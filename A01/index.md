@@ -1,4 +1,4 @@
-# Lineární algebra
+# Lineární algebra I
 
 Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi nimi. Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními veličinami, u kterých si všímáme směru. Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do sloupce nebo řádku. Může se například jednat o silové působení a posunutí v předem zvolených bodech namáhané konstrukce. Poté má smysl pracovat s vektory libovolné dimenze. 
 
@@ -113,74 +113,3 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
 * Matice projekce jednoho stavu do druhého
 * Mocniny matice
 
-## Vlastní směry a hodnoty
-
-* Definice
-* Vlastní směry matice Markovova řetězce
-* Vlastní směry geometrické transformace
-
-## Konstituční zákony
-
-* Matice jako trenzor a materiálová vlastnost
-* Vlastní směry matic a tenzorů a jejich souvislost s rovinami symetrie materiálu
-* Ortotropní materiály
-
-## Diagonalizace
-
-* Konstituční zákony v ortotropních materiálech
-* Princip superpozice
-
-## Transformace souřadnic, inverzní matice
-
-* Vztah mezi souřadnicemi v různých souřadnicových systémech
-* Inverzní matice
-* Využití inverzní matice k řešení soustav lineárních rovnic
-* Inverzní transformace
-* Transformace tenzoru do jiných souřadnic
-
-# Derivace a integrál
-
-* Motivace, problematika měření rychlosti
-* Definice derivace, okamžitá rychlost
-* Model ochlazování kávy
-* Lineární aproximace
-* Fourierův zákon, gradient v 1D
-* Diferenciální rovnice
-* Konečné diference, numerické derivování
-* Integrál jako antiderivace
-* Riemannův integrál, integrál jako součet nekonečně mnoha nekonečně malých příspěvků
-* Derivace a integrál součtu a konstantního násobku
-
-
-# Impulsové věty
-
-* Newtonovy pohybové zákony
-* První a druhá impulsová věta
-* Rovnováha na páce, výpočet reakcí při působení bodových sil na přímém nosníku
-* Posouvající síla a moment u nosníků
-* Diferenciální rovnice ohybové čáry nosníku
-
-# Teorie elasticity
-
-* Tenzor napětí
-* Linearizace funkce přetvoření, separace rotační, posuvné a deformační složky
-* Tenzor deformace
-* Hookův zákon pro izotropní, anizotropní a ortotropní materiál
-* Transformace tenzoru napětí a deformace
-
-# Parciální derivace
-
-* Parciální derivace, problematika měření rychlosti funkce více proměnných
-* Numerické derivování pro funkce více proměnných
-* Lineární aproximace funkce více proměnných a vektorové funkce
-* Zákon šíření chyb
-* Gradient, divergence, rotace
-
-# Konstituční vztahy, difuzní rovnice
-
-* Tok tepla, difuzní tok
-* Divergence toku
-* Rovnice kontinuity
-* Difuzní rovnice
-* Rovnice vedení tepla
-* Sorretův jev 
