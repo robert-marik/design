@@ -43,24 +43,26 @@ Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom
 Jinou variantou je použití sloupcových vektorů, kde soustavu přepíšeme do tvaru
 
 $$
-\begin{pmatrix}u_1\cru_2\cru_3\cru_4\end{pmatrix}=
-\begin{pmatrix}k_{11}\crk_{21}\crk_{31}\crk_{41}\end{pmatrix} f_1 +
-\begin{pmatrix}k_{12}\crk_{22}\crk_{32}\crk_{42}\end{pmatrix} f_2 +
-\begin{pmatrix}k_{13}\crk_{23}\crk_{33}\crk_{43}\end{pmatrix} f_3 +
-\begin{pmatrix}k_{14}\crk_{24}\crk_{34}\crk_{44}\end{pmatrix} f_4.
+\begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4\end{pmatrix}=
+\begin{pmatrix}k_{11}\cr k_{21}\cr k_{31}\cr k_{41}\end{pmatrix} f_1 +
+\begin{pmatrix}k_{12}\cr k_{22}\cr k_{32}\cr k_{42}\end{pmatrix} f_2 +
+\begin{pmatrix}k_{13}\cr k_{23}\cr k_{33}\cr k_{43}\end{pmatrix} f_3 +
+\begin{pmatrix}k_{14}\cr k_{24}\cr k_{34}\cr k_{44}\end{pmatrix} f_4.
 $$
 
 Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Aby síly byly takév ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
 
 $$
-\begin{pmatrix}u_1\cru_2\cru_3\cru_4\end{pmatrix}=
+\begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4
+\end{pmatrix}=
 \begin{pmatrix}
 k_{11} & k_{12} & k_{13}& k_{14} \cr
 k_{21} & k_{22} & k_{23}& k_{24} \cr
 k_{31} & k_{32} & k_{33}& k_{34} \cr
 k_{41} & k_{42} & k_{43}& k_{44} \cr
 \end{pmatrix} 
-\begin{pmatrix}f_1\crf_2\crf_3\crf_4\end{pmatrix}.
+\begin{pmatrix}f_1\cr f_2\cr f_3\cr f_4
+\end{pmatrix}.
 $$
 
 Po přeznačení dostáváme 
