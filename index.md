@@ -43,8 +43,7 @@ Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom
 Jinou variantou je použití sloupcových vektorů, kde soustavu přepíšeme do tvaru
 
 $$
-\begin{pmatrix}u_1\\u_2\\u_3\\u_4\end{pmatrix}
-=
+\begin{pmatrix}u_1\\u_2\\u_3\\u_4\end{pmatrix}=
 \begin{pmatrix}k_{11}\\k_{21}\\k_{31}\\k_{41}\end{pmatrix} f_1 +
 \begin{pmatrix}k_{12}\\k_{22}\\k_{32}\\k_{42}\end{pmatrix} f_2 +
 \begin{pmatrix}k_{13}\\k_{23}\\k_{33}\\k_{43}\end{pmatrix} f_3 +
