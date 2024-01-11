@@ -54,8 +54,7 @@ $$
 Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Aby síly byly takév ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
 
 $$
-\begin{pmatrix}u_1\\u_2\\u_3\\u_4\end{pmatrix}
-=
+\begin{pmatrix}u_1\\u_2\\u_3\\u_4\end{pmatrix}=
 \begin{pmatrix}
 k_{11} & k_{12} & k_{13}& k_{14} \\
 k_{21} & k_{22} & k_{23}& k_{24} \\
