@@ -1,4 +1,4 @@
-# Lineární algebra I
+# Lineární algebra II
 
 ## Vlastní směry a hodnoty
 
