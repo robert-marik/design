@@ -109,7 +109,7 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
   * Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
 * Matice jako zobrazení vektoru na vektor
   
-  * [Ilustrační zápisník](https://gist.github.com/robert-marik/a0522301f333ca84de0882b26bd06dd2)
+  * [Ilustrační zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_geometricka_zobrazeni.ipynb)
   * Sloupce matice jsou obrazy vektorů ve směru os
   * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe.
   * Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
@@ -137,3 +137,9 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
 
 ## Markovovy řetězce
 
+Matice je možné použít k modelování vývoje systémů. Z pravděpodobností
+s jakou se systém nachází v jednotlivých stavech sestavíme vektor a
+matici použijeme k modelování toho, jak systém přechází z jednoho
+stavu do druhého.
+
+[Ilustrativní zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_markov_chain.ipynb)
