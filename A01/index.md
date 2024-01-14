@@ -1,19 +1,3 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-
 # Lineární algebra I
 
 Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi nimi. Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními veličinami, u kterých si všímáme směru. Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do sloupce nebo řádku. Může se například jednat o silové působení a posunutí v předem zvolených bodech namáhané konstrukce. Poté má smysl pracovat s vektory libovolné dimenze. 
@@ -97,9 +81,13 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
 
 ## Geometrické transformace
 
-* Deformace nosníku: mesh tělesa
+* Ukázka, jak se modeluje deformace nosníkku. 
+  Těleso se dělí na malé elementy. 
+
   ![](mesh.png)
   ![](deformace.png)  
+
+  Pro modelování deformace potřebujeme mít možnost jednoznačně identifikovat dílčí elementy a být schopni popsat změnu jejich tvaru a polohy při deformaci. K tomu je možno použít souřadnice a maticový počet.
 * Kartézská soustava souřadnic
   * Jsou zvoleny počátek a navzájem kolmé osy (v rovině dvě, v prostoru tři). 
   * Bod ztotožníme s uspořádanou dvojicí nebo trojicí čísel udávajících vzdálenost od počátku měřenou ve směru jednotlivých os.  
@@ -107,11 +95,15 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
   * Vektor je veličina daná směrem a velikostí, například síla, rychlost, moment síly, posunutí bodu, difuzní tok, tok tepla. 
   * Znázorňujeme jej orientovanou úsečkou, jejíž směr odpovídá směru vektoru a délka souvisí s velikostí vektor. 
   * Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
-* Matice jako zobrazení vektoru na vektor
-  
+* Matice jako zobrazení vektoru na vektor  
   * [Ilustrační zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_geometricka_zobrazeni.ipynb)
-  * Sloupce matice jsou obrazy vektorů ve směru os
-  * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe.
+  * Sloupce matice popisující zobrazení jsou obrazy vektorů ve směru os.
+  * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe. 
+  
+  $$
+  I = \begin{pmatrix} 1&0&0\cr0&1&0\cr 0&0&1
+  \end{pmatrix}
+  $$
   * Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
 
   $$
@@ -125,15 +117,16 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
 
 ## Homogenní souřadnice, posunutí a projekce
 
-* Homogenní souřadnice
-* Posunutí pomocí maticového součinu
-* Perspektiva pomocí maticového součinu
+* Homogenní souřadnice. Vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi jako s vektory v dimenzi o jedničku větším. Před převodem z homogenních souřadnic je nutné zajistit na poslední pozici jedničku a poté převést na body.
+* Posunutí pomocí maticového součinu. V homogenních souřadnicích neplatí podmínka, že nula se zobrazuje na nulu. Je možné takto realizovat například posunutí.
+* Perspektiva pomocí maticového součinu. V homogenních souřadnicích neplatí podmínka, že se rovnoběžky zobrazují na rovnoběžky. Tím je možné maticový součin použít pro obrázky s perspektivou.
 
 ## Maticový součin dvou matic
 
-* Složené zobrazení
-* Nekomutativita 
-* Asociativita
+* Složené zobrazení. Součin $C=AB$ je matice, která má ve sloupcích obrazy sloupců matice $B$ při zobrazení popsaném maticí $A$. Jedná se o matici složeného zobrazení, kdy nejprve použijme zobrazení $B$ a potom zobrazení $A$.
+* Maticový součin obecně není komutativní. Obecně neplatí $AB=BA.$ 
+* Maticový součin je asociativní. Platí $A(BC)=(AB)C$.
+* Neutrálním prvkem je jednotková matice $I$.
 
 ## Markovovy řetězce
 
@@ -142,4 +135,4 @@ s jakou se systém nachází v jednotlivých stavech sestavíme vektor a
 matici použijeme k modelování toho, jak systém přechází z jednoho
 stavu do druhého.
 
-[Ilustrativní zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_markov_chain.ipynb)
+[Ilustrativní zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_markov_chain.ipynb), sukcese lesa.
