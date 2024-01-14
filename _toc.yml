@@ -14,6 +14,7 @@ parts:
     chapters:
     - file: B01/index.md
     - file: B02/index.md
+    - file: B03/index.md
   - caption: Základy teorie elasticity
     numbered: true
     chapters:

@@ -101,16 +101,27 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
   ![](mesh.png)
   ![](deformace.png)  
 * Kartézská soustava souřadnic
-  
-  Jsou zvoleny počátek a navzájem kolmé osy (v rovině dvě, v prostoru tři) a bod ztotožníme s uspořádanou dvojicí nebo trojicí čísel udávajících vzdálenost od počátku měřenou ve směru jednotlivých os.  
+  * Jsou zvoleny počátek a navzájem kolmé osy (v rovině dvě, v prostoru tři). 
+  * Bod ztotožníme s uspořádanou dvojicí nebo trojicí čísel udávajících vzdálenost od počátku měřenou ve směru jednotlivých os.  
 * Geometrická interpretace vektoru
-
-  Vektor je veličina daná směrem a velikostí, například síla, rychlost, moment síly, posunutí bodu, difuzní tok, tok tepla. Znázorňujeme jej orientovanou úsečkou, jejíž směr odpovídá směru vektoru a délka souvisí s velikostí vektor. Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
+  * Vektor je veličina daná směrem a velikostí, například síla, rychlost, moment síly, posunutí bodu, difuzní tok, tok tepla. 
+  * Znázorňujeme jej orientovanou úsečkou, jejíž směr odpovídá směru vektoru a délka souvisí s velikostí vektor. 
+  * Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
 * Matice jako zobrazení vektoru na vektor
-* Sloupce matice jako obrazy vektorů ve směru os
-* Jednotková matice
-* Matice rotace
-* Součet a rozdíl matic
+  
+  * [Ilustrační zápisník](https://gist.github.com/robert-marik/a0522301f333ca84de0882b26bd06dd2)
+  * Sloupce matice jsou obrazy vektorů ve směru os
+  * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe.
+  * Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
+
+  $$
+  \begin{pmatrix}
+  \cos\theta&-\sin\theta\cr
+  \sin\theta&\cos\theta
+  \end{pmatrix}.
+  $$
+
+* Součet a rozdíl matic je definován po složkách.
 
 ## Homogenní souřadnice, posunutí a projekce
 
@@ -124,127 +135,5 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
 * Nekomutativita 
 * Asociativita
 
-## Markovovy řetězce (druhové složení lesa)
-
-Markovův řetězec je jeden z nejjednodušších modelů popisujících systém, který se
-může nacházet v různých stavech a mezi těmito stavy se náhodně přepíná podle
-předem daných pravděpodobností. Pro jeho popis je vhodný matematický aparát
-založený na teorii matic. Následující ukázka aplikace při studiu populací je z
-knihy Ekologie: jedinci, populace a společenstva autorů Begon, M. and Townsend, C.R. and Harper, J.L.
-
-Americký vědec H. S. Horn studoval druhovou skladbu lesa a vycházel z
-předpokladů, že existuje konstantní pravděpodobnost, že určitý druh je nahrazen
-jiným druhem. Tabulka pravděpodobností je níže. Pro každý současný druh jsou v
-řádku pravděpodobnosti, že tento druh bude za 50 let nahrazen druhem ze záhlaví
-příslušného sloupce. Například pravděpodobnost toho, že na stanovišti, kde nyní
-roste bříza topololistá poroste za 50 let červený javor je 50% (první řádek,
-třetí sloupec). Pravděpodobnost toho, že na stanovišti, kde nyní roste javor za
-50 let poroste bříza je nulová (třetí řádek, první sloupec). Model předpokládá,
-že i když se dřevina v lokalitě nevyskytuje, existuje zdroj semen a dřevina se
-na této lokalitě může objevit.
-
-<style>
-  .tabulka table {
-    table-layout:fixed 
-  }
-</style>  
-
-<div class="tabulka">
-
-||Bříza topololistá|Tupela lesní|Javor červený|Buk|
-|---------|--:|--:|--:|--:|
-|Bříza topololistá|0.05|0.36|0.50|0.09|
-|Tupela lesní|0.01|0.57|0.25|0.17|
-|Javor červený|0.00|0.14|0.55|0.31|
-|Buk | 0.00|0.01|0.03|0.96|
-
-</div>
-
-Procentuální zastoupení jednotlivých druhů budeme charakterizovat vektorem, kde
-hodnoty pro stromy budou ve stejném pořadí, jako jsou stromy seřazeny v naší
-tabulce. Pokud například je zastoupena napůl bříza a buk, odpovídá to vektoru
-$v(0) = (50,0,0,50)^T.$ 
-
-Procentuální zastoupení každého druhu se bude měnit z období na období.
-Například procentuální zastoupení  javoru v dalším období bude dáno
-procentuálním zastoupením javoru v současnosti a pravděpodobností, že se na
-stanovišti udrží a dále procentuálním
-zastoupením ostatních dřevin a pravděpodobností, že tato dřevina bude nahrazena
-javorem. Tedy pro javor a vektor procentuálního zastoupení $v = (v_1,v_2,v_3,v_4)^T$ to
-bude 
-$$
-  0.50 v_1 + 0.25v_2 + 0.55 v_3 + 0.03 v_4
-$$
-Při použití maticového součinu vektoru rozložení zastoupení s maticí
-pravděpodobností
-$$M=\begin{pmatrix}
-0.05 & 0.01 & 0 & 0\cr
-0.36& 0.57& 0.14&0.01\cr
-0.50&0.25&0.55&0.03\cr
-0.09&0.17&0.31&0.96
-\end{pmatrix}$$
-je zastoupení dřevin v následujícím období dáno vzorcem
-$$v(k+1)=Mv(k).$$
-
-```{code-cell} ipython
-:tags: ["hide-input"]
-M = np.matrix([0.05, 0.36, 0.50, 0.09,
-              0.01, 0.57, 0.25, 0.17,
-              0.0,0.14,0.55,0.31,
-              0.0,0.01,0.03,0.96]).reshape(4,4).T
-M
-```
-
-Zkusíme si namodelovat 20 období, tj. tisíc let vývoje. K tomu si připravíme
-pole do kterého budeme ukládat data. Výchozím stavem bude rovnoměrné zastoupení
-všech druhů. Vývoj jednotlivých dřevin zachytíme graficky.
-
-```{code-cell} ipython
-:tags: ["hide-input"]
-N = 20
-X_init = [25, 25, 25, 25]
-
-X = np.zeros((4, N))
-X[:, 0] = X_init
-for i in range(N - 1):
-    X[:, i + 1] = M @ X[:, i]
-
-fig, ax = plt.subplots()
-t = np.array(range(N))*50
-plt.plot(t,X.T)
-plt.legend(["Bříza topololistá", "Tupela lesní", "Javor červený", "Buk"])
-ax.set(
-    title="Vývoj zastoupení jednotlivých druhů",
-    ylim=(0,None),
-    ylabel="Procentuální podíl", 
-    xlabel="Čas/rok");
-```
-
-Ze simulace se zdá, že poměr dřevin se postupně stabilizuje. 
-Z matematického hlediska se procentuální zastoupení dřevin nemění, pokud je
-vektor zastoupení dřevin vlastním vektorem matice příslušným vlastní hodnotě
-$1$. Ověříme, že to tak opravdu je.
-
-```{code-cell} ipython
-:tags: ["hide-input"]
-X_final = X[:, [-1]]
-print(X_final.ravel())  # array se převede na 1D pomocí ravel
-print((M @ X_final).ravel())
-```
-
-Pokud bychom chtěli simulaci ne po 50 letech, ale po 100 letech, můžeme maticí
-vynásobit dvakrát. To je v konečném důsledku stejné, jako bychom násobili druhou
-mocninou. Pokud bychom chtěli delší časový interval, použijeme vyšší mocninu.
-Následující výpočet ukazuje, že pro dostatečně velkou mocninu vychází všechny
-sloupce matice stejné a jsou rovny výslednému poměru mezi jednotlivými
-dřevinami.
-
-```{code-cell} ipython
-:tags: ["hide-input"]
-M**50
-```
-
-Další uplatnění Markovových řetězců je například při předpovědi počasí a jejím
-zpřesněním na lokální úroveň. Používá informace o tom, s jakou pravděpodobností
-je jeden druh počasí zachován či vystřídán druhým. 
+## Markovovy řetězce
 

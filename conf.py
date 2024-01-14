@@ -36,6 +36,7 @@ extensions = [
     'sphinx_proof',
     #'sphinx_jupyterbook_latex'
     'sphinx_last_updated_by_git',
+    'sphinx_multitoc_numbering',
 ]
 external_toc_exclude_missing = False
 external_toc_path = '_toc.yml'
@@ -47,9 +48,9 @@ html_sourcelink_suffix = ''
 html_theme = 'sphinx_book_theme'
 #html_theme = 'insipid'
 oznameni = """
-Toto jsou učební materiály předmětu Aplikovaná matematika převedené do nové šablony. Stará verze je po nějaký čas k dispozici na  <a href="https://robert-marik.github.io/am-old">https://robert-marik.github.io/am-old</a> a nebude již udržována.
+Toto jsou učební materiály pro matematiku k předmětu Geometrie a aplikovaná matematika převedené do nové šablony. Stará verze je po nějaký čas k dispozici na  <a href="https://robert-marik.github.io/am-old">https://robert-marik.github.io/am-old</a> a nebude již udržována.
 """
-extra_navbar = '<a href="https://user.mendelu.cz/marik/Aplikovana_matematika.pdf">Offline verze v PDF</a>'
+extra_navbar = '...'
 html_theme_options = {
     'extra_footer': '<p>\n<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>\n  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>\n</p>\n<p><script src="https://utteranc.es/client.js"\n repo="robert-marik/am" \n issue-term="pathname" \n label="comment" \n theme="github-light" \n crossorigin="anonymous" \n  async> \n </script> \n </p>',
     'search_bar_text': 'Hledat v textu...',
@@ -70,7 +71,7 @@ html_theme_options = {
     #'breadcrumbs': True,
 }
 language = 'cs'
-html_title = 'Aplikovaná matematika'
+html_title = 'Aplikovaná matematika (design)'
 jupyter_cache = ''
 jupyter_execute_notebooks = 'auto'
 latex_engine = 'xelatex'

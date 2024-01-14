@@ -1,0 +1,73 @@
+\documentclass[border=0.5cm]{standalone}
+
+\usepackage{tikz}
+    \usetikzlibrary{perspective}
+    \usetikzlibrary{3d}
+    \usetikzlibrary{arrows.meta}
+    
+\begin{document}
+    
+    \begin{tikzpicture}[%
+       %3d view = {-30}{-15},
+       %perspective
+    ]
+    \begin{scope}[shift={(-2,2)}]
+        \draw[-{Latex[scale = 0.7]}] (-4, -4, 0) -- (-3, -4, 0)
+            node[below] {\footnotesize$x$};
+        \draw[-{Latex[scale = 0.7]}] (-4, -4, 0) -- (-4, -3, 0)
+            node[right] {\footnotesize$y$};
+        \draw[-{Latex[scale = 0.7]}] (-4, -4, 0) -- (-4, -4, 1)
+            node[above] {\footnotesize$z$};
+    \end{scope}            
+
+        \begin{scope}[canvas is xz plane at y = 2]
+        
+            \draw[
+                %fill = lightgray
+            ] (-2, -2) rectangle (2, 2);
+            
+            \draw[-{Latex[left]}, blue] (-1.25, 0) -- (1.25, 0)
+                node[below left] {$\sigma_{xy}$};
+            \draw[-{Latex[left]}, blue] (0, -1.25) -- (0, 1.25)
+                node[left] {$\sigma_{yZ}$};
+        
+        \end{scope}     
+    
+        \draw[-Latex, red] (0, 2, 0) -- (0, 3.5, 0)
+            node[left] {$\sigma_{y}$};
+    
+        \begin{scope}[canvas is yz plane at x = 2]
+    
+            \draw[
+               % fill = lightgray
+            ] (-2, -2) rectangle (2, 2);
+            
+            \draw[-{Latex[right]}, blue] (-1.25, 0) -- (1.25, 0)
+                node[below right] {$\sigma_{xy}$};
+            \draw[-{Latex[left]}, blue] (0, -1.25) -- (0, 1.25)
+                node[below right] {$\sigma_{xz}$};
+    
+        \end{scope} 
+
+        \draw[-Latex, red] (2, 0, 0) -- (3.5, 0, 0)
+            node[right] {$\sigma_{x}$};
+
+        \begin{scope}[canvas is xy plane at z = 2]
+
+            \draw[
+                %fill = lightgray
+            ] (-2, -2) rectangle (2, 2);
+
+            \draw[-{Latex[left]}, blue] (-1.25, 0) -- (1.25, 0)
+                node[above]{$\sigma_{xz}$};
+            \draw[-{Latex[left]}, blue] (0, -1.25) -- (0, 1.25)
+                node[left]{$\sigma_{yz}$};
+
+        \end{scope} 
+
+        \draw[red, -Latex] (0, 0, 2) -- (0, 0, 3.5)
+            node[left] {$\sigma_{z}$};
+
+    \end{tikzpicture}
+    
+\end{document}

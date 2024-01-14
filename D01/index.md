@@ -1,8 +1,5 @@
-# Parciální derivace
+# Parciální derivace ve fyzice
 
-* Parciální derivace, problematika měření rychlosti funkce více proměnných
-* Numerické derivování pro funkce více proměnných
-* Lineární aproximace funkce více proměnných a vektorové funkce
 * Zákon šíření chyb
 * Gradient, divergence, rotace
 
