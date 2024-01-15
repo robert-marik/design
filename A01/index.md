@@ -96,7 +96,7 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
   * Znázorňujeme jej orientovanou úsečkou, jejíž směr odpovídá směru vektoru a délka souvisí s velikostí vektor. 
   * Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
 * Matice jako zobrazení vektoru na vektor  
-  * [Ilustrační zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_geometricka_zobrazeni.ipynb)
+  * <a href="../notebooks/matice_geometricka_zobrazeni.html">Ilustrační zápisník</a>
   * Sloupce matice popisující zobrazení jsou obrazy vektorů ve směru os.
   * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe. 
   
@@ -112,6 +112,7 @@ Uvedená operace mezi maticí a vektorem se nazývá maticový součin.
   \sin\theta&\cos\theta
   \end{pmatrix}.
   $$
+
 
 * Součet a rozdíl matic je definován po složkách.
 
@@ -135,4 +136,4 @@ s jakou se systém nachází v jednotlivých stavech sestavíme vektor a
 matici použijeme k modelování toho, jak systém přechází z jednoho
 stavu do druhého.
 
-[Ilustrativní zápisník](https://github.com/robert-marik/design/blob/main/notebooks/matice_markov_chain.ipynb), sukcese lesa.
+<a href="../notebooks/matice_markov_chain.html">Ilustrativní zápisník</a>, sukcese lesa.
