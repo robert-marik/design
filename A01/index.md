@@ -1,12 +1,32 @@
 # Lineární algebra I
 
-Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi nimi. Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními veličinami, u kterých si všímáme směru. Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do sloupce nebo řádku. Může se například jednat o silové působení a posunutí v předem zvolených bodech namáhané konstrukce. Poté má smysl pracovat s vektory libovolné dimenze. 
+Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi
+nimi. 
 
+* Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními
+  veličinami, u kterých si všímáme směru. 
+  Příklady zahrnují následující.
+  * Rychlost pohybu.
+  * Polohový vektor v prostoru (spojuje počátek s uvažovaným bodem)
+  * Posunutí (změna polohy v prostoru, vektor spojuje počáteční a koncovou pozici
+    posunutého bodu)
+  * Síla a moment síly
+* Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do
+  sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
+  Příklady zahrnují následující.
+  * Na konstrukci je zvoleno $N$ bodů. Sledujeme změnu polohy těchto
+    bodů. Pokud se body mohou pohybovat s jedním stupněm volnosti, dostáváme
+    $N$-rozměrný vektor. Obecněji můžeme pracova s vektorem dimenze $3N$. 
+  * Podobně jako předchozí příklad, ale můžeme pracovat s bodovými silami
+    působícími na konstrukci.
+  * Na objektu je zvoleno $N$ bodů a sledujeme teplotu v těchto bodech.   
 ## Matice tuhosti a poddajnosti, zatížení nosníku
 
 Na praktické ukázce deformace nosníku si ukážeme zavedení čtyřrozměrných vektorů, matice a součinu matice s vektorem.
 
-Sledujeme nosník ve vybraných čtyřech uzlových bodech. V těchto bodech je nosník zatížen silami $f_1$, ..., $f_4$ a vlivem těchto sil je deformován nosník o $u_1$, ..., $u_4$. 
+Sledujeme nosník ve vybraných čtyřech uzlových bodech. V těchto bodech je nosník
+zatížen silami $f_1$, ..., $f_4$ a vlivem těchto sil je deformován nosník o
+$u_1$, ..., $u_4$. Síly působí svisle, výchylky bodů jsou ve svislém směru.
 
 Předpokládejme, že stejně jako na pružině je deformace úměrná síle. Předpokládejme, že deformace od různých sil se sčítají. Poté máme následující vztahy. 
 
@@ -36,7 +56,7 @@ u_i= \sum_{j=1}^4 k_{ij}f_j.
 $$
 
 
-Poslední výraz bývá okvyklejší zapsat pomocí Einsteinovy notace, kdy se vynechává znaménko pro sumu a přes opakovaný index se sčítá. Tedy soustava se zjednoduší na $$u_i=k_{ij}f_j.$$
+Poslední výraz bývá obvyklejší zapsat pomocí Einsteinovy notace, kdy se vynechává znaménko pro sumu a přes opakovaný index se sčítá. Tedy soustava se zjednoduší na $$u_i=k_{ij}f_j.$$
 
 Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom o jiný zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.
 
@@ -52,7 +72,7 @@ $$
 \begin{pmatrix}k_{14}\cr k_{24}\cr k_{34}\cr k_{44}\end{pmatrix} f_4.
 $$
 
-Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Aby síly byly takév ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
+Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Aby síly byly také ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
 
 $$
 \begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4
@@ -75,13 +95,13 @@ $$
 
 kde $U$ je vektor deformací, $F$ je vektor působících sil a $K$ je matice poddajnosti. Toto je již relativně jednoduchý vztah, reprezentuje totiž jednu rovnici, která vyjadřuje, že jedna veličina je součinem dvou jiných veličin.
 
-Podobně je možné postupovat i naopak a vyjářit síly pomocí deformací vztahem $$F=CU,$$ kde $C$ je matice tuhosti.
+Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vztahem $$F=CU,$$ kde $C$ je matice tuhosti.
 
 Uvedená operace mezi maticí a vektorem se nazývá maticový součin. 
 
 ## Geometrické transformace
 
-* Ukázka, jak se modeluje deformace nosníkku. 
+* Ukázka, jak se modeluje deformace nosníku. 
   Těleso se dělí na malé elementy. 
 
   ![](mesh.png)

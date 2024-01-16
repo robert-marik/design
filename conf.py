@@ -16,7 +16,7 @@ PygmentsBridge.latex_formatter = CustomLatexFormatter
 author = 'Robert Mařík'
 bibtex_bibfiles = []
 comments_config = {'hypothesis': False, 'utterances': False}
-copyright = '2022, 2023'
+copyright = '2022, 2023, 2024'
 exclude_patterns = ['**.ipynb_checkpoints', '.DS_Store', 'Thumbs.db','_build', 'reseni*', 'cviceni/cviceni00.md','cviceni/cviceni12.md', 'cviceni/cviceni13.md', 'cviceni/cviceni14.md', 'cviceni/text.md', 'README.md']
 #execution_allow_errors = False
 #execution_excludepatterns = []
@@ -69,6 +69,7 @@ html_theme_options = {
     'body_max_width': None,
     'navigation_with_keys':False,
     #'breadcrumbs': True,
+    "show_navbar_depth": 2,
 }
 language = 'cs'
 html_title = 'Aplikovaná matematika (design)'
@@ -105,4 +106,4 @@ mathjax3_config = {
   'tex': {'packages': {'[+]': ['physics']}}
 }
 
-notfound_urls_prefix = '/am/'
+notfound_urls_prefix = '/design/'
