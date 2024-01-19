@@ -15,8 +15,10 @@ nimi.
   sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
   Příklady zahrnují následující.
   * Na konstrukci je zvoleno $N$ bodů. Sledujeme změnu polohy těchto
-    bodů. Pokud se body mohou pohybovat s jedním stupněm volnosti, dostáváme
-    $N$-rozměrný vektor. Obecněji můžeme pracova s vektorem dimenze $3N$. 
+    bodů. Pokud se body mohou pohybovat s jedním stupněm volnosti,
+    dostáváme $N$-rozměrný vektor. Obecněji, pokud není pohyb omezen,
+    musíme sledovat polohu ve všech třech nezávislých směrech a
+    pracujeme s vektorem dimenze $3N$.
   * Podobně jako předchozí příklad, ale můžeme pracovat s bodovými silami
     působícími na konstrukci.
   * Na objektu je zvoleno $N$ bodů a sledujeme teplotu v těchto bodech.   
@@ -155,13 +157,33 @@ Operace {eq}`3` mezi maticí a vektorem definovaná vztahem {eq}`2` se nazývá 
 
 ## Homogenní souřadnice, posunutí a projekce
 
-* Homogenní souřadnice. Vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi jako s vektory v dimenzi o jedničku větším. Před převodem z homogenních souřadnic je nutné zajistit na poslední pozici jedničku a poté převést na body.
-* Posunutí pomocí maticového součinu. V homogenních souřadnicích neplatí podmínka, že nula se zobrazuje na nulu. Je možné takto realizovat například posunutí.
-* Perspektiva pomocí maticového součinu. V homogenních souřadnicích neplatí podmínka, že se rovnoběžky zobrazují na rovnoběžky. Tím je možné maticový součin použít pro obrázky s perspektivou.
+### Homogenní souřadnice. 
+
+* Vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi
+  jako s vektory v dimenzi o jedničku větším. Například bod $[1,2]$ má
+  v homogenních souřčadnicích tvar $(1,2,1)$
+* Před převodem z homogenních souřadnic do kartézských je nutné
+  zajistit na poslední pozici jedničku a poté převést na bod v
+  kartézských souřadnicích. Například $(6,90,3)$ jsou homogenní
+  souřadnice bodu $[2,30]$.
+
+### Posunutí pomocí maticového součinu. 
+
+V homogenních souřadnicích neplatí podmínka, že nula se zobrazuje na
+nulu. Je možné takto realizovat například posunutí.
+
+### Perspektiva pomocí maticového součinu
+
+V homogenních souřadnicích neplatí podmínka, že se rovnoběžky
+zobrazují na rovnoběžky. Tím je možné maticový součin použít pro
+obrázky s perspektivou.
 
 ## Maticový součin dvou matic
 
-* Složené zobrazení. Součin $C=AB$ je matice, která má ve sloupcích obrazy sloupců matice $B$ při zobrazení popsaném maticí $A$. Jedná se o matici složeného zobrazení, kdy nejprve použijme zobrazení $B$ a potom zobrazení $A$.
+* Maticový součin dvou matic je definován pomocí násobení matice a vektoru.
+  Součin $C=AB$ je matice, která má ve sloupcích obrazy sloupců matice $B$ při
+  zobrazení popsaném maticí $A$. 
+* Součin $C=AB$ je možno chápat jako složené zobrazení, kdy nejprve použijme zobrazení $B$ a potom zobrazení $A$.
 * Maticový součin obecně není komutativní. Obecně neplatí $AB=BA.$ 
 * Maticový součin je asociativní. Platí $A(BC)=(AB)C$.
 * Neutrálním prvkem je jednotková matice $I$.
