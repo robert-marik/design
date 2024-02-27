@@ -17,7 +17,7 @@ Bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
 ## Linearizace vektoru posunutí
 ## Tenzor deformace
 
-* linearizace, [nelineárí transfromace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
+* linearizace, [nelineární transfromace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
 * separace rotační, posuvné a deformační složky 
 * tenzor deformace
 
