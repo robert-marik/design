@@ -13,6 +13,5 @@
   $$f(x)\approx f(x_0) + \frac{\mathrm df}{\mathrm dx}(x_0)(x-x_0)$$
   Lineární aproximace v nule pro funkci procházející počátkem se vždy redukuje na přímou úměrnost. Konstutuční zákony jsou formulávány pomocí přímé úměrnosti ([Darcyho zákon](https://en.wikipedia.org/wiki/Darcy%27s_law), [Fickův zákon](https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion), [Fourierův zákon](https://en.wikipedia.org/wiki/Thermal_conduction#Fourier's_law), [Hookův zákon](https://en.wikipedia.org/wiki/Hooke%27s_law))
 * Fourierův zákon, gradient v 1D
-* Konečné diference, numerické derivování, [prezentace](https://user.mendelu.cz/marik/manim/Diference/)
 
 

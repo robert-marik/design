@@ -25,3 +25,7 @@ parts:
     chapters:
     - file: D01/index.md
     - file: D02/index.md
+  - caption: Numerická matematika
+    numbered: true
+    chapters:
+    - file: E01/index.md
