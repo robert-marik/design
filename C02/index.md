@@ -1,4 +1,4 @@
-# Teorie elasticity
+# Teorie elasticity ve 3D
 
 ## Tenzor napětí
 
@@ -15,11 +15,10 @@ $$
 Bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
 
 ## Linearizace vektoru posunutí
-## Tenzor deformace
-
-* linearizace, [nelineární transfromace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
-* separace rotační, posuvné a deformační složky 
-* tenzor deformace
 
 ## Hookův zákon pro izotropní, anizotropní a ortotropní materiál
-## Transformace tenzoru napětí a deformace
+
+## Přímé nosníky
+
+* Posouvající síla a ohybový moment u nosníků.
+* Diferenciální rovnice ohybové čáry nosníku
