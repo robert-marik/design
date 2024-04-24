@@ -29,3 +29,7 @@ parts:
     numbered: true
     chapters:
     - file: E01/index.md
+  - caption: Shrnutí
+    numbered: true
+    chapters:
+    - file: F01/index.md

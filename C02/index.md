@@ -1,4 +1,4 @@
-# Teorie elasticity
+# Teorie elasticity ve 3D
 
 ## Tenzor napětí
 
@@ -21,4 +21,8 @@ Bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
 * tenzor deformace
 
 ## Hookův zákon pro izotropní, anizotropní a ortotropní materiál
-## Transformace tenzoru napětí a deformace
+
+## Přímé nosníky
+
+* Posouvající síla a ohybový moment u nosníků.
+* Diferenciální rovnice ohybové čáry nosníku
