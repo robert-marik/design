@@ -1,0 +1,66 @@
+//name: 001 Derivace polohy podle času
+::001 Derivace polohy podle času::[markdown]Veličina $x$ označuje polohu tělesa, jehož pohyb je vázán na přímku.
+(Například pohyb po kolejích, pohyb na laně, pohyb po vodicí tyči, atd.). Poloha
+se mění s časem. Co vyjadřuje derivace polohy podle času $\\frac\{\mathrm
+dx\}\{\mathrm dt\}$? Jsou možná dvě slovní vyjádření. Vyberte obě.
+{
+    =%50%Rychlost, s jakou se mění poloha v čase, tj. rychlost pohybu.
+    ~%-50%Rychlost, s jakou se mění rychlost pohybu v čase, tj. zrychlení. 
+    ~%-50%Polohu tělesa v zadaném okamžiku, tj. časový průběh pohybu.
+    =%50%Změnu polohy za jednotku času.
+    ~%-50%Změnu rychlosti změny polohy za jednotku času.
+    ~%-50%Rychlost změny polohy za jednotku času.
+    #### Derivace je rychlost. Derivace polohy podle času udává, jak rychle se
+    mění poloha v čase. To je ekvivalentní tomu, jaká je změna polohy za jednotku času.
+}
+
+//name: 002 Derivace teploty podle času
+::002 Derivace teploty podle času::[markdown]Veličina $T$ označuje teplotu
+objektu jako funkci času. Co vyjadřuje derivace teploty podle času
+$\\frac\{\\mathrm T\}\{\\mathrm dt\}$? Jsou možná dvě slovní vyjádření. Vyberte obě.
+{
+    =%50%Rychlost, s jakou se mění teplota v čase, tj. rychlost ohřevu.
+    ~%-50%Rychlost, s jakou se mění rychlost ohřevu v čase.
+    ~%-50%Teplotu objektu v zadaném okamžiku, tj. časový průběh teploty.
+    =%50%Změnu teploty za jednotku času.
+    ~%-50%Změnu rychlosti změny teploty za jednotku času.
+    ~%-50%Rychlost změny teploty za jednotku času.
+    #### Derivace je rychlost. Derivace teploty podle času udává, jak rychle se
+    mění teplota v čase. To je ekvivalentní tomu, jaká je změna teploty za jednotku času.
+}
+
+
+//name: 003 Znaménko derivace teploty podle času
+::003 Znaménko derivace teploty podle času::[markdown]Veličina $T$ označuje teplotu
+objektu jako funkci času. V jaké situaci bude derivace teploty podle času záporná?
+{
+    =Když se teplota snižuje.
+    ~Nikdy.
+    ~Vždy.
+    ~Když se teplota zvyšuje. 
+    ~Když se teplota nemění.  
+    ~Když se teplota zvyšuje a zároveň klesá.
+    ~Když je teplota kladná a zároveň klesá.
+    ~Když je teplota záporná a zároveň roste.
+    ~Když je teplota kladná a zároveň roste.
+    #### Derivace teploty podle času je záporná, když teplota klesá. Skutečnost,
+    zda je teplota kladná nebo záporná, nemá na znaménko derivace vliv.
+}
+
+//name: 004 Znaménko derivace teploty podle času II
+::004 Znaménko derivace teploty podle času II::[markdown]Veličina $T$ označuje teplotu
+objektu jako funkci času. V jaké situaci bude derivace teploty podle času nulová?
+{
+    ~Když se teplota snižuje.
+    ~Nikdy.
+    ~Vždy.
+    ~Když se teplota zvyšuje. 
+    =Když se teplota nemění.  
+    ~Když se teplota zvyšuje a zároveň klesá.
+    ~Když je teplota kladná a zároveň klesá.
+    ~Když je teplota záporná a zároveň roste.
+    ~Když je teplota kladná a zároveň roste.
+    #### Derivace teploty podle času je nulová, když se teplota mění nulovou
+    rychlostí, tj. zůstává konstantní. 
+}
+

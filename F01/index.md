@@ -1,4 +1,4 @@
-# Shtnutí
+# Shrnutí
 
 ## Derivace
 
@@ -10,7 +10,7 @@
 * tepelná výměna
 * rovnice ohybové čáry nosníku
   * $$\frac{\mathrm du}{\mathrm dx}=\theta$$
-  * $$\frac{\mathrm theta}{\mathrm dx}=-\frac{1}{EI}M$$
+  * $$\frac{\mathrm d\theta}{\mathrm dx}=\frac{1}{EI}M$$
   * Nosník šířky $a$, výšky $b$ a délky $l$ zatížený na konci silou $F$.
     $$I = \frac 1{12}ab^3$$ $$u(l)=\frac{Fl^3}{3EI}$$
 * problematika zvětšování a zmenšování jednotek nebo rozměrů
@@ -20,12 +20,14 @@
 
 ### Linearizace
 
-* kde se používá
-* slabiny
-* silné stránky
+* kde se používá (konstituční zákony resp. další fyzikální zákony, matice rotace)
+* slabiny (jenom aproximace)
+* silné stránky (výsledkem je velmi jednoduchý vztah)
 
 ## Matice
 
 * Zobrazení vektoru na vektory v geometrii a fyzice
+  * zachovává rovnoběžnost a dělící poměr
+  * je možné modifikovat pro středové promítání ([camera matrix](https://en.wikipedia.org/wiki/Camera_matrix))
 * Jak interpretovat sloupce difuzní matice?
 * Jak intepretovat jednotlivé elementy matice tuhosti?

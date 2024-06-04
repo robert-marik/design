@@ -1,0 +1,93 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Rovnice ochlazovani
+$CATEGORY: $course$/top/Aplikovana matematika/Rovnice ochlazovani
+
+
+// question: 21501  name: 001 Rychlost ochlazování
+::001 Rychlost ochlazování::[markdown]Teplota $T$ kávy v hrníčku je funkcí času $t$. Jaký výraz udává rychlost ochlazování kávy?{
+	~$\\displaystyle \\frac\{\\mathrm dT\}\{\\mathrm dt\}$#Jste blízko, ale toto je derivace teploty podle času, tedy rychlost růstu teploty v čase. Potřebujeme rychlost poklesu.
+	=$\\displaystyle - \\frac\{\\mathrm dT\}\{\\mathrm dt\}$#Ano, rychlost poklesu teploty je záporně vzatá rychlost růstu teploty v čase, tedy záporně vzatá derivace teploty podle času.
+	~$\\displaystyle \\frac\{T(t+h)-T(t)\}\{h\}$#Ne, toto je podíl změny teploty mezi okamžiky $t$ a $t+h$ a času $h$. Tedy průměrná rychlost růstu teploty. My potřebujeme okamžitou rychlost poklesu teploty.
+	~$\\displaystyle \\frac\{T(t+h)-T(t)\}\{t\}$
+	~$\\displaystyle T(t+h)-T(t)$#Ne, toto je změna teploty mezi okamžiky $t$ a $t+h$. My potřebujeme okamžitou rychlost poklesu teploty.
+	~$\\displaystyle T(t+h)$#Ne, toto je teplota v čase $t+h$. My se snažíme získat znalost, jak rychle se teplota mění.
+	####Rychlost ochlazování je vlastně rychlost poklesu teploty. Vypočteme ji jako záporně vzatou rychlost růstu a tedy záporně vzatou derivaci teploty podle času. Tedy rychlost ochlazování je $$-\\frac\{\\mathrm dT\}\{\\mathrm dt\}.$$
+}
+
+// question: 21501a  name: 001a Jednotka rychlosti ochlazování
+::001a Jednotka rychlosti ochlazování::[markdown]Rychlost ochlazování je záporně
+vzatá derivace teploty podle času. Jaká je jednotka rychlosti ochlazování?
+Teplota se měří ve stupních Celsia, čas v sekundách.{
+    =$\{\}^\circ\\mathrm C \\mathrm s^\{-1\}$#Ano, rychlost ochlazování je záporně vzatá derivace teploty podle času, tedy změna teploty za sekundu.
+    ~$\{\}^\circ\\mathrm C$#Ne, rychlost ochlazování je změna teploty za sekundu.
+    ~$\\mathrm s$#Ne, rychlost ochlazování je změna teploty za sekundu.
+    ~$\{\}^\circ\\mathrm C^\{-1\} \\mathrm s$#Ne, rychlost ochlazování je změna teploty za sekundu.
+}
+
+// question: 21502  name: 002 Teplotní rozdíl
+::002 Teplotní rozdíl::[markdown]Rychlost ochlazování kávy souvisí s teplotou okolí. Teplota kávy je $T$, teplota okolí je $T_M$. Z fyziky je známo, že rychlost ochlazování je úměrná rozdílu teplot (kávy a okolí). Který výraz vyjadřuje tento rozdíl?{
+	=$T-T_M$
+	~$\\displaystyle \\frac\{\\mathrm dT\}\{\\mathrm dt\}$#Ne, toto je rychlost růstu teploty v čase.
+	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dt\}$
+	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dT\}$
+	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dT\}$
+	####Rozdíl teploty kávy $T$ a teploty mistnosti $T_M$ je $$T-T_M.$$
+	}
+
+// question: 21503  name: 003 Matematický model ochlazování
+::003 Matematický model ochlazování::[markdown]
+Uvažujme kávu o 
+teplotě $T$ v hrnku, který je v místnosti o teplotě $T_M$. Rychlost ochlazování
+kávy je úměrná  teplotnímu rozdílu kávy a okolí. Jaký matematický 
+model popisuje ochlazování kávy? Je-li více možných odpovědí, volte tu, která
+zajistí, že konstanta úměrnosti je kladná.{
+	=$\\displaystyle \\frac\{\\mathrm dT\}\{\mathrm dt\}\=-k(T-T_M)$#Ano, 
+	rychlost ochlazování je úměrná rozdílu teplot kávy a okolí. Protože teplota
+	kávy je větší než teplota místnosti a káva se ochlazuje, je kladnost konstanty úměrnosti
+	zajištěna záporným znaménkem.
+	~$\\displaystyle \\frac\{\\mathrm dT\}\{\mathrm dt\}\=k T_M$
+	~$\\displaystyle \\frac\{\\mathrm dT\}\{\mathrm dt\}\=k(T-T_M)$#Téměř,
+	ale vzhledem k tomu, že teplota kávy klesá a káva má vyšší teplotu než
+	okolí, derivace teploty podle času a rozdíl teploty kávy a okolí se liší
+	znaménkem. Při této volbě by musela být konstanta úměrnosti záporná, což
+	zpravidla nepreferujeme. 
+}
+
+// question: 21504  name: 004 Počáteční podmínka
+::004 Počáteční podmínka::[markdown]Káva v hrníčku má počáteční teplotu $T_0$. 
+Jaká počáteční podmínka musí doplnit model, aby model správně poisoval
+uvažovanou situaci?{
+	=$T(0)\=T_0$#Ano, počáteční teplota kávy, tedy teplota v čase $t\=0$ je $T_0$.
+	~$T(T_0)\=0$
+	~$T(T_0)\=T_0$
+	~$T(0)\=0$
+	~$T(T_0)\=0$
+}
+
+// question: 21505  name: 005 Káva v mrazivém počasí
+::005 Káva v mrazivém počasí::[markdown]
+![](coffee.jpg)
+\n\n
+Model ochlazování kávy v hrníčku v místnosti o teplotě $T_M$ je dán rovnicí
+$$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T-T_M).$$
+Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující probíhající děj?
+{
+    =Rovnice se nijak nezmění.
+    ~Ochlazování bude probíhat rychleji. V rovnici nebude figurovat minus.
+    ~Ochlazování bude probíhat rychleji. Na pravé straně bude namísto rozdílu figurovat součet teploty kávy a teploty okolí.
+    ~Pravá strana by změnila znaménko. Teploty na pravé straně se budou odečítat v opačném pořadí.
+}
+
+// question: 21506  name: 006 Teplota kávy v mrazivém počasí
+::006 Teplota kávy v mrazivém počasí::[markdown] Který graf je realistický jako
+výstup modelu, kdy modelujeme časový vývoj teploty čerstvě uvařené kávy v
+mrazivém prostředí?
+{
+    =a !\[\]\(coffee.png\)
+    ~Graf B
+    ~Graf C
+    ~Graf D
+}
