@@ -64,3 +64,38 @@ objektu jako funkci času. V jaké situaci bude derivace teploty podle času nul
     rychlostí, tj. zůstává konstantní. 
 }
 
+//name: 005 Definice derivace
+::005 Definice derivace::[markdown]Derivace je definována vztahem
+$$\\frac\{\\mathrm df\}\{\\mathrm dx\} \= \\lim_\{h \\to 0\} \\frac\{f(x+h) -
+f(x)\}\{h\}.$$
+Vyberte všechna správná tvrzení.
+{
+    =%50%Zlomek $\\frac\{f(x+h) - f(x)\}\{h\}$ udává průměrnou rychlost, s jako se
+    funkce $f$ mění v intervalu $[x, x+h]$.
+    ~%-50%Zlomek $\\frac\{f(x+h) - f(x)\}\{h\}$ udává okamžitou rychlost, s jakou se
+        funkce $f$ mění v bodě $x$.
+    =%50%Limita je v definici pro převod průměrné rychlosti na okamžitou rychlost.
+    ~%-50%Limita je v definici pro zajištění toho, že hodnota derivace zůstane vždy
+    nezáporná.
+    ~%-50%Limita je v definici pro zajištění toho, že derivace bude vždy nulová.
+}
+
+//name: 006 Derivace konstanty
+::006 Derivace konstanty::[markdown]Mějme konstantní funkci $f(x) \= c$, kde $c$ je
+konstanta. Jaká je derivace $$\frac\{\\mathrm df\}\{\\mathrm dx\}?$$
+{
+    =0
+    ~1
+    ~$c$
+    ~$-c$
+    ~$x$
+    ~$-x$
+    ~$x^2$
+    ~$-x^2$
+    ~$c^2$
+    ~$-c^2$
+    #### Derivace konstanty je nulová, protože konstanta nemění hodnotu.
+}
+
+
+
