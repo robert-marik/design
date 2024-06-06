@@ -3,14 +3,23 @@
 Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi
 nimi. 
 
+## Vektory
+
+Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme vektory jako uspořádané $n$-tice nebo orientované úsečky. 
+
+
+### Příklady vektorů
+
 * Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními
   veličinami, u kterých si všímáme směru. 
   Příklady zahrnují následující.
-  * Rychlost pohybu.
-  * Polohový vektor v prostoru (spojuje počátek s uvažovaným bodem)
+  * Rychlost pohybu. 
+      * Orientovaná úsečka, jejíž orientace udává směr pohybu a délka udává okamžitou rychlost.
+      * Uspořádaná dvojice nebo trojice, kde jednotlivé komponenty udávají rychlost ve směru příslušných os.
+  * Polohový vektor v prostoru (spojuje počátek s uvažovaným bodem). Opět můžeme modelovat jako orientovanou úsečku z počátku do příslušného bodu, nebo dvojici či trojici hodnot udávající souřadnice bodu. 
   * Posunutí (změna polohy v prostoru, vektor spojuje počáteční a koncovou pozici
-    posunutého bodu)
-  * Síla a moment síly
+    posunutého bodu).
+  * Síla a moment síly.
 * Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do
   sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
   Příklady zahrnují následující.
@@ -22,7 +31,23 @@ nimi.
   * Podobně jako předchozí příklad, ale můžeme pracovat s bodovými silami
     působícími na konstrukci.
   * Na objektu je zvoleno $N$ bodů a sledujeme teplotu v těchto bodech.   
-## Matice tuhosti a poddajnosti, zatížení nosníku
+
+### Operace s vektory
+
+**Násobení vektoru s číslem** je definováno jako součin daného čísla a jednotlivých komponent  vektoru, resp. jako vektor mířící *stejným směrem* jehož délka je odpovídajícím násobkem délky původního vektoru. (V případě záporného čísla násobíme absolutní hodnotou a otáčíme směr).
+
+* Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ platí $3\vec u = \begin{pmatrix} 9\cr 3\end{pmatrix}$.
+* Grafické násobení: ![Násobení vektoru číslem](vektory.svg)
+
+**Sčítání vektorů** je definováno po složkách pro uspořádané $n$-tice a jako celkové posunutí složené ze dvou dílčích posunutí pro orientované vektory. Variantou grafického sčítání vektorů je doplnění na rovnoběžník, viz obrázky.
+
+* Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ a $\vec v = \begin{pmatrix} 2\cr 5\end{pmatrix}$ platí $\vec u +\vec v = \begin{pmatrix} 5\cr 6\end{pmatrix}$.
+* Grafický součet: ![Součet vektorů](soucet.svg)
+
+
+## Matice
+
+### Motivace - matice tuhosti a poddajnosti, zatížení nosníku
 
 Na praktické ukázce deformace nosníku si ukážeme zavedení čtyřrozměrných vektorů, matice a součinu matice s vektorem.
 
@@ -43,7 +68,7 @@ $$ (1)
 
 Toto jsou celkem čtyři vztahy obsahující jako data čtyři veličiny. V reálu jsou sledovaných bodů tisíce místo čtyř a proto se jedná o nepraktický zápis pro práci (tisíce rovnic a tisíce neznámých).
 
-### Řádkový a sloupcový index
+#### Řádkový a sloupcový index
 
 Soustavu {eq}`1` je možné zapsat kratším způsobem ve tvaru 
 
@@ -62,7 +87,7 @@ Poslední výraz bývá obvyklejší zapsat pomocí Einsteinovy notace, kdy se v
 
 Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom o jiný zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.
 
-### Vektorový a maticový zápis
+#### Vektorový a maticový zápis
 
 Jinou variantou je použití sloupcových vektorů, kde soustavu {eq}`1` přepíšeme do tvaru
 
@@ -74,7 +99,10 @@ $$
 \begin{pmatrix}k_{14}\cr k_{24}\cr k_{34}\cr k_{44}\end{pmatrix} f_4.
 $$ (2)
 
-Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Aby síly byly také ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
+Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Jedná se o operaci kombinující součin čísel s vektory a sčítání vektorů. Tato operace se nazývá *lineární kombinace vektorů*.
+
+
+Aby síly byly také ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru 
 
 $$
 \begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4
@@ -89,7 +117,7 @@ k_{41} & k_{42} & k_{43}& k_{44} \cr
 \end{pmatrix},
 $$ (3)
 
-přičemž obdélníkové schema vyplněné hodnotami se nazývá matice.
+přičemž obdélníkové schema vyplněné hodnotami se nazývá matice. Tímto je zaveden nový objekt (*matice*) a nová operace (*součin matice a vektoru*). 
 
 Po přeznačení 
 
@@ -112,13 +140,37 @@ $$
 U = K F,
 $$
 
-kde $U$ je vektor deformací, $F$ je vektor působících sil a $K$ je matice poddajnosti. Toto je již relativně jednoduchý vztah. Reprezentuje totiž jednu rovnici, která vyjadřuje, že jedna veličina je součinem dvou jiných veličin. V určitém smyslu je stejně jako u pružiny deformace úměrná působící síle, ovšem deformace a síla jsou vyjádřeny vektorem a konstanta úměrnosti maticí.
+kde $U$ je vektor deformací, $F$ je vektor působících sil a $K$ je *matice poddajnosti*. Toto je již relativně jednoduchý vztah. Reprezentuje totiž jednu rovnici, která vyjadřuje, že jedna veličina je součinem dvou jiných veličin. V určitém smyslu je stejně jako u pružiny deformace úměrná působící síle, ovšem deformace a síla jsou vyjádřeny vektorem a konstanta úměrnosti maticí.
 
-Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vztahem $$F=CU,$$ kde $C$ je matice tuhosti.
+Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vztahem $$F=CU,$$ kde $C$ je *matice tuhosti*.
 
 Operace {eq}`3` mezi maticí a vektorem definovaná vztahem {eq}`2` se nazývá maticový součin. Později si ukážeme, jak tuto definici rozšířit na dvě matice.
 
-## Geometrické transformace
+## Definice maticového součinu
+
+Součin matice a vektoru definujeme jako lineární kombinaci sloupců matice, při které jsou koeficienty komponenty vektoru. 
+
+Pro trojrozměrný vektor $\vec v =\begin{pmatrix}v_1\cr v_2\cr v_3\end{pmatrix}$ a čtvercovou matici 
+$$A = 
+\begin{pmatrix}
+a_{11} &a_{12}& a_{13}\cr
+a_{21} &a_{22}& a_{23}\cr
+a_{31} &a_{32}& a_{33}
+\end{pmatrix}
+$$ 
+dostáváme 
+$$  
+A\vec v = 
+\begin{pmatrix} a_{11} \cr a_{21} \cr a_{31}  \end{pmatrix} v_1
++
+\begin{pmatrix} a_{12} \cr a_{22} \cr a_{32}  \end{pmatrix} v_2
++
+\begin{pmatrix} a_{13} \cr a_{23} \cr a_{33}  \end{pmatrix} v_3.
+$$
+
+## Využití maticového součinu: konstituční vztahy
+
+## Využití maticového součinu: geometrické transformace
 
 * Ukázka, jak se modeluje deformace nosníku. 
   Těleso se dělí na malé elementy. 
