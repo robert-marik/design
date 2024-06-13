@@ -13,10 +13,13 @@
 
 ## Vlastní směry a hodnoty
 
-* Definice: Vlastní směr matice je směr, který se zobrazuje na směr rovnoběžný.
-* Vlastní směry geometrické transformace
-* Vlastní směry matic a tenzorů a jejich souvislost s rovinami symetrie materiálu
-* Pro aplikace to znamená, že podnět (například spád teploty) má stejný směr jako jím vyvolaný tok tepla.
+**Definice** Buďte $A$ matice, $\lambda$ číslo a $\vec v$ vektor, splňující $$A\vec v = \lambda \vec v.$$ Potom se vektor $\vec v$ nazývá *vlastním vektorem matice $A$* a číslo $\lambda$ *vlastním číslem matice $A$ příslušným vlastnímu vektoru $\vec v$*.
+
+**Neformální definice.** Vlastní směr matice je směr, který se zobrazuje na směr rovnoběžný. Délka obrazu jednotkového vektoru mířícího vlastním směrem je vlastní číslo.
+
+* Pro aplikace to znamená, že podnět (například spád teploty) ve vlastním směru vyvolá odezvu (například tok tepla) ve stejném směru.
+* Vlastní směry symetrických materiálů souvisí s rovinami symetrie. 
+* Synonymum pro vlastní směr a vlastní hodnotu jsou vlastní vektor a vlastní číslo.
 
 
 ## Diagonalizace
@@ -25,12 +28,11 @@ Konstituční zákony v ortotropních materiálech jsou jednoduché, pokud
 volíme souřadnou soustavu ve vlastních směrech tenzoru popisujícího
 daný zákon. V takových případech je matice popisující danou vlastnost
 diagonální. Například tok tepla vyvolaný spadem teploty v podélném
-směru dřeva je také v tomto směru. Totéý platí i pro další anatomické
+směru dřeva je také v tomto směru. Totéž platí i pro další anatomické
 směry.
  
 ## Transformace souřadnic, inverzní matice
 
-* Součin matic
 * Vztah mezi souřadnicemi v různých souřadnicových systémech, [animace](https://user.mendelu.cz/marik/manim/MatrixMultiplication/)
 * Inverzní matice je náhrada za absenci dělení matic.
 * Transformace tenzoru do jiných souřadnic, [animace](https://user.mendelu.cz/marik/manim/Deformation/)

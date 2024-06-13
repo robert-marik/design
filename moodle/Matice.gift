@@ -1,0 +1,49 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Matice
+$CATEGORY: $course$/top/Aplikovana matematika/Matice
+
+
+//name: 001 Kdy se používají matice 
+::001 Matice::[markdown]Při popisu chování materiálu je nutné někdy místo skalárních veličin použít 
+veličiny maticové. Kdy se tyto matice používají a proč?
+{
+    =U anizotropních materiálů. Matice umožňují definovat zobrazení, kdy vzor a obraz nemusí mířit stejným směrem.
+    ~U procesů popsaných vektorovými veličinami. Tedy vždy, když řešíme úlohu pro deskový materiál (dvourozměrné vektory a čtvercové matice druhého řádu), nebo pro trojrozměrné těleso (trojrozměrné vektory a čtvercové matice třetího řádu).
+    ~U izotropních materiálů. Matice umožňují definovat zobrazení, které zachovává rovnoběžnost.
+    ~U dějů, které nejsou statické, ale probíhají v čase. Matice umožní zachytit časovou prodlevu mezi podnětem a odezvou. 
+    #### U anizotropních materiálů. Matice umožňují definovat zobrazení, kdy vzor a obraz nemusí mířit stejným směrem.
+}
+
+
+//name: 002 Jak se definuje součin matice a vektoru
+::002 Součin matice a vektoru::[markdown]Jak se definuje součin matice a vektoru? Co je výsledkem?
+{
+    =Lineární kombinace sloupců matice. Koeficienty lineární kombinace jsou komponenty vektoru.
+    ~Vektor, který vznikne násobením prvků matice a vektoru po složkách.
+    ~Matice, která vznikne násobením prvků vektoru a matice po složkách.
+    ~Vektor, který má tu vlastnost, že se pomocí matice zobrazuje na svůj násobek (vlastní vektor).
+    #### Lineární kombinace sloupců matice. Koeficienty lineární kombinace jsou komponenty vektoru.
+}
+
+//name: 003 Součin matice a vektoru
+::003 Součin matice a bázového vektoru::[markdown]Nechť $A$ je čtvercová matice mající tři řádky a tři sloupce. Buď $$e_2\=\\begin\{pmatrix\}0\\cr1\\cr0\\cr\\end\{pmatrix\}$$ bázový vektor. Jak vypadá výsledek součinu matice $A$ a vektoru $e_2$?
+{
+    =Výsledek je druhý sloupec matice $A$.
+    ~Výsledek je vektor, který má všechny složky nulové.
+    ~Výsledek je vektor, který má všechny složky rovny prvkům matice $A$.
+    ~Výsledek je vektor, který má všechny složky rovny prvkům vektoru $e_2$.
+    #### Výsledek lineární kombinace sloupců matice, kdy druhý sloupec uvažujeme jednou a všechny ostatní nula-krát. Tedy výsledek bude roven druhému sloupci matice $A$.
+}
+
+//name: 004 Součinitel tepelné vodivosti a vektor
+::004 Součinitel tepelné vodivosti a vektor::[markdown]Buď $\lambda$ tenzorový součinitel tepelné vodivosti dřeva. Které z tvrzení vystihuje roli prvků matice $\lambda$?
+{
+    ~Otázka nemá smysl, vlastnosti anizotropních materiálů nepopisujeme pomocí maticových veličin.
+    =V pořadí $i$-tý sloupec je tok vyvolaný jednotkovým spádem teploty ve směru $i$-té osy.
+    ~V pořadí $i$-tý řádek je spád teploty nutný pro vyvolání jednotkového toku ve směru $i$-té osy.
+    ~Každý prvek v matici je součtem příspěvků k celkové vodivosti ve všech směrech.
+    ~Každý prvek v matici je součtem příspěvků k celkové vodivosti v anatomických směrech dřeva.
+    ####V pořadí $i$-tý sloupec je tok vyvolaný jednotkovým spádem teploty ve směru $i$-té osy. To plyne z tohot, že takový sloupec získáme jako lineární kombinaci sloupců matice tak, že $i$-tý sloupec uvažujeme jedenkrát a ostatní sloupce nula-krát.
+}

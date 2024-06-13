@@ -3,6 +3,16 @@
 Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi
 nimi. 
 
+## Motivace
+
+Jednou ze základních úloh v praxi je posoudit reakci objektu na působení vnějších sil. Například změna tvaru při namáhání. Pro popis úloh tohoto typu zpravidla dělíme těleso na malé elementy a popisujeme, co se s těmito elementy děje: o kolik se posunou, jestli a jak změní svůj tvar nebo objem a podobně. 
+
+![](mesh.png)
+![](deformace.png)  
+
+Pro modelování deformace potřebujeme mít možnost jednoznačně identifikovat dílčí elementy a být schopni popsat změnu jejich tvaru a polohy při deformaci. K tomu je možno použít souřadnice. V prostoru jsou souřadnice tvořeny trojicemi, v rovině dvojicemi čísel. Takové objekty patří v matematice mezi vektory.
+
+
 ## Vektory
 
 Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme vektory jako uspořádané $n$-tice nebo orientované úsečky. 
@@ -16,10 +26,11 @@ Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme 
   * Rychlost pohybu. 
       * Orientovaná úsečka, jejíž orientace udává směr pohybu a délka udává okamžitou rychlost.
       * Uspořádaná dvojice nebo trojice, kde jednotlivé komponenty udávají rychlost ve směru příslušných os.
-  * Polohový vektor v prostoru (spojuje počátek s uvažovaným bodem). Opět můžeme modelovat jako orientovanou úsečku z počátku do příslušného bodu, nebo dvojici či trojici hodnot udávající souřadnice bodu. 
-  * Posunutí (změna polohy v prostoru, vektor spojuje počáteční a koncovou pozici
-    posunutého bodu).
+  * Polohový vektor bodu v prostoru spojuje počátek s uvažovaným bodem. Opět můžeme modelovat jako orientovanou úsečku z počátku do příslušného bodu, nebo dvojici či trojici hodnot udávající souřadnice bodu. Pro pohybující se bod je tento vektor funkcí času.
+  * Posunutí, tj. změna polohy v prostoru Tento vektor spojuje počáteční a koncovou pozici
+    posunutého bodu.
   * Síla a moment síly.
+  * Spád skalární veličiny. Tento vektor dává do pohybu transportní děje, jako transport tepla, transport vody materiálem, transport iontů nebo molekul při impregnaci apod. Směr ukazuje, kterým směrem klesá veličina nejrychleji a velikost udává, jaká tato rychlost je. 
 * Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do
   sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
   Příklady zahrnují následující.
@@ -41,9 +52,10 @@ Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme 
 
 **Sčítání vektorů** je definováno po složkách pro uspořádané $n$-tice a jako celkové posunutí složené ze dvou dílčích posunutí pro orientované vektory. Variantou grafického sčítání vektorů je doplnění na rovnoběžník, viz obrázky.
 
-* Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ a $\vec v = \begin{pmatrix} 2\cr 5\end{pmatrix}$ platí $\vec u +\vec v = \begin{pmatrix} 5\cr 6\end{pmatrix}$.
-* Grafický součet: ![Součet vektorů](soucet.svg)
-
+1. **Algebraický součet.** Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ a $\vec v = \begin{pmatrix} 2\cr 5\end{pmatrix}$ platí $\vec u +\vec v = \begin{pmatrix} 5\cr 6\end{pmatrix}$.
+1. **Grafický součet.** Buď umístíme jeden vektor do koncového bodu druhého vektoru, nebo doplníme na rovnoběžník. 
+ 
+![Součet vektorů](soucet.svg)
 
 ## Matice
 
@@ -151,6 +163,7 @@ Operace {eq}`3` mezi maticí a vektorem definovaná vztahem {eq}`2` se nazývá 
 Součin matice a vektoru definujeme jako lineární kombinaci sloupců matice, při které jsou koeficienty komponenty vektoru. 
 
 Pro trojrozměrný vektor $\vec v =\begin{pmatrix}v_1\cr v_2\cr v_3\end{pmatrix}$ a čtvercovou matici 
+
 $$A = 
 \begin{pmatrix}
 a_{11} &a_{12}& a_{13}\cr
@@ -158,54 +171,63 @@ a_{21} &a_{22}& a_{23}\cr
 a_{31} &a_{32}& a_{33}
 \end{pmatrix}
 $$ 
+
 dostáváme 
+
 $$  
 A\vec v = 
-\begin{pmatrix} a_{11} \cr a_{21} \cr a_{31}  \end{pmatrix} v_1
-+
-\begin{pmatrix} a_{12} \cr a_{22} \cr a_{32}  \end{pmatrix} v_2
-+
+\begin{pmatrix} a_{11} \cr a_{21} \cr a_{31}  \end{pmatrix} v_1 +
+\begin{pmatrix} a_{12} \cr a_{22} \cr a_{32}  \end{pmatrix} v_2 +
 \begin{pmatrix} a_{13} \cr a_{23} \cr a_{33}  \end{pmatrix} v_3.
 $$
 
-## Využití maticového součinu: konstituční vztahy
+
+## Využití maticového součinu: zobrazení vektorů
+
+V praxi používáme matice ve zobrazeních, kde je obrazem vektoru opět vektor. Maticové zobrazení má jistá specifika. 
+
+* Obrazem nulového vektoru je vždy nulový vektor. 
+* Obrazem násobku vektoru je násobek obrazu vektoru. 
+* Obrazy rovnoběžných vektorů jsou rovnoběžné.
+* Obraz vektoru nemusí být rovnoběžný se vzorem.
+
+První tři vlastnosti platí i pro násobení vektoru skalárním číslem. V tomto případě však automaticky vychází vzor a obraz rovnoběžný. Díky použití matice namísto skalární hodnoty jsme schopni modelovat i situace, kdy vzor a obraz nemusí mít stejný směr. 
+
+## Využití maticového součinu: konstituční zákony
+
+Konstituční zákony jsou zákony, které udávají, jak materiál reaguje na vnější podnět. 
+
+* Při nerovnoměrném rozložení teploty v tělese se teplota vyrovnává vedením tepla. Intenzita děje souvisí se spádem teploty. 
+* Při nerovnoměrném vlhkosti nebo koncentrace nějaké látky v tělese se nerovnovážná situace vyrovnává difuzí. Difuzní tok souvisí se spádem koncentrace. 
+
+V izotropních materiálech má podnět stejný směr jako odezva a souvislost mezi nimi může být zprostředkována násobením skalární hodnotou. V anizotropních materiálech je však situace jiná. Materiálové vlastnosti závisí na směru. Například v některém směru materiál vede teplo lépe, než ve směru jiném. Proto se tok tepla vždy stáčí do tohoto preferovaného směru a nemusí mít stejný směr jako spád teploty. Vztah mezi podnětem a odezvou je možné vyjádřit pomocí maticového násobení. 
+
+**Příklad.** <a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla ve dřevě a v hliníku. Vektor definující pokles teploty je stále stejně dlouhý a tři scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. 
+
 
 ## Využití maticového součinu: geometrické transformace
 
-* Ukázka, jak se modeluje deformace nosníku. 
-  Těleso se dělí na malé elementy. 
+Matice jako zobrazení vektoru na vektor  
 
-  ![](mesh.png)
-  ![](deformace.png)  
+* <a href="../notebooks/matice_geometricka_zobrazeni.html">Ilustrační zápisník</a>
+* Sloupce matice popisující zobrazení jsou obrazy jednotkových vektorů ve směru os.
+* Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe. 
 
-  Pro modelování deformace potřebujeme mít možnost jednoznačně identifikovat dílčí elementy a být schopni popsat změnu jejich tvaru a polohy při deformaci. K tomu je možno použít souřadnice a maticový počet.
-* Kartézská soustava souřadnic
-  * Jsou zvoleny počátek a navzájem kolmé osy (v rovině dvě, v prostoru tři). 
-  * Bod ztotožníme s uspořádanou dvojicí nebo trojicí čísel udávajících vzdálenost od počátku měřenou ve směru jednotlivých os.  
-* Geometrická interpretace vektoru
-  * Vektor je veličina daná směrem a velikostí, například síla, rychlost, moment síly, posunutí bodu, difuzní tok, tok tepla. 
-  * Znázorňujeme jej orientovanou úsečkou, jejíž směr odpovídá směru vektoru a délka souvisí s velikostí vektor. 
-  * Pro početní operace používáme souřadnice vektoru. Jedná se o souřadnice koncového bodu, pokud počáteční bod přesuneme do počátku. Také se jedná o souřadnice koncového bodu v soustavě, která má nulový bod posunutý do počátečního bodu vektoru.
-* Matice jako zobrazení vektoru na vektor  
-  * <a href="../notebooks/matice_geometricka_zobrazeni.html">Ilustrační zápisník</a>
-  * Sloupce matice popisující zobrazení jsou obrazy vektorů ve směru os.
-  * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe. 
-  
-  $$
-  I = \begin{pmatrix} 1&0&0\cr0&1&0\cr 0&0&1
-  \end{pmatrix}
-  $$
-  * Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
+$$
+I = \begin{pmatrix} 1&0&0\cr0&1&0\cr 0&0&1
+\end{pmatrix}
+$$
+* Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
 
-  $$
-  \begin{pmatrix}
-  \cos\theta&-\sin\theta\cr
-  \sin\theta&\cos\theta
-  \end{pmatrix}.
-  $$
+$$
+\begin{pmatrix}
+\cos\theta&-\sin\theta\cr
+\sin\theta&\cos\theta
+\end{pmatrix}.
+$$
 
 
-* Součet a rozdíl matic je definován po složkách.
+* Součet a rozdíl matic je definován po složkách. Součin matic je definován jako složené zobrazení (viz též níže).
 
 ## Homogenní souřadnice, posunutí a projekce
 
