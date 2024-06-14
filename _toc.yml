@@ -7,8 +7,9 @@ parts:
   - caption: Lineární algebra
     numbered: true
     chapters:
-    - file: A01/index.md
-    - file: A02/index.md
+    - file: vektory/index.md
+    - file: matice/index.md
+    - file: vlastni_cisla/index.md
   - caption: Diferenciální a integrální počet
     numbered: true
     chapters:

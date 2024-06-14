@@ -1,65 +1,6 @@
-# Lineární algebra I
+# Matice
 
-Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi
-nimi. 
-
-## Motivace
-
-Jednou ze základních úloh v praxi je posoudit reakci objektu na působení vnějších sil. Například změna tvaru při namáhání. Pro popis úloh tohoto typu zpravidla dělíme těleso na malé elementy a popisujeme, co se s těmito elementy děje: o kolik se posunou, jestli a jak změní svůj tvar nebo objem a podobně. 
-
-![](mesh.png)
-![](deformace.png)  
-
-Pro modelování deformace potřebujeme mít možnost jednoznačně identifikovat dílčí elementy a být schopni popsat změnu jejich tvaru a polohy při deformaci. K tomu je možno použít souřadnice. V prostoru jsou souřadnice tvořeny trojicemi, v rovině dvojicemi čísel. Takové objekty patří v matematice mezi vektory.
-
-
-## Vektory
-
-Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme vektory jako uspořádané $n$-tice nebo orientované úsečky. 
-
-
-### Příklady vektorů
-
-* Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními
-  veličinami, u kterých si všímáme směru. 
-  Příklady zahrnují následující.
-  * Rychlost pohybu. 
-      * Orientovaná úsečka, jejíž orientace udává směr pohybu a délka udává okamžitou rychlost.
-      * Uspořádaná dvojice nebo trojice, kde jednotlivé komponenty udávají rychlost ve směru příslušných os.
-  * Polohový vektor bodu v prostoru spojuje počátek s uvažovaným bodem. Opět můžeme modelovat jako orientovanou úsečku z počátku do příslušného bodu, nebo dvojici či trojici hodnot udávající souřadnice bodu. Pro pohybující se bod je tento vektor funkcí času.
-  * Posunutí, tj. změna polohy v prostoru Tento vektor spojuje počáteční a koncovou pozici
-    posunutého bodu.
-  * Síla a moment síly.
-  * Spád skalární veličiny. Tento vektor dává do pohybu transportní děje, jako transport tepla, transport vody materiálem, transport iontů nebo molekul při impregnaci apod. Směr ukazuje, kterým směrem klesá veličina nejrychleji a velikost udává, jaká tato rychlost je. 
-* Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do
-  sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
-  Příklady zahrnují následující.
-  * Na konstrukci je zvoleno $N$ bodů. Sledujeme změnu polohy těchto
-    bodů. Pokud se body mohou pohybovat s jedním stupněm volnosti,
-    dostáváme $N$-rozměrný vektor. Obecněji, pokud není pohyb omezen,
-    musíme sledovat polohu ve všech třech nezávislých směrech a
-    pracujeme s vektorem dimenze $3N$.
-  * Podobně jako předchozí příklad, ale můžeme pracovat s bodovými silami
-    působícími na konstrukci.
-  * Na objektu je zvoleno $N$ bodů a sledujeme teplotu v těchto bodech.   
-
-### Operace s vektory
-
-**Násobení vektoru s číslem** je definováno jako součin daného čísla a jednotlivých komponent  vektoru, resp. jako vektor mířící *stejným směrem* jehož délka je odpovídajícím násobkem délky původního vektoru. (V případě záporného čísla násobíme absolutní hodnotou a otáčíme směr).
-
-* Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ platí $3\vec u = \begin{pmatrix} 9\cr 3\end{pmatrix}$.
-* Grafické násobení: ![Násobení vektoru číslem](vektory.svg)
-
-**Sčítání vektorů** je definováno po složkách pro uspořádané $n$-tice a jako celkové posunutí složené ze dvou dílčích posunutí pro orientované vektory. Variantou grafického sčítání vektorů je doplnění na rovnoběžník, viz obrázky.
-
-1. **Algebraický součet.** Pro $\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}$ a $\vec v = \begin{pmatrix} 2\cr 5\end{pmatrix}$ platí $\vec u +\vec v = \begin{pmatrix} 5\cr 6\end{pmatrix}$.
-1. **Grafický součet.** Buď umístíme jeden vektor do koncového bodu druhého vektoru, nebo doplníme na rovnoběžník. 
- 
-![Součet vektorů](soucet.svg)
-
-## Matice
-
-### Motivace - matice tuhosti a poddajnosti, zatížení nosníku
+## Motivace - matice tuhosti a poddajnosti, zatížení nosníku
 
 Na praktické ukázce deformace nosníku si ukážeme zavedení čtyřrozměrných vektorů, matice a součinu matice s vektorem.
 
@@ -80,7 +21,7 @@ $$ (1)
 
 Toto jsou celkem čtyři vztahy obsahující jako data čtyři veličiny. V reálu jsou sledovaných bodů tisíce místo čtyř a proto se jedná o nepraktický zápis pro práci (tisíce rovnic a tisíce neznámých).
 
-#### Řádkový a sloupcový index
+### Řádkový a sloupcový index
 
 Soustavu {eq}`1` je možné zapsat kratším způsobem ve tvaru 
 
@@ -99,7 +40,7 @@ Poslední výraz bývá obvyklejší zapsat pomocí Einsteinovy notace, kdy se v
 
 Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom o jiný zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.
 
-#### Vektorový a maticový zápis
+### Vektorový a maticový zápis
 
 Jinou variantou je použití sloupcových vektorů, kde soustavu {eq}`1` přepíšeme do tvaru
 
@@ -182,7 +123,15 @@ A\vec v =
 $$
 
 
-## Využití maticového součinu: zobrazení vektorů
+Pro obecnou definici je nejvýhodnější využití Einsteinovy notace, jak jsme definovali v odstavci s motivací.
+
+```{prf:definition} Součin matice a vektoru
+Součinem matice $A=(a_{ij})$ a vektoru $\vec v = (v_{i})$ je vektor $\vec u = (u_i)$
+definovaný vztahem
+$$u_i = \sum_j a_{ij} v_{j}.$$
+```
+
+## Zobrazení vektorů
 
 V praxi používáme matice ve zobrazeních, kde je obrazem vektoru opět vektor. Maticové zobrazení má jistá specifika. 
 
@@ -193,49 +142,54 @@ V praxi používáme matice ve zobrazeních, kde je obrazem vektoru opět vektor
 
 První tři vlastnosti platí i pro násobení vektoru skalárním číslem. V tomto případě však automaticky vychází vzor a obraz rovnoběžný. Díky použití matice namísto skalární hodnoty jsme schopni modelovat i situace, kdy vzor a obraz nemusí mít stejný směr. 
 
-## Využití maticového součinu: konstituční zákony
+## Konstituční zákony
 
 Konstituční zákony jsou zákony, které udávají, jak materiál reaguje na vnější podnět. 
 
-* Při nerovnoměrném rozložení teploty v tělese se teplota vyrovnává vedením tepla. Intenzita děje souvisí se spádem teploty. 
-* Při nerovnoměrném vlhkosti nebo koncentrace nějaké látky v tělese se nerovnovážná situace vyrovnává difuzí. Difuzní tok souvisí se spádem koncentrace. 
+* Při nerovnoměrném rozložení teploty v tělese se teplota vyrovnává vedením tepla. Intenzita děje souvisí se spádem teploty. (Fourierův zákon)
+* Při nerovnoměrném vlhkosti nebo koncentrace nějaké látky v tělese se nerovnovážná situace vyrovnává difuzí. Difuzní tok souvisí se spádem koncentrace. (Fickův zákon)
 
-V izotropních materiálech má podnět stejný směr jako odezva a souvislost mezi nimi může být zprostředkována násobením skalární hodnotou. V anizotropních materiálech je však situace jiná. Materiálové vlastnosti závisí na směru. Například v některém směru materiál vede teplo lépe, než ve směru jiném. Proto se tok tepla vždy stáčí do tohoto preferovaného směru a nemusí mít stejný směr jako spád teploty. Vztah mezi podnětem a odezvou je možné vyjádřit pomocí maticového násobení. 
+Ve dvourozměrných a trojrozměrných úlohách mají spád teploty či koncentrace a tok tepla či látky směr a velikost a jedná se tedy o vektory. Situace se liší podle toho, o jaký typ materiálu se jedná. 
 
-**Příklad.** <a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla ve dřevě a v hliníku. Vektor definující pokles teploty je stále stejně dlouhý a tři scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. 
+* V izotropních materiálech má podnět stejný směr jako odezva a souvislost mezi nimi může být zprostředkována násobením skalární hodnotou. Proto v těchto materiálech matice nepotřebujeme. Fourierův zákon a Fickův zákon pro izotropní materiály maticovou formulaci nevyžadují.
+* V anizotropních materiálech je však situace jiná. Materiálové vlastnosti závisí na směru. Například v některém směru materiál vede teplo lépe, než ve směru jiném. Proto se tok tepla vždy stáčí do tohoto preferovaného směru a nemusí mít stejný směr jako spád teploty. Vztah mezi podnětem a odezvou je v tomto případě nutné vyjádřit pomocí maticového násobení. Proto Fourierův a Fickův zákon ve dřevě má v roli materiálové vlastnosti matici.
+
+**Příklad.** Je-li spád teploty (například v Kelvinech na metr) dán vektorem $\vec u$, je tok tepla $\vec q$ (například ve wattech na metr čtvereční) v hliníku dán vztahem 
+$$\vec q = 237 \mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u$$ 
+a tok v (javorovém) dřevě vztahem
+$$\vec q = \begin{pmatrix}0.3&0&0\cr0&0.18&0\cr 0&0&0.18\end{pmatrix}\mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u. $$ 
+(Viz [Hliník](https://cs.wikipedia.org/wiki/Hlin%C3%ADk) a [Tepelné vlastnosti dřeva](https://www.dashofer.cz/download/pdf/drv/2_5_1_tepelne_vlastnosti_dreva.pdf).)
+<a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla ve dřevě a v hliníku. Vektor definující pokles teploty je stále stejně dlouhý a tři scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. 
 
 
-## Využití maticového součinu: geometrické transformace
+## Geometrické transformace I
 
-Matice jako zobrazení vektoru na vektor  
+Body v prostotu můžeme ztotožnit s vektory a matice může poté popisovat zobrazení bodů v prostoru. 
 
 * <a href="../notebooks/matice_geometricka_zobrazeni.html">Ilustrační zápisník</a>
 * Sloupce matice popisující zobrazení jsou obrazy jednotkových vektorů ve směru os.
 * Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe. 
-
-$$
-I = \begin{pmatrix} 1&0&0\cr0&1&0\cr 0&0&1
-\end{pmatrix}
-$$
+  $$
+  I = \begin{pmatrix} 1&0&0\cr0&1&0\cr 0&0&1
+  \end{pmatrix}
+  $$
 * Matice rotace o úhel $\theta$ proti směru hodinových ručiček má tvar 
-
-$$
-\begin{pmatrix}
-\cos\theta&-\sin\theta\cr
-\sin\theta&\cos\theta
-\end{pmatrix}.
-$$
-
-
+  $$   \begin{pmatrix}   \cos\theta&-\sin\theta\cr   \sin\theta&\cos\theta   \end{pmatrix}. $$
 * Součet a rozdíl matic je definován po složkách. Součin matic je definován jako složené zobrazení (viz též níže).
 
-## Homogenní souřadnice, posunutí a projekce
+## Geometrické transformace II
 
-### Homogenní souřadnice. 
+### Motivace 
 
-* Vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi
+Násobení matice s nulovým vektorem je nulový vektor. Proto se zobrazením 
+$$X\to AX$$
+počátek zobrazí vždy na počátek. Proto není možné pomocí maticového násobení realizovat například posunutí. Podobně je možné ukázat, že maticové násobení zachovává rovnoběžnost a proto není možné pomocí maticového násobení realizovat perspektivu. Například není možné pomocí maticového násobení modelovat zobrazení kamerou a není možné vyhodnocovat data z fotografií. Pro odstranění těchto nevýhod je možné použít rozšíření souřadnic, homogenní souřadnice. 
+
+### Homogenní souřadnice
+
+* Homogenní souřadnice vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi
   jako s vektory v dimenzi o jedničku větším. Například bod $[1,2]$ má
-  v homogenních souřčadnicích tvar $(1,2,1)$
+  v homogenních souřadnicích tvar $(1,2,1)$
 * Před převodem z homogenních souřadnic do kartézských je nutné
   zajistit na poslední pozici jedničku a poté převést na bod v
   kartézských souřadnicích. Například $(6,90,3)$ jsou homogenní
@@ -244,13 +198,18 @@ $$
 ### Posunutí pomocí maticového součinu. 
 
 V homogenních souřadnicích neplatí podmínka, že nula se zobrazuje na
-nulu. Je možné takto realizovat například posunutí.
+nulu. Je možné takto realizovat například posunutí. Matice posunutí v rovině, která počátek posune do bodu $(a_1,a_2)$,
+je 
+$$\begin{pmatrix}1&0&a_1\cr 0&1&a_2\cr 0&0&1\end{pmatrix}.$$ 
+Vskutku, přímým výpočtem v homogenních souřadnicích dostáváme následující.
+$$ \begin{pmatrix}1&0&a_1\cr 0&1&a_2\cr 0&0&1\end{pmatrix} \begin{pmatrix}u_1\cr u_2\cr 1\end{pmatrix} = u_1\begin{pmatrix}1\cr 0\cr 0\end{pmatrix}+ u_2\begin{pmatrix}0\cr 1\cr 0\end{pmatrix}+ 1\begin{pmatrix}a_1\cr a_2\cr 1\end{pmatrix} = \begin{pmatrix}u_1+a_1\cr u_2+a_2\cr 1\end{pmatrix}$$
+
 
 ### Perspektiva pomocí maticového součinu
 
 V homogenních souřadnicích neplatí podmínka, že se rovnoběžky
 zobrazují na rovnoběžky. Tím je možné maticový součin použít pro
-obrázky s perspektivou.
+obrázky s perspektivou. Viz [Camera matrix](https://en.wikipedia.org/wiki/Camera_matrix).
 
 ## Maticový součin dvou matic
 

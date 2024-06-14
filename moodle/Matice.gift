@@ -4,7 +4,6 @@ $CATEGORY: $course$/top/Aplikovana matematika
 // question: 0  name: Switch category to $course$/top/Aplikovana matematika/Matice
 $CATEGORY: $course$/top/Aplikovana matematika/Matice
 
-
 //name: 001 Kdy se používají matice 
 ::001 Matice::[markdown]Při popisu chování materiálu je nutné někdy místo skalárních veličin použít 
 veličiny maticové. Kdy se tyto matice používají a proč?
@@ -15,7 +14,6 @@ veličiny maticové. Kdy se tyto matice používají a proč?
     ~U dějů, které nejsou statické, ale probíhají v čase. Matice umožní zachytit časovou prodlevu mezi podnětem a odezvou. 
     #### U anizotropních materiálů. Matice umožňují definovat zobrazení, kdy vzor a obraz nemusí mířit stejným směrem.
 }
-
 
 //name: 002 Jak se definuje součin matice a vektoru
 ::002 Součin matice a vektoru::[markdown]Jak se definuje součin matice a vektoru? Co je výsledkem?
@@ -46,4 +44,20 @@ veličiny maticové. Kdy se tyto matice používají a proč?
     ~Každý prvek v matici je součtem příspěvků k celkové vodivosti ve všech směrech.
     ~Každý prvek v matici je součtem příspěvků k celkové vodivosti v anatomických směrech dřeva.
     ####V pořadí $i$-tý sloupec je tok vyvolaný jednotkovým spádem teploty ve směru $i$-té osy. To plyne z tohot, že takový sloupec získáme jako lineární kombinaci sloupců matice tak, že $i$-tý sloupec uvažujeme jedenkrát a ostatní sloupce nula-krát.
+}
+
+//name: 005 Transformace tenzoru
+::005 Transformace tenzoru::[markdown]Jak se transformuje tenzor druhého řádu $T$ pomocí matice $A$?
+{
+    ~Nový tenzor je součinem matice $A$ a tenzoru $T$ v tomto pořadí, tj. $T' \= A T$.
+    =Nový tenzor je součinem matice inverzní k matice $A$, tenzoru $T$ a matice $A$ v tomto pořadí, tj. $T' \= A^\{-1\} T A$.
+    ~Nijak, tenzor je invariantní při změně báze (materiál se chová stejným způsobem nezávisle na tom, v jaké souřadné soustavě jej popisujeme).
+}
+
+//name: 006 Matice rotace
+::006 Matice rotace::[markdown]Co je to vlastní směr matice?
+{
+=Směr, který se maticovým zobrazením nemění (směr se zobrazí do rovnoběžného směru).
+~Směr, který je dán jednotlivými sloupci matice.
+~Směr, který je dán jednotlivými řádky matice.
 }
