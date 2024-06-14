@@ -19,8 +19,8 @@ parts:
   - caption: Základy teorie elasticity
     numbered: true
     chapters:
-    - file: C01/index.md
-    - file: C02/index.md
+    - file: statika/index.md
+    - file: deformace/index.md
   - caption: Operátory matematické fyziky
     numbered: true
     chapters:
