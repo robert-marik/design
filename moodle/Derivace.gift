@@ -1,28 +1,35 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Derivace
+$CATEGORY: $course$/top/Aplikovana matematika/Derivace
+
 //name: 001 Derivace polohy podle času
 ::001 Derivace polohy podle času::[markdown]Veličina $x$ označuje polohu tělesa, jehož pohyb je vázán na přímku.
 (Například pohyb po kolejích, pohyb na laně, pohyb po vodicí tyči, atd.). Poloha
 se mění s časem. Co vyjadřuje derivace polohy podle času $\\frac\{\mathrm
 dx\}\{\mathrm dt\}$? Jsou možná dvě slovní vyjádření. Vyberte obě.
 {
-    =%50%Rychlost, s jakou se mění poloha v čase, tj. rychlost pohybu.
+    ~%50%Rychlost, s jakou se mění poloha v čase, tj. rychlost pohybu.
     ~%-50%Rychlost, s jakou se mění rychlost pohybu v čase, tj. zrychlení. 
     ~%-50%Polohu tělesa v zadaném okamžiku, tj. časový průběh pohybu.
-    =%50%Změnu polohy za jednotku času.
+    ~%50%Změnu polohy za jednotku času.
     ~%-50%Změnu rychlosti změny polohy za jednotku času.
     ~%-50%Rychlost změny polohy za jednotku času.
     #### Derivace je rychlost. Derivace polohy podle času udává, jak rychle se
     mění poloha v čase. To je ekvivalentní tomu, jaká je změna polohy za jednotku času.
 }
 
+
 //name: 002 Derivace teploty podle času
 ::002 Derivace teploty podle času::[markdown]Veličina $T$ označuje teplotu
 objektu jako funkci času. Co vyjadřuje derivace teploty podle času
-$\\frac\{\\mathrm T\}\{\\mathrm dt\}$? Jsou možná dvě slovní vyjádření. Vyberte obě.
+$\\frac\{\\mathrm dT\}\{\\mathrm dt\}$? Jsou možná dvě slovní vyjádření. Vyberte obě.
 {
-    =%50%Rychlost, s jakou se mění teplota v čase, tj. rychlost ohřevu.
+    ~%50%Rychlost, s jakou se mění teplota v čase, tj. rychlost ohřevu.
     ~%-50%Rychlost, s jakou se mění rychlost ohřevu v čase.
     ~%-50%Teplotu objektu v zadaném okamžiku, tj. časový průběh teploty.
-    =%50%Změnu teploty za jednotku času.
+    ~%50%Změnu teploty za jednotku času.
     ~%-50%Změnu rychlosti změny teploty za jednotku času.
     ~%-50%Rychlost změny teploty za jednotku času.
     #### Derivace je rychlost. Derivace teploty podle času udává, jak rychle se
@@ -68,13 +75,13 @@ objektu jako funkci času. V jaké situaci bude derivace teploty podle času nul
 ::005 Definice derivace::[markdown]Derivace je definována vztahem
 $$\\frac\{\\mathrm df\}\{\\mathrm dx\} \= \\lim_\{h \\to 0\} \\frac\{f(x+h) -
 f(x)\}\{h\}.$$
-Vyberte všechna správná tvrzení.
+Vyberte dvě správná tvrzení.
 {
-    =%50%Zlomek $\\frac\{f(x+h) - f(x)\}\{h\}$ udává průměrnou rychlost, s jako se
+    ~%50%Zlomek $\\frac\{f(x+h) - f(x)\}\{h\}$ udává průměrnou rychlost, s jakou se
     funkce $f$ mění v intervalu $[x, x+h]$.
     ~%-50%Zlomek $\\frac\{f(x+h) - f(x)\}\{h\}$ udává okamžitou rychlost, s jakou se
         funkce $f$ mění v bodě $x$.
-    =%50%Limita je v definici pro převod průměrné rychlosti na okamžitou rychlost.
+    ~%50%Limita je v definici pro převod průměrné rychlosti na okamžitou rychlost.
     ~%-50%Limita je v definici pro zajištění toho, že hodnota derivace zůstane vždy
     nezáporná.
     ~%-50%Limita je v definici pro zajištění toho, že derivace bude vždy nulová.
@@ -97,5 +104,22 @@ konstanta. Jaká je derivace $$\frac\{\\mathrm df\}\{\\mathrm dx\}?$$
     #### Derivace konstanty je nulová, protože konstanta nemění hodnotu.
 }
 
-
-
+//name: 007 Derivace teploty podle polohy
+::007 Derivace teploty podle polohy::[markdown]Sledujeme teplotní profil ve stěně. Osa $x$ míří kolmo stěnou z vnitřní části budovy ven. Teplota 
+ve stěně je $T$ a tato teplota závisí na poloze, tedy $T\=T(x)$. Vyberte správná tvrzení pro 
+derivaci teploty podle polohy $$\\frac\{\\mathrm dT\}\{\\mathrm dx\}.$$ 
+{
+    ~%25%Derivace udává, jak rychle se mění teplota ve stěně ve směru osy $x$.
+    ~%-25%Derivace udává, jak rychle se mění poloha ve stěně, když se mění teplota.
+    ~%-25%Derivace udává, jak rychle se mění teplota ve stěně, když se mění čas.
+    ~%25%Derivace udává nárůst teploty směrem ven na jednotce délky.
+    ~%-25%Derivace udává, jak rychle se mění nárůst teploty ve stěně.
+    ~%-25%Derivace udává, jak rychle se mění teplota ve stěně, když se mění čas.
+    ~%-25%Jednotkou derivace je stupeň Celsia za minutu. 
+    ~%-25%Jednotkou derivace je stupeň Celsia. 
+    ~%25%Jednotkou derivace je stupeň Celsia na centimetr
+    ~%-25%Pokud je v místnosti vyšší teplota než venku, je derivace kladná, jinak je záporná.
+    ~%25%Pokud je v místnosti vyšší teplota než venku, je derivace záporná, jinak je kladná.
+    ~%-25%Derivace je vždy kladná, protože ve směru osy hodnota $x$ roste.
+    #### Derivace teploty podle polohy udává, jak rychle se mění teplota ve stěně, když se posouváme po ose $x$. Tedy jinak řečeno, je to změna teploty na jednotce délky. Jednotkou je jednotka teploty na jednotku délky, například stupeň Celsia na centimetr. Derivace je kladná, pokud ve směru osy $x$ (tj. z vnitřku ven) teplota roste a záporná, pokud klesá.  
+}

@@ -1,10 +1,8 @@
 // question: 0  name: Switch category to $course$/top/Aplikovana matematika
 $CATEGORY: $course$/top/Aplikovana matematika
 
-
 // question: 0  name: Switch category to $course$/top/Aplikovana matematika/Rovnice ochlazovani
 $CATEGORY: $course$/top/Aplikovana matematika/Rovnice ochlazovani
-
 
 // question: 21501  name: 001 Rychlost ochlazování
 ::001 Rychlost ochlazování::[markdown]Teplota $T$ kávy v hrníčku je funkcí času $t$. Jaký výraz udává rychlost ochlazování kávy?{
@@ -28,7 +26,7 @@ Teplota se měří ve stupních Celsia, čas v sekundách.{
 }
 
 // question: 21502  name: 002 Teplotní rozdíl
-::002 Teplotní rozdíl::[markdown]Rychlost ochlazování kávy souvisí s teplotou okolí. Teplota kávy je $T$, teplota okolí je $T_M$. Z fyziky je známo, že rychlost ochlazování je úměrná rozdílu teplot (kávy a okolí). Který výraz vyjadřuje tento rozdíl?{
+::002 Teplotní rozdíl::[markdown]Rychlost ochlazování kávy souvisí s teplotou okolí. Teplota kávy je $T$, teplota okolí je $T_M$. Z fyziky je známo, že rychlost ochlazování je úměrná rozdílu teplot (kávy a okolí). Který výraz vyjadřuje tento rozdíl?{ 
 	=$T-T_M$
 	~$\\displaystyle \\frac\{\\mathrm dT\}\{\\mathrm dt\}$#Ne, toto je rychlost růstu teploty v čase.
 	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dt\}$
@@ -68,17 +66,15 @@ uvažovanou situaci?{
 }
 
 // question: 21505  name: 005 Káva v mrazivém počasí
-::005 Káva v mrazivém počasí::[markdown]
-![](coffee.jpg)
-\n\n
+::005 Káva v mrazivém počasí::[markdown] ![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/coffee.jpg)\n\n
 Model ochlazování kávy v hrníčku v místnosti o teplotě $T_M$ je dán rovnicí
 $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T-T_M).$$
 Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující probíhající děj?
 {
-    =Rovnice se nijak nezmění.
-    ~Ochlazování bude probíhat rychleji. V rovnici nebude figurovat minus.
-    ~Ochlazování bude probíhat rychleji. Na pravé straně bude namísto rozdílu figurovat součet teploty kávy a teploty okolí.
-    ~Pravá strana by změnila znaménko. Teploty na pravé straně se budou odečítat v opačném pořadí.
+    =Rovnice se nijak nezmění. Fyzikální podstata děje je stále stejná. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T-T_M).$$
+    ~Ochlazování bude probíhat rychleji. V rovnici nebude figurovat minus. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=k(T-T_M).$$
+    ~Ochlazování bude probíhat rychleji. Na pravé straně bude namísto rozdílu figurovat součet teploty kávy a teploty okolí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T+T_M).$$
+    ~Pravá strana by změnila znaménko. Teploty na pravé straně se budou odečítat v opačném pořadí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T_M-T).$$
 }
 
 // question: 21506  name: 006 Teplota kávy v mrazivém počasí
@@ -92,6 +88,4 @@ mrazivém prostředí?
     ~![](teplota_kavy_3.svg)
 }
 
-// question: 21507  name: 007 Teplota kávy v mrazivém počasí
-::007 Teplota kávy v mrazivém počasí::[markdown]Který graf je realistický jako
-výstup modelu, kdy modelujeme časový vývoj teploty čerstvě uvařené kávy v
+

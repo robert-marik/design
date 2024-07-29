@@ -7,19 +7,20 @@ parts:
   - caption: Lineární algebra
     numbered: true
     chapters:
-    - file: A01/index.md
-    - file: A02/index.md
+    - file: vektory/index.md
+    - file: matice/index.md
+    - file: vlastni_cisla/index.md
   - caption: Diferenciální a integrální počet
     numbered: true
     chapters:
-    - file: B01/index.md
-    - file: B02/index.md
-    - file: B03/index.md
+    - file: derivace/index.md
+    - file: integralB02/index.md
+    - file: parcialni_derivace/index.md
   - caption: Základy teorie elasticity
     numbered: true
     chapters:
-    - file: C01/index.md
-    - file: C02/index.md
+    - file: statika/index.md
+    - file: deformace/index.md
   - caption: Operátory matematické fyziky
     numbered: true
     chapters:
