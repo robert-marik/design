@@ -86,8 +86,12 @@ Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující prob�
 výstup modelu, kdy modelujeme časový vývoj teploty čerstvě uvařené kávy v
 mrazivém prostředí?
 {
-    =a !\[\]\(coffee.png\)
-    ~Graf B
-    ~Graf C
-    ~Graf D
+    =![](teplota_kavy_2.svg)
+    ~![](teplota_kavy_0.svg)
+    ~![](teplota_kavy_1.svg)
+    ~![](teplota_kavy_3.svg)
 }
+
+// question: 21507  name: 007 Teplota kávy v mrazivém počasí
+::007 Teplota kávy v mrazivém počasí::[markdown]Který graf je realistický jako
+výstup modelu, kdy modelujeme časový vývoj teploty čerstvě uvařené kávy v
