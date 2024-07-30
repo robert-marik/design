@@ -66,9 +66,7 @@ uvažovanou situaci?{
 }
 
 // question: 21505  name: 005 Káva v mrazivém počasí
-::005 Káva v mrazivém počasí::[markdown]
-![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/coffee.jpg)
-\n\n
+::005 Káva v mrazivém počasí::[markdown] ![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/coffee.jpg)\n\n
 Model ochlazování kávy v hrníčku v místnosti o teplotě $T_M$ je dán rovnicí
 $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T-T_M).$$
 Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující probíhající děj?
@@ -78,7 +76,6 @@ Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující prob�
     ~Ochlazování bude probíhat rychleji. Na pravé straně bude namísto rozdílu figurovat součet teploty kávy a teploty okolí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T+T_M).$$
     ~Pravá strana by změnila znaménko. Teploty na pravé straně se budou odečítat v opačném pořadí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T_M-T).$$
 }
-
 
 // question: 21506  name: 006 Jednotka konstanty
 ::006 Jednotka konstanty z modelu tepelné výměny::[markdown]
@@ -92,4 +89,15 @@ má stejnou jednotku jako je jednotka teploty, protože fyzikálně odpovídá n
 ~Konstanta nemá žádnou jednotku, protože konstanty, které jsou ve fyzice konstantami úměrnosti, žádné fyzikální jednotky nemají. Nedpovídají totiž reálně měřitelným veličinám.
 =Jednotkou konstanty je převrácená hodnota jednotky času, protože po součinu s teplotou musí mít pravá strana stejnou jednotku jako derivace teploty podle času a jednotka této derivace je podílem jednotky teploty a času.
 ####"Derivace na levé straně má jednotku rovnu podílu jednotky teploty a jednotky času. Na pravé straně musí být stejná jednotka. Protože napravo figuruje součin teplotního rozdílu (udává se ve stejných jednotkách jako teplota) s konstantou $k$, musí se jednotka času dostat do jmenovatele právě prostřednictvím konstanty $k$. Tedy jednotka této konstanty musí mít ve jmenovateli jednotku času.
+}
+
+// question: 21507  name: 007 Teplota kávy v mrazivém počasí
+::007 Teplota kávy v mrazivém počasí::[markdown] Který graf je realistický jako
+výstup modelu, kdy modelujeme časový vývoj teploty čerstvě uvařené kávy v
+mrazivém prostředí?
+{
+    =![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/teplota_kavy_2.svg)
+    ~![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/teplota_kavy_0.svg)
+    ~![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/teplota_kavy_1.svg)
+    ~![](https://raw.githubusercontent.com/robert-marik/design/main/moodle/teplota_kavy_3.svg)
 }
