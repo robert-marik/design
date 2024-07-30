@@ -123,3 +123,52 @@ derivaci teploty podle polohy $$\\frac\{\\mathrm dT\}\{\\mathrm dx\}.$$
     ~%-25%Derivace je vždy kladná, protože ve směru osy hodnota $x$ roste.
     #### Derivace teploty podle polohy udává, jak rychle se mění teplota ve stěně, když se posouváme po ose $x$. Tedy jinak řečeno, je to změna teploty na jednotce délky. Jednotkou je jednotka teploty na jednotku délky, například stupeň Celsia na centimetr. Derivace je kladná, pokud ve směru osy $x$ (tj. z vnitřku ven) teplota roste a záporná, pokud klesá.  
 }
+
+//name: 008 Derivace, párování
+::008 Derivace, párování::[markdown]Na hromadu sypkého materiálu přisypáváme další a další materiál. Tvar hromady je dán geometrickými a fyzikálními vlastnostmi materiálu. To v praxi znamená, že hromada má tvar kužele se stálým poměrem poloměru podstavy a výšky.  Objem $V$je tedy jednoznačně určen výškou $h$ a naopak. Obě tyto veličiny se při přisypávání dalšího materiálu na hromadu mění v čase. Čas označíme $t$.\n\nUrčete, která derivace je spjata s jednotlivými slovními formulacemi. Derivace jsou zapsány zjednodušeně, například derivace objemu podle času je `dV/dt`. 
+{
+=Rychlost, s jakou se roste objem hromady v čase, tj. změna objemu za jednotku času. ->dV/dt$
+=Rychlost, s jakou se roste výška hromady v čase, tj. změna výšky za jednotku času.->dh/dt
+=Rychlost, s jakou se roste výška hromady jako funkce objemu, tj. změna výšky při změně objemu o jednotku.->dh/dV
+=Rychlost, s jakou se roste objem hromady jako funkce výšky, tj. změna objemu při změně výšky o jednotku.->dV/dh
+} 
+
+//name: 009 Derivace v aplikacích
+::009 Derivace v aplikacích::[markdown]Derivace slouží k nalezení rychlosti změny (růstu) veličiny v čase. Dokážete si představit, co se za touto formulací skrývá? Která formulace nejvýstižněji popisuje roli derivace podle času v aplikačních úlohách?
+{
+~Vstupem je průměrná rychlost na libovolném intervalu mezi počátkem a koncem pohybu. Výstupem (po zderivování průměrné rychlosti) získáme okamžitou rychlost.
+~Vstupem je změna veličiny (rozdíl funkčních hodnot na začátku a na konci intervalu) a výstupem je funkce, udávající rychlost v libovolném časovém intervalu mezi počátečním a koncovým okamžikem.
+=Vstupem je časový průběh veličiny (funkce udávající hodnotu v libovolném časovém okamžiku) a výstupem je funkce, udávající okamžitou rychlost růstu v libovolném časovém okamžiku.
+~Vstupem je změna veličiny (rozdíl funkčních hodnot na začátku a na konci intervalu) a výstupem je funkce, udávající rychlost v libovolném časovém okamžiku.
+}
+
+//name: 010 Derivace v aplikacích II
+::010 Derivace v aplikacích II::[markdown]Veličina $N$ udává velikost populace. Její derivace podle času má numericky nízkou hodnotu, tj. je blízká nule. Co to znamená pro vývoj populace? Vyberte nejvhodnější tvrzení.
+{
+~Velikost populace je vysoká a mění se rychle (populace je přemnožená a množí se dál již pomalu).
+=Velikost populace se prakticky nemění. Populace je blízko svého stacionárního stavu.
+~Populace je malá, veličina
+je hodně pod nosnou kapacitou prostředí.
+~Velikost populace je vysoká a mění se rychle (populace je přemnožená a rychle se dál množí).
+####Derivace je rychlost růstu a podle zadání je tato rychlost blízká k nule. Tedy populace se mění malou rychlostí, prakticky se nemění v čase. Jestli se jedná o velkou populaci či malou populaci není možné z informace o derivaci usuzovat, obě varianty jsou příppustné. Proto tvrzení, která operují s velikostí populace v absolutních číslech (malá resp. velká populace) nemohou být správnou odpovědí. 
+}
+
+//name: 011 Derivace v aplikacích III
+::011 Derivace v aplikacích III::[markdown]
+Veličina $T$ udává teplotu vody v závislosti na čase. Derivace je $$\frac\{\mathrm dT\}\{\mathrm dt\}\=20^\circ/\mathrm\{min\}$$
+Co je možné z této informace vyčíst? Pokud je více možností, vyberte tu, která nese nejpodrobnější informace.
+{
+~Teplota vody je větší než 20 stupňů Celsia a roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
+=Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
+~Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu. Za minutu bude teplota o 20 stupňů vyšší (pokud voda nedospěje k bodu varu).
+~Teplota vody je menší než 80 stupňů Celsia a roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
+~Teplota vody je 20 stupňů Celsia a do tohoto stavu se ohřívala přibližně minutu.
+####Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
+Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
+Derivace teploty vody podle času vyjadřuje okamžitou rychlost, jak rychle roste teplota vody. Tedy jaká je změna za jednotku času v daném okamžiku. Nic více.
+Zejména je dobré si uvědomit následující.\n
+1. Není možné říci, jaká bude teplota za minutu, protože není jisté, že během minuty se rychlost nezmění.\n
+2. Není možné ani říci, jaká teplota je, jestli nízká nebo vysoká.\n
+3. V derivaci je informace o změnách funkčních hodnot, o hodnotách samotných derivace informaci nenese.\n
+4. Rychlostí dvacet stupňů Celsia za minutu se může ohřívat studená i horká voda.\n
+5. Dokonce se touto rychlostí může ohřívat i voda těsně před varem, protože se jedná o rychlost okamžitou a celý proces nemusí trvat celou minutu. }

@@ -29,7 +29,7 @@ $$\frac{T(t+h)-T(t)}{h}$$
 
 ### C) Teplota jako funkce času, okamžitá rychlost
 
-V praxi je nutné znát okamžitou rychlost. Příroda reaguje na okamžitého hodnoty veličin. Formálně není možné do předchozího vzorce dosadit $h=0$. Ja však možné toto udělat trikem založeným na limitním přechodu (viz [prezentace](https://user.mendelu.cz/marik/manim/Spojitost/).
+V praxi je nutné znát okamžitou rychlost. Příroda reaguje na okamžitého hodnoty veličin. Formálně není možné do předchozího vzorce dosadit $h=0$. Ja však možné toto udělat trikem založeným na limitním přechodu (viz [prezentace](https://user.mendelu.cz/marik/manim/Spojitost/)).
 
 $$\frac {\mathrm dT}{\mathrm dt}=\lim_{h\to 0}\frac{T(t+h)-T(t)}{h}$$
 
@@ -65,15 +65,10 @@ $$\frac {\mathrm dx}{\mathrm dt}=\lim_{h\to 0}\frac{x(t+h)-x(t)}{h}.$$
 Fyzikálně derivace udává okamžitou rychlost růstu funkce $x(t)$, tj. změnu veličiny $x$ vyvolanou jednotkovou změnou veličiny $t$.
 
 
-* Okamžitá rychlost, [derivace a průběh funkce](https://user.mendelu.cz/marik/manim/PrubehFunkce/)  
-* Model ochlazování kávy: rychlost ochlazování je úměrná teplotnímu rozdílu.
-  $$\frac{\mathrm dT}{\mathrm dt}=-k(T-T_0)$$
-  Další modely viz [Mateamtika](https://robert-marik.github.io/matematika/cviceni/cviceni02.html), příklady 2.4 až 2.10.
-* Diferenciální rovnice a jejich diskretizace
-* Lineární aproximace, [prezentace](https://user.mendelu.cz/marik/manim/Linearni_aproximace/)
-  $$f(x+h)\approx f(x) + \frac{\mathrm df}{\mathrm dx}(x)h$$
-  $$f(x)\approx f(x_0) + \frac{\mathrm df}{\mathrm dx}(x_0)(x-x_0)$$
-  Lineární aproximace v nule pro funkci procházející počátkem se vždy redukuje na přímou úměrnost. Konstutuční zákony jsou formulávány pomocí přímé úměrnosti ([Darcyho zákon](https://en.wikipedia.org/wiki/Darcy%27s_law), [Fickův zákon](https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion), [Fourierův zákon](https://en.wikipedia.org/wiki/Thermal_conduction#Fourier's_law), [Hookův zákon](https://en.wikipedia.org/wiki/Hooke%27s_law))
-* Fourierův zákon, gradient v 1D
+* Okamžitá rychlost, viz [derivace a průběh funkce](https://user.mendelu.cz/marik/manim/PrubehFunkce/)  
+* Okamžitá rychlost pohybu je derivace polohy (nebo polohového vektoru ve vícedimenzionálním případě) podle času. 
+* Rychlost s jakou se mění rychlost pohybu je zrychlení. Zrychlení je podle Newtonova pohybového zákona úměrné působící síle. Ta může či nemusí záviset na poloze. Například při pohybu v tíhovém poli Země je síla konstantní, protože v každém místě je stejná tíhová síla. Při kmitání (například na pružině) okolo rovnovážné polohy síla není konstantní, protože ve větší vzdálenosti je síla, která vrací těleso zpět, zpravidla větší. (Na malé natažení pružiny stačí menší síla než na velké natažení.)
+* Rychlost, s jakou se mění teplota chladnoucí kávy je derivace teploty podle času. Tato rychlost souvisí s teplotním rozdílem.
+
 
 

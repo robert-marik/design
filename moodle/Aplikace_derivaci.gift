@@ -1,0 +1,91 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Derivace
+$CATEGORY: $course$/top/Aplikovana matematika/Aplikace derivací
+
+//name: 001a Lineární aproximace A
+::001a Lineární aproximace A::[markdown]Lineární aproximace je založena na přirozeném postupu, nad kterým v případě konstantních rychlostí ani neppřemýšlíme. Uvažujme studený nápoj o teplotě  $5^\\circ\\mathrm \{C\}$. V láhvi teplota roste *konstantní* rychlostí dva stupně Celsia za minutu. Označte výpočet, který správně odhaduje teplotu nápoje po třech minutách.
+{
+~$5\times 2\times 3$
+~$5+3$
+~$2\times 3$
+=$5+2\times 3$
+~$5t+ 3$
+~$5+ 3t$
+~$5+ 2(t - 3)$
+~$2+ 3(t - 2)$
+####K výchozí teplotě je nutné přičíst změnu teploty za tři minuty. Díky konstantní rychlosti tuto změnu můžeme vypočítat jako součin změny za minutu a počtu minut. Teplota po třech minutách tedy bude $$5+2\times 3.$$
+} 
+
+//name: 001b Lineární aproximace B
+::001b Lineární aproximace B::[markdown]Lineární aproximace je založena na přirozeném postupu, nad kterým v případě konstantních rychlostí ani neppřemýšlíme. Uvažujme studený nápoj o teplotě  $5^\\circ\\mathrm \{C\}$. V láhvi teplota roste *konstantní* rychlostí dva stupně Celsia za minutu. Označte výpočet, který správně odhaduje teplotu nápoje jako funkci času
+{
+~$5\times 2\times 3$
+~$5+3$
+~$2\times 3$
+~$5+2\times 3$
+~$5t+ 3$
+=$5+ 2t$
+~$5+ 2(t - 1)$
+~$2+ 3(t - 2)$
+####K výchozí teplotě je nutné přičíst změnu teploty za daný čas. Díky konstantní rychlosti tuto změnu můžeme vypočítat jako součin změny za minutu (dva stupně za minutu) a počtu minut ($t$). Teplota po třech minutách tedy bude $$5+2\times t.$$
+} 
+
+//name: 001c Lineární aproximace C
+::001c Lineární aproximace C::[markdown]Lineární aproximace je založena na přirozeném postupu, nad kterým v případě konstantních rychlostí ani nepřemýšlíme. Uvažujme studený nápoj, jehož teplota zvolna roste. Po jedné minutě má teplotu  $5^\\circ\\mathrm \{C\}$. Teplota roste *konstantní* rychlostí dva stupně Celsia za minutu. Označte výpočet, který správně odhaduje teplotu nápoje jako funkci času
+{
+~$5\times 2\times 3-1$
+~$5\times 2\times (3-1)$
+~$5+3t$
+~$2\times 3$
+~$5+2\times 3t$
+~$5t+ 3$
+=$5+ 2(t-1)$
+~$5+ 2(t - 3)$
+~$2+ 3(t - 2)$
+####K teplotě po jedné minutě je nutné přičíst změnu teploty mzi první minutou a časem $t$. Díky konstantní rychlosti tuto změnu můžeme vypočítat jako součin změny za minutu (dva stupně Celsia za minutu) a počtu minut mezi časem $t$ a první minutou ($t-1$). Teplota po třech minutách tedy bude $$5+2(t-1).$$
+} 
+
+//name: 001c Lineární aproximace C
+::001c Lineární aproximace C::[markdown]Lineární aproximace je založena na přirozeném postupu, nad kterým v případě konstantních rychlostí ani nepřemýšlíme. Ale pro zobecnění je nutno umět postup i zformalizovat a zobecnit.\nUvažujme studený nápoj, jehož teplota zvolna roste. Po jedné minutě má teplotu  $5^\\circ\\mathrm \{C\}$. Teplota roste *konstantní* rychlostí dva stupně Celsia za minutu. Hledáme teplotu jako funkci času. Spárujte hodnotu ze zadání se slovním vyjádřením (fyzikálním významem).
+{
+=5 stupňů Celsia->Teplota v čase jedna minuta
+=2 stupně Celsia za minutu->Derivace teploty podle času.
+=1 minuta->Čas, ve kterém známe teplotu i rychlost růstu teploty.
+}
+
+
+//name: 002a Lineární aproximace
+::002a Lineární aproximace::[markdown]
+Lineární aproximace je založena na vzorci $$f(x)\\approx f(x_0)+\\frac\{\\mathrm df\}\{\\mathrm dx\}(x_0)(x-x_0).$$ Co v tomto kontextu vyjadřuje derivace $\\frac\{\\mathrm df\}\{\\mathrm dx\}(x_0)$?
+{
+=Odhad změny veličiny $f$ na intervalu jednotkové délky, začínajícího v bodě $x_0$.
+~Odhad změny veličiny $f$ na intervalu mezi $x_0$ a $x$.
+~Odhad průměrné rychlosti růstu veličiny $f$ na intervalu mezi $x_0$ a $x$.
+~Odhad hodnoty veličiny $f$ v bodě $x$.
+~Odhad hodnoty veličiny $f$ v bodě $x_0$.
+}
+
+//name: 002b Lineární aproximace
+::002b Lineární aproximace::[markdown]
+Lineární aproximace je založena na vzorci $$f(x)\\approx f(x_0)+\\frac\{\\mathrm df\}\{\\mathrm dx\}(x_0)(x-x_0).$$ Co v tomto kontextu vyjadřuje člen $\\frac\{\\mathrm df\}\{\\mathrm dx\}(x_0)(x-x_0)$?
+{
+~Odhad změny veličiny $f$ na intervalu jednotkové délky, začínajícího v bodě $x_0$.
+=Odhad změny veličiny $f$ na intervalu mezi $x_0$ a $x$.
+~Odhad průměrné rychlosti růstu veličiny $f$ na intervalu mezi $x_0$ a $x$.
+~Odhad hodnoty veličiny $f$ v bodě $x$.
+~Odhad hodnoty veličiny $f$ v bodě $x_0$.
+}
+
+
+//name: 003 Konstitutivní zákony
+::003 Konstitutivní zákony::[markdown]
+Konstitutivní vztahy mezi skalárními veličinami, jako Fourierův zákon, Darcyho zákon, Fickův zákon, Hookův zákon, mají tvar přímé úměrnosti. Zaškrtněte správné vysvětlení tohoto fenoménu.
+{
+~Není rozumné vysvětlení uvedeného fenoménu. Jevy popsané těmito zákony (vedení tepla, proudění podzemní vody, difuze, elastická deformace) mají všechny zcela jinou podstatu a proto neexistuje jednotné vysvětlení.
+=Jedná se o lineární aproximace obecných zákonitostí. V aproximaci figuruje z podstaty věci funkce, procházející počátkem a proto jeden člen z lineární aproximace vypadne a zůstane přímá úměrnost.
+~Je to důsledek známého jevu, že příroda je ze své podstaty lineární a všechny fyzikální zákonitosti mají tvar přímé úměrnosti.
+~Je to důsledek spojitosti obou veličin. Závislosti mezi fyzikálními veličinami jsou z principu spojité.
+####Všechny zákony udávají materiálovou odezvu na vnější podněty. Protože bez podnětu není ani odezva, procházejí funkční předpisy pro všechny tyto odezvy počátkem. Lineární aproximací potom bude funkce, která je lineární a prochází počátkem. Tedy přímá úměrnost, funkce tvaru $y\=kx$.
+}

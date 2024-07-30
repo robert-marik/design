@@ -123,7 +123,7 @@ A\vec v =
 $$
 
 
-Pro obecnou definici je nejvýhodnější využití Einsteinovy notace, jak jsme definovali v odstavci s motivací.
+Pro obecnou definici je nejvýhodnější využití sumační notace nebo dokonce Einsteinovy notace, jak jsme ukázali v odstavci s motivací.
 
 ```{prf:definition} Součin matice a vektoru
 Součinem matice $A=(a_{ij})$ a vektoru $\vec v = (v_{i})$ je vektor $\vec u = (u_i)$
@@ -158,8 +158,8 @@ Ve dvourozměrných a trojrozměrných úlohách mají spád teploty či koncent
 $$\vec q = 237 \mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u$$ 
 a tok v (javorovém) dřevě vztahem
 $$\vec q = \begin{pmatrix}0.3&0&0\cr0&0.18&0\cr 0&0&0.18\end{pmatrix}\mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u. $$ 
-(Viz [Hliník](https://cs.wikipedia.org/wiki/Hlin%C3%ADk) a [Tepelné vlastnosti dřeva](https://www.dashofer.cz/download/pdf/drv/2_5_1_tepelne_vlastnosti_dreva.pdf).)
-<a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla ve dřevě a v hliníku. Vektor definující pokles teploty je stále stejně dlouhý a tři scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. 
+(Viz [Hliník](https://cs.wikipedia.org/wiki/Hlin%C3%ADk) a [Tepelné vlastnosti dřeva](https://www.dashofer.cz/download/pdf/drv/2_5_1_tepelne_vlastnosti_dreva.pdf).) Podíl velikosti toku tepla a spádu teploty je u hliníku konstantní a nezávislý na směru, ale u dřeva tomu tak není. Stejný spád teploty vyvolá jiný tok v podélném a jiný v příčném směru.
+<a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla v uvedených případech. Vektor definující pokles teploty je stále stejně dlouhý a jednotlivé scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. Poznamenejme, že uvedený výpočet pro javor platí pouze, pokud jsou osy orientovány tak, že jsou v anatomických směrech dřeva. V obecném případě nebude mít matice nulové prvky, ale bude mít všech devět komponent nenulových, což jakoukoliv činí obtížnější, protože zpravidla se jedná o jeden článek v řetězci výpočtů a jakékoliv komplikace se dalšími kroky často prohlubují. 
 
 
 ## Geometrické transformace I

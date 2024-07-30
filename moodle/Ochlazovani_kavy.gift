@@ -78,3 +78,18 @@ Přenesme kávu do mrazu, tj. $T_M<0$. Jak se změní rovnice modelující prob�
     ~Ochlazování bude probíhat rychleji. Na pravé straně bude namísto rozdílu figurovat součet teploty kávy a teploty okolí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T+T_M).$$
     ~Pravá strana by změnila znaménko. Teploty na pravé straně se budou odečítat v opačném pořadí. $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=-k(T_M-T).$$
 }
+
+
+// question: 21506  name: 006 Jednotka konstanty
+::006 Jednotka konstanty z modelu tepelné výměny::[markdown]
+Studené těleso bylo přemístěno do teplé místnosti. Jeho teplota roste v čase podle vztahu $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\= -k(T-T_M)$$ kde $T_M$ je teplota místnosti a $k$ konstanta úměrnosti z Newtonova zákona ochlazování. Vyberte správné tvrzení o jednotce konstanty $k$.
+{
+~Konstanta
+má stejnou jednotku jako je jednotka teploty, protože fyzikálně odpovídá nárůstu teploty za jednotku času.
+~Konstanta nemá žádnou jednotku, protože na levé straně rovnice je výraz udávaný v jednotkách teploty (derivace je rychlost růstu teploty) a na pravé straně musí vycházet stejná jednotka.
+~Jednotka konstanty je stejná jako jednotka času, protože po součinu s teplotou musí mít pravá strana stejnou jednotku jako derivace teploty podle času a jednotka této derivace je podílem jednotky teploty a času.
+~Konstanta má stejnou jednotku jako je jednotka teploty, protože fyzikálně odpovídá rozdílu počáteční teploty a teploty místnoti.
+~Konstanta nemá žádnou jednotku, protože konstanty, které jsou ve fyzice konstantami úměrnosti, žádné fyzikální jednotky nemají. Nedpovídají totiž reálně měřitelným veličinám.
+=Jednotkou konstanty je převrácená hodnota jednotky času, protože po součinu s teplotou musí mít pravá strana stejnou jednotku jako derivace teploty podle času a jednotka této derivace je podílem jednotky teploty a času.
+####"Derivace na levé straně má jednotku rovnu podílu jednotky teploty a jednotky času. Na pravé straně musí být stejná jednotka. Protože napravo figuruje součin teplotního rozdílu (udává se ve stejných jednotkách jako teplota) s konstantou $k$, musí se jednotka času dostat do jmenovatele právě prostřednictvím konstanty $k$. Tedy jednotka této konstanty musí mít ve jmenovateli jednotku času.
+}

@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Funkce
+    numbered: true
+    chapters:
+    - file: funkce/index.md
   - caption: Lineární algebra
     numbered: true
     chapters:
@@ -14,8 +18,10 @@ parts:
     numbered: true
     chapters:
     - file: derivace/index.md
-    - file: integralB02/index.md
+    - file: aplikace_derivaci/index.md
     - file: parcialni_derivace/index.md
+    - file: aplikace_parcialnich_derivaci/index.md
+    - file: integral/index.md
   - caption: Základy teorie elasticity
     numbered: true
     chapters:

@@ -1,0 +1,75 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Funkce
+$CATEGORY: $course$/top/Aplikovana matematika/Funkce
+
+//name: 001 Umernost
+::001 Úměrnost slovně 1::[markdown]Hmotnost objektu souvisí s jeho velikostí. U některých živočišných druhů, jako jsou například mnohé ryby, mají mláďata přibližně stejný tvar jako dospělí a proto je u těchto druhů hmotnost $m$ svázána se třetí mocninou délky $l$ vztahem $$m\=kl^3.$$ \n\n Jak byste tento vztah přečetli slovně?
+{
+=Hmotnost ryby je přímo úměrná třetí mocnině její délky.
+~Hmotnost ryby je přímo úměrná třetí odmocnině její délky.
+~Hmotnost ryby je nepřímo úměrná její délce.
+~Hmotnost ryby je nepřímo úměrná třetí mocnině její délky.
+~Hmotnost ryby je nepřímo úměrná třetí odmocnině její délky.
+~Hmotnost ryby je přímo úměrná její délce.
+}
+
+//name: 002 Umernost
+::002 Úměrnost slovně 2::[markdown]Ve vědě zpravidla navazuje každý vědec na své předchůdce. Klasickou ukázkou je odvození gravitačního zákona. Na začátku byla podrobná pozorování pohybu planet, která vykonal Tycho Brahe. Z nich později Johanes Keppler vyvodil geniální zákony pro pohyb planet. Na tuto činnost navázal později Isaac Newton, který brilantní analýzou, v níž položil základy diferenciálního a integrálního počtu. Newton prokázal, že Keplerovy zákony je možné odvodit matematickou cestou, pokud mezi gravitační silou $F$ působící mezi dvěma objekty a jejich vzdáleností $r$ je vztah tvaru $$F\=\frac k\{r^2\}.$$ Jak byste tento vztah mezi gravitační silou a vzdáleností vyjádřili slovně?
+{
+= Gravitační síla je nepřímo úměrná druhé mocnině vzdálenosti.
+~Gravitační síla je přímo úměrná druhé mocnině vzdálenosti.
+~Gravitační síla je přímo úměrná druhé odmocnině vzdálenosti.
+~Gravitační síla je nepřímo úměrná druhé odmocnině vzdálenosti.
+~Gravitační síla je nepřímo úměrná vzdálenosti.
+~Gravitační síla je přímo úměrná vzdálenosti.
+}
+
+//name: 003 Umernost
+::003 Úměrnost slovně 3::[markdown]Jedním z pravidelných dějů je kmitání kyvadla. Pomocí něj se dokonce dříve měřil čas. Pro matematické kyvadlo délky $l$ je perioda $T$ dána vzorcem  $$T\=2\pi \sqrt\{\frac lg\},$$  kde $g$ je tíhové zrychlení. Jak byste tento vztah mezi periodou $T$ a délkou kyvadla $l$ vyjádřili slovně?
+{
+=Perioda kyvadla je přímo úměrná odmocnině z délky kyvadla.
+~Perioda kyvadla je nepřímo úměrná odmocnině z délky kyvadla.
+~Perioda kyvadla je přímo úměrná druhé mocnině délky kyvadla.,
+~Perioda kyvadla je nepřímo úměrná druhé mocnině z délky kyvadla.,
+~Perioda kyvadla je přímo úměrná délce kyvadla.
+~Perioda kyvadla je nepřímo úměrná délce kyvadla.
+}
+
+//name: 004 Umernost
+::004 Úměrnost vzorcem 1::
+[markdown]U nosníku namáhaného na vzpěr je nutné, aby zatížení nepřekročilo jistou mez. Maximální zatížení nosníku daného průřezu souvisí délkou nosníku.\n\n Fyzikální analýzou je možné ukázat, že maximální svislá síla $F$ působící v ose nosníku je nepřímo úměrná druhé mocnině jeho délky $l$. Vyjádřete tento vztah matematicky.
+{
+=$\displaystyle F\=\frac k\{l^2\}$
+~$\displaystyle F\= k\{l^2\}$
+~$\displaystyle F\= k\{l\}$
+~$\displaystyle F\= k\sqrt \{l\}$
+~$\displaystyle F\= \frac k\{l\}$
+~$\displaystyle F\= \frac \{k\}\{\sqrt \{l\}\}$
+}
+
+//name: 005 Umernost
+::005 Úměrnost vzorcem 2::
+[markdown]Princip hry na strunné hudební nástroje spočívá ve zkracování struny na hmatníku, čímž se mění frekvence jejích kmitů a tím i výška tónu, tj. frekvence kmitů.\n\n Je známo, že frekvence $f$ kmitů struny je nepřímo úměrná délce $l$ struny. Vyjádřete tento vztah matematicky.
+{=$\displaystyle f\=\frac k\{l\}$
+~$\displaystyle f\= k\{l^2\}$
+~$\displaystyle f\= k\{l\}$
+~$\displaystyle f\= k\sqrt \{l\}$
+~$\displaystyle f\= \frac k\{l^2\}$
+~$\displaystyle f\= \frac k\{\sqrt \{l\}\}$
+}
+
+//name: 006 Umernost
+::006 Úměrnost vzorcem 3::
+[markdown]Odolnost nosníků zajímá nejenom stavaře dřevěných konstrukcí, ale například i arboristy (strom je možno chápat jako vetknutý nosník) nebo stavitele mostů (most je možno chápat jako nosník podepřený na dvou koncích). Při zátěžovém testu se zatíží most pomocí nákladních aut a porovnává se naměřený průhyb a jeho teoretická hodnota.\n\nPro rovnoměrně zatížený nosník je jeho prohnutí $\delta$ úměrné čtvrté mocnině délky $l$. Jak byste tuto souvislost zapsali matematicky?
+{
+=$\displaystyle \delta\=k\{l^4\}$
+~$\displaystyle \delta\= k\{l^3\}$
+~$\displaystyle \delta\= k\{\sqrt \{l\}\}$
+~$\displaystyle \delta\= \frac k\{l\}$
+~$\displaystyle \delta\= \frac k\{l^3\}$
+~$\displaystyle \delta\= \frac k\{\sqrt[4]\{l\}\}$
+}
+
+
