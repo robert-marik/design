@@ -46,6 +46,32 @@ veličiny maticové. Kdy se tyto matice používají a proč?
     ####V pořadí $i$-tý sloupec je tok vyvolaný jednotkovým spádem teploty ve směru $i$-té osy. To plyne z tohot, že takový sloupec získáme jako lineární kombinaci sloupců matice tak, že $i$-tý sloupec uvažujeme jedenkrát a ostatní sloupce nula-krát.
 }
 
+//name: 004a Fourierův zákon
+::004a Fourierův zákon::[markdown]Fourierův zákon ve své nejobecnější 
+formě říká, že tepelný tok je úměrný spádu teploty. (Spádem teploty rozumíme záporně vzatý gradient teploty.) Jakým způsobem lze tento zákon vyjádřit pomocí maticového zápisu?
+{
+    =Tepelný tok je roven součinu tenzoru tepelné vodivosti a spádu teploty.
+    ~Tepelný tok je roven součinu tenzoru tepelné vodivosti a teploty.
+    ~Tepelný tok je roven součinu spádu teploty a tenzoru tepelné vodivosti.
+    ~Tepelný tok je roven součinu spádu teploty a teploty.
+    ####Tepelný tok je roven součinu tenzoru tepelné vodivosti a gradientu teploty. Tepelný tok a spád teploty jsou sloupcové vektory. Tenzor tepelné vodivosti je čtvercová matice.
+}
+
+//name: 004b Fourierův zákon
+::004b Fourierův zákon::[markdown]Fourierův zákon ve své nejobecnější 
+formě říká, že tepelný tok je úměrný spádu teploty. (Spádem teploty rozumíme záporně vzatý gradient teploty.) 
+V materiálech, které mají jistou dávku symetrie, je možné predikovat směr toku podle spádu teploty. Vyberte všechna pravdivá tvrzení pro izotropní materiály (mají ve všech směrech stejné vlastosti) a pro ortoropní materiály (v různých směrech mohou být různé vlastnosti, ale materiál má tři navzájem kolmé roviny symetrie)
+{
+    ~%50%V izotropních materiálech mají tepelný tok a spád teploty vždy stejný směr.
+    ~%-25%V izotropních materiálech mají tepelný tok a spád teploty vždy různý směr.
+    ~%-25%V ortotropních materiálech mají tepelný tok a spád teploty vždy stejný směr.
+    ~%-25%V ortotropních materiálech mají tepelný tok a spád teploty vždy různý směr.
+    ~%50%V ortotropních materiálech mají tepelný tok a spád teploty stejný směr, pokud je spád teploty v průsečících rovin symetrie (např. v anatomických směrech dřeva).
+    ~%-25%V ortotropních materiálech mají tepelný tok a spád teploty stejný směr, pokud je spád teploty ve směru některé souřadné osy.
+}
+
+
+
 //name: 005 Transformace tenzoru
 ::005 Transformace tenzoru::[markdown]Jak se transformuje tenzor druhého řádu $T$ pomocí matice $A$?
 {

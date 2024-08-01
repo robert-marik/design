@@ -31,7 +31,7 @@ Teplota se měří ve stupních Celsia, čas v sekundách.{
 	~$\\displaystyle \\frac\{\\mathrm dT\}\{\\mathrm dt\}$#Ne, toto je rychlost růstu teploty v čase.
 	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dt\}$
 	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dT\}$
-	~$\\displaystyle \\frac\{\\mathrm dT_M\}\{\\mathrm dT\}$
+	~$\\displaystyle \\frac\{\\mathrm dT\}\{\\mathrm dT_M\}$
 	####Rozdíl teploty kávy $T$ a teploty mistnosti $T_M$ je $$T-T_M.$$
 	}
 

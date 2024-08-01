@@ -62,13 +62,14 @@ $$\frac {\mathrm dx}{\mathrm dt}=\lim_{h\to 0}\frac{x(t+h)-x(t)}{h}.$$
 
 ## Fyzikální význam derivace
 
-Fyzikálně derivace udává okamžitou rychlost růstu funkce $x(t)$, tj. změnu veličiny $x$ vyvolanou jednotkovou změnou veličiny $t$.
+Fyzikálně derivace udává okamžitou rychlost závislé proměnné, tj. změnu této proměnné vyvolanou jednotkovou změnou nezávislé proměnné. Nezávislou proměnnou bývá nejčastěji čas nebo poloha. Potom derivací získáme informaci, jak rychle se hodnoty sledované veličiny mění v čase nebo v prostoru.
 
-
-* Okamžitá rychlost, viz [derivace a průběh funkce](https://user.mendelu.cz/marik/manim/PrubehFunkce/)  
-* Okamžitá rychlost pohybu je derivace polohy (nebo polohového vektoru ve vícedimenzionálním případě) podle času. 
+* Derivace je okamžitá rychlost růstu, viz [derivace a průběh funkce](https://user.mendelu.cz/marik/manim/PrubehFunkce/)  
+* Okamžitá rychlost pohybu je derivace polohy podle času. Ve vícedimenzionálním případě pracujeme s polohovým vektorem a derivujeme každou komponentu samostatně.
 * Rychlost s jakou se mění rychlost pohybu je zrychlení. Zrychlení je podle Newtonova pohybového zákona úměrné působící síle. Ta může či nemusí záviset na poloze. Například při pohybu v tíhovém poli Země je síla konstantní, protože v každém místě je stejná tíhová síla. Při kmitání (například na pružině) okolo rovnovážné polohy síla není konstantní, protože ve větší vzdálenosti je síla, která vrací těleso zpět, zpravidla větší. (Na malé natažení pružiny stačí menší síla než na velké natažení.)
-* Rychlost, s jakou se mění teplota chladnoucí kávy je derivace teploty podle času. Tato rychlost souvisí s teplotním rozdílem.
+* Rychlost změny teploty chladnoucí kávy je derivace teploty podle času. Tato rychlost souvisí s teplotním rozdílem kávy a okolí. Protože teplota horké kávy s časem klesá, je derivace teploty podle času záporná.
+* Rychlost růstu teploty v daném směru je derivace teploty podle polohy. Je možné ji udávat například ve stupních Celsia na centimetr. Tato hodnota je důležitá pro posouzení tepelných ztrát.
+* Rychlost, s jakou se mění svislá deformace zatíženého nosníku, je rovna úhlu pootočení svislých průřezů od svislé polohy.
 
 
 

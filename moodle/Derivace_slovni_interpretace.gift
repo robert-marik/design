@@ -1,0 +1,58 @@
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika
+$CATEGORY: $course$/top/Aplikovana matematika
+
+// question: 0  name: Switch category to $course$/top/Aplikovana matematika/Slovni interpretace derivace
+$CATEGORY: $course$/top/Aplikovana matematika/Slovni interpretace derivace
+
+//name: 001 Derivace průhybu nosníku
+::001 Derivace průhybu nosníku::[markdown]Veličina $S$ označuje průhyb nosníku jako funkci síly $F$, která tento nosník zatěžuje. Jaký význam má derivace $\\frac\{\mathrm dS\}\{\mathrm dF\}$?
+{
+    =Derivace udává změnu průhybu nosníku při zvýšení zatěžující síly o jednotku.
+    ~Derivace udává změnu zatěžující síly při zvýšení průhybu nosníku o jednotku.
+    ~Derivace udává průhyb nosníku při zatěžující síle rovné jedné.
+    ~Derivace udává zatěžující sílu při průhybu nosníku rovném jedné.
+}
+
+//name: 002 Derivace průhybu nosníku z viskoelastického materiálu
+::002 Derivace průhybu nosníku z viskoelastického materiálu::[markdown]Viskoelastický materiál je takový, u něhož je při zatížení deformace funkcí času. Například dlouhodobě zatížený nosník se může při konstatním zatížení prohýbat stále více. Veličina $S$ označuje průhyb takového nosníku jako funkci času $t$. Derivace $\\frac\{\mathrm dS\}\{\mathrm dt\}$ má hodnotu $2\\,\\mathrm\{mm\}/\mathrm\{den\}$? Jak tuto hodnotu interpretovat slovně?
+{
+    =Za den se průhyb nosníku zvýší o dva milimetry.
+    ~Za den se průhyb nosníku sníží o dva milimetry.
+    ~Navýšení průhybu nosníku o jeden milimetr trvá dva dny.
+    ~Zadání nedává smysl, hodnota derivace nosníku podle času je u viskoelastických materiálů vždy záporná.
+    ~Zadání nedává smysl, derivace průhybu podle času by měla být v jednotce času lomeno jednotkou délky.
+}
+
+//name: 003 Derivace teploty podle času
+::003 Derivace teploty podle času::[markdown]Derivace teploty uvnitř dřevěného výrobku podrobeného tepelné modifikaci je $\\frac\{\mathrm dT\}\{\mathrm dt\} \= 0.4^\\circ\\mathrm\{C\}/\\mathrm\{min\}$. Jak tuto hodnotu interpretovat slovně?
+{
+    =Teplota uvnitř výrobku roste o čtyři desetiny stupně za minutu.
+    ~Teplota uvnitř výrobku naroste o jeden stupeň za čtyři desetiny minuty.
+    ~Teplota uvnitř výrobku klesá o čtyři desetiny stupně za minutu.
+    ~Aby teplota uvnitř výrobku byla konstantní, je nutné zvyšovat teplotu okolí o čtyři desetiny stupně za minutu.
+    ~Aby teplota uvnitř výrobku byla konstantní, je nutné snižovat teplotu okolí o čtyři desetiny stupně za minutu.
+    ~Teplota uvnitř výrobku dosáhne maximální hodnoty za čtyři desetiny minuty.
+    ~Teplota uvnitř výrobku dosáhne rovnovážné hodnoty za čtyři desetiny minuty.
+    ~Teplota uvnitř výrobku je čtyři desetiny stupně pod rovnovážnou hodnotou.
+}
+
+//name: 004 Derivace výšky stromu
+::004 Derivace výšky stromu::[markdown]Derivace výšky stromu podle času je $\\frac\{\\mathrm dh\}\{\\mathrm dt\} \= 0.5\\mathrm\{m\}/\\mathrm\{rok\}$. Jak tuto hodnotu interpretovat slovně?
+{
+    =Výška stromu roste o půl metru za rok.
+    ~Výška stromu klesá o půl metru za rok.
+    ~Výška stromu roste o jeden metr za půl roku.
+    ~Výška stromu klesá o jeden metr za půl roku.
+    ~Výška stromu dosáhne maximální hodnoty za půl roku.
+}
+
+//name: 005 Derivace množství štěpky
+::005 Derivace množství štěpky::[markdown]Sypký materiál, jako napříkad štěpka, má tu vlastnost, že pokud jej vršíme na hromadu ve tvaru kužele, má tento kužel konstantní poměr mezi výškou a poloměrem podstavy. Tento poměr je dán fyzikálními vlastnostmi a geometrií materiálu. Díky tomu je realistický předpoklad, že hmotnost materiálu $m$ na hromadě je funkcí výšky hromady $h$. Při výšce 2 metry je derivace hmotnosti materiálu na hromadě podle výšky rovna deseti kilogramům na centimetr ($\\frac\{\\mathrm dm\}\{\\mathrm dh\}\=10\\,\\mathrm\{kg\}/\\mathrm\{cm\}$). Jak je možné tuto hodnotu vyjádřit slovně?
+{
+    =Hmotnost materiálu na hromadě se zvýší o deset kilogramů při zvýšení výšky hromady o jeden centimetr.
+    ~Hmotnost materiálu na hromadě se zvýší o jeden kilogram při zvýšení výšky hromady o deset centimetrů.
+    ~Hmotnost materiálu na hromadě se zvýší o jeden kilogram při zvýšení výšky hromady o dva metry.
+    ~Hmotnost hromady vysoké dva metry a jeden centimer je deset kilogramů.
+    ~Hmotnost hromady vysoké dva metry je dvacet kilogramů.
+}
+
