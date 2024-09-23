@@ -18,24 +18,17 @@ bibtex_bibfiles = []
 comments_config = {'hypothesis': False, 'utterances': False}
 copyright = '2022, 2023, 2024'
 exclude_patterns = ['**.ipynb_checkpoints', '.DS_Store', 'Thumbs.db','_build', 'reseni*', 'cviceni/cviceni00.md','cviceni/cviceni12.md', 'cviceni/cviceni13.md', 'cviceni/cviceni14.md', 'cviceni/text.md', 'README.md']
-#execution_allow_errors = False
-#execution_excludepatterns = []
-#execution_in_temp = False
-#execution_timeout = 30
 extensions = [
     'sphinx_togglebutton',
     'sphinx_copybutton',
     'notfound.extension',    
     'myst_nb',
-    #'jupyter_book',
     'sphinx_comments',
     'sphinx_external_toc',
     'sphinx.ext.intersphinx',
     'sphinx_design',
     'sphinx_book_theme',
     'sphinx_proof',
-    #'sphinx_jupyterbook_latex'
-    'sphinx_last_updated_by_git',
     'sphinx_multitoc_numbering',
 ]
 external_toc_exclude_missing = False
@@ -50,15 +43,13 @@ html_theme = 'sphinx_book_theme'
 oznameni = """
 Toto jsou učební materiály pro matematiku k předmětu Geometrie a aplikovaná matematika převedené do nové šablony. Stará verze je po nějaký čas k dispozici na  <a href="https://robert-marik.github.io/am-old">https://robert-marik.github.io/am-old</a> a nebude již udržována.
 """
-extra_navbar = '...'
+#extra_navbar = '...'
 html_theme_options = {
     'extra_footer': '<p>\n<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>\n  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>\n</p>\n<p><script src="https://utteranc.es/client.js"\n repo="robert-marik/am" \n issue-term="pathname" \n label="comment" \n theme="github-light" \n crossorigin="anonymous" \n  async> \n </script> \n </p>',
     'search_bar_text': 'Hledat v textu...',
     'path_to_docs': '',
-    'repository_url': 'https://github.com/robert-marik/am',
+    'repository_url': 'https://github.com/robert-marik/design',
     'repository_branch': 'main',
-    #'google_analytics_id': '',
-    #'extra_navbar': extra_navbar,
     'home_page_in_toc': False,
     # 'announcement': oznameni,
     'use_repository_button': False,
@@ -66,13 +57,17 @@ html_theme_options = {
     'use_issues_button': False,
     'use_download_button': False,
     'use_fullscreen_button': False,
-    'body_max_width': None,
+#    'body_max_width': None,
     'navigation_with_keys':False,
-    #'breadcrumbs': True,
-    "show_navbar_depth": 2,
+#    "show_navbar_depth": 2,
+#    "single_page": True,
+#    "extra_navbar": "",  # ToC ve spodní části stránky
+#    "toc_title": "",     # Zruší nadpis pro ToC
+#    "show_toc_level": 1, # Ovládá hloubku ToC, 0 nebo 1 ho vypne
 }
 language = 'cs'
 html_title = 'Aplikovaná matematika (design)'
+
 jupyter_cache = ''
 jupyter_execute_notebooks = 'auto'
 latex_engine = 'xelatex'
@@ -99,6 +94,11 @@ html_js_files = [
     'custom.js',
 #    'https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'
 ]
+
+html_css_files = [
+    'custom.css',
+]
+
 latex_table_style = ['booktabs']
 
 mathjax3_config = {
