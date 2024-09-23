@@ -7,6 +7,7 @@ Instalace vlastniho prostredi a zavislosti
 mamba create -n design
 mamba activate design
 mamba install --file requirements.txt
+pip install sphinx_multitoc_numbering
 ```
 
 Preklad a upload na server
