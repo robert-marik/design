@@ -1,11 +1,11 @@
 .PHONY: html upload clean
 
 html:
-	sphinx-build -Ea . _build/html -b html
+	mamba run --live-stream -n design sphinx-build -Ea . _build/html -b html
 	cp custom.css _build/html/_static/custom.css
 
 upload:	
-	ghp-import -n -o -p -f _build/html
+	mamba run --live-stream -n design ghp-import -n -o -p -f _build/html
 
 clean:
 	rm -r _build
