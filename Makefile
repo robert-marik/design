@@ -2,6 +2,7 @@
 
 html:
 	sphinx-build -Ea . _build/html -b html
+	cp custom.css _build/html/_static/custom.css
 
 upload:	
 	ghp-import -n -o -p -f _build/html
