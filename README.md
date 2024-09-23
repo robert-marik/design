@@ -12,6 +12,12 @@ pip install sphinx_multitoc_numbering
 
 Preklad a upload na server
 ```
+make
+make upload
+```
+
+Spousti se v podstate nasledujici prikazy
+```
 sphinx-build -Ea ./ _build/html -b html
 ghp-import -n -o -p -f _build/html
 ```
