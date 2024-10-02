@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[ultra thick]
+  \draw[->, shift={(0,-5pt)}, red](0,0)--(1,0) node[right]{$\vec u$};
+  \draw[->, blue](0,0)--(2,0) node[right]{$2\vec u$};
+  \draw[->, shift={(0,-10pt)}](0,0)--(-3,0) node[left]{$-3\vec u$};
+\end{tikzpicture}
+\end{document}
