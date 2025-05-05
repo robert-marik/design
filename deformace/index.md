@@ -2,6 +2,10 @@
 
 ## Tenzor napětí
 
+* Napětí je podílem velikosti působící síly a velikosti plochy, na kterou tato síla působí. Pro sílu kolmou k ploše mluvíme o normálovém napětí, pro sílu ve směru plochy o smykovém napětí. 
+* Znaménková konvence - viz obrázek. Napětí v obrázku jsou kladná, opačná napětí jsou záporná. Kladné normálové napětí tedy značí tah, záporné tlak. 
+* V obrázku jsou napěí pouze na třech stěnách, na zbylých šesti jsou odpovídající napětí tak, aby element byl ve statické rovnováze, tj. aby výsledná síla a výsledný moment byly nulové.
+
 $$
 \sigma = \begin{pmatrix}
 \sigma_x & \sigma_{xy} & \sigma_{xz}\cr
@@ -12,7 +16,7 @@ $$
 
 ![](../images/stress.svg)
 
-Bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
+Tenzor napětí je bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
 
 ## Linearizace vektoru posunutí, tenzor deformace
 
