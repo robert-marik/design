@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Vektory &#8212; Aplikovaná matematika (design)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6f0469f0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics"]}, "tex": {"packages": {"[+]": ["physics"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vektory/index';</script>
+    <script src="../_static/custom.js?v=9eb870d4"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="3. Matice" href="../matice/index.html" />
+    <link rel="prev" title="1. Funkce" href="../funkce/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Hledat v textu..."
+         aria-label="Hledat v textu..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aplikovaná matematika (design)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funkce</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funkce/index.html">1. Funkce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineární algebra</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Vektory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matice/index.html">3. Matice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlastni_cisla/index.html">4. Vlastní směry a vlastní hodnoty matic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diferenciální a integrální počet</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivace/index.html">5. Derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parcialni_derivace/index.html">6. Parciální derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integral/index.html">7. Integrál</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerika/index.html">8. Numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Základy teorie elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statika/index.html">9. Základy teorie elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deformace/index.html">10. Teorie elasticity ve 3D</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Operátory matematické fyziky</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../D01/index.html">11. Parciální derivace ve fyzice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../D02/index.html">12. Konstituční vztahy, difuzní rovnice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerická matematika</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../E01/index.html">13. Základní numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shrnutí</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../F01/index.html">14. Shrnutí</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vektory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace">2.1. Motivace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-vektoru">2.2. Příklady vektorů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operace-s-vektory">2.3. Operace s vektory</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vektory">
+<h1><span class="section-number">2. </span>Vektory<a class="headerlink" href="#vektory" title="Link to this heading">#</a></h1>
+<p>Lineární algebra se zabývá vícerozměrnými veličinami (vektory) a vztahy mezi
+nimi.</p>
+<p>V části věnované lineární algebře se naučíte:</p>
+<ul class="simple">
+<li><p>Ukážeme si, že fyzikální veličiny mohou být vícerozměrné nebo mnohorozměrné. Poté jsou reprezentovány vektory.</p></li>
+<li><p>Ukážeme si, že vztahy mezi vektory je možné formulovat pomocí matic. Získáváme tak aparát, který je možno použít k popisu geometrických transformací (využití je při zobrazování), k popisu materiálové odezvy na gradient teploty či gradient koncentrace (Fourierův a Fickův zákon).</p></li>
+</ul>
+<section id="motivace">
+<h2><span class="section-number">2.1. </span>Motivace<a class="headerlink" href="#motivace" title="Link to this heading">#</a></h2>
+<p>Jednou ze základních úloh v praxi je posoudit reakci objektu na působení vnějších sil. Například změna tvaru při namáhání. Pro popis úloh tohoto typu zpravidla dělíme těleso na malé elementy a popisujeme, co se s těmito elementy děje: o kolik se posunou, jestli a jak změní svůj tvar nebo objem a podobně.</p>
+<p><img alt="" src="../_images/mesh.png" />
+<img alt="" src="../_images/deformace.png" /></p>
+<p>Pro modelování deformace potřebujeme mít možnost jednoznačně identifikovat dílčí elementy a být schopni popsat změnu jejich tvaru a polohy při deformaci. K tomu je možno použít souřadnice. V prostoru jsou souřadnice tvořeny trojicemi, v rovině dvojicemi čísel. Takové objekty patří v matematice mezi vektory.</p>
+</section>
+<section id="priklady-vektoru">
+<h2><span class="section-number">2.2. </span>Příklady vektorů<a class="headerlink" href="#priklady-vektoru" title="Link to this heading">#</a></h2>
+<p>Základním objektem v lineární algebře je vektor. Nejčastěji vyjadřujeme vektory jako uspořádané <span class="math notranslate nohighlight">\(n\)</span>-tice nebo orientované úsečky.</p>
+<p>Formální definici vektorů neuvádíme. Zjednodušeně řečeno, je to algebraická struktura s jistými pravidly, které nás opravňují s vektory pracovat tak, jak to v běžných případech potřebujeme. Tedy sčítat vektory, násobit vektory číslem anebo měřit úhel mezi dvěma vektory.</p>
+<ul class="simple">
+<li><p>Dvourozměrné a trojrozměrné vektory se používají k práci s fyzikálními
+veličinami, u kterých si všímáme směru.
+Příklady zahrnují následující.</p>
+<ul>
+<li><p>Rychlost pohybu.</p>
+<ul>
+<li><p>Orientovaná úsečka, jejíž orientace udává směr pohybu a délka udává okamžitou rychlost.</p></li>
+<li><p>Uspořádaná dvojice nebo trojice, kde jednotlivé komponenty udávají rychlost ve směru příslušných os.</p></li>
+</ul>
+</li>
+<li><p>Polohový vektor bodu v prostoru spojuje počátek s uvažovaným bodem. Opět můžeme modelovat jako orientovanou úsečku z počátku do příslušného bodu, nebo dvojici či trojici hodnot udávající souřadnice bodu. Pro pohybující se bod je tento vektor funkcí času.</p></li>
+<li><p>Posunutí, tj. změna polohy v prostoru. Tento vektor spojuje počáteční a koncovou pozici
+posunutého bodu.</p></li>
+<li><p>Síla a moment síly.</p></li>
+<li><p>Spád skalární veličiny. Tento vektor dává do pohybu transportní děje, jako transport tepla, transport vody materiálem, transport iontů nebo molekul při impregnaci apod. Směr ukazuje, kterým směrem klesá veličina nejrychleji a velikost udává, jaká tato rychlost je.</p></li>
+</ul>
+</li>
+<li><p>Vícerozměrné vektory se používají u jakékoliv sady dat, kterou uspořádáme do
+sloupce nebo řádku. Poté má smysl pracovat s vektory libovolné dimenze.
+Příklady zahrnují následující.</p>
+<ul>
+<li><p>Na konstrukci je zvoleno <span class="math notranslate nohighlight">\(N\)</span> bodů. Sledujeme změnu polohy těchto
+bodů. Pokud se body mohou pohybovat s jedním stupněm volnosti,
+dostáváme <span class="math notranslate nohighlight">\(N\)</span>-rozměrný vektor. Obecněji, pokud není pohyb omezen,
+musíme sledovat polohu ve všech třech nezávislých směrech a
+pracujeme s vektorem dimenze <span class="math notranslate nohighlight">\(3N\)</span>.</p></li>
+<li><p>Podobně jako předchozí příklad, ale můžeme pracovat s bodovými silami
+působícími na konstrukci.</p></li>
+<li><p>Na objektu je zvoleno <span class="math notranslate nohighlight">\(N\)</span> bodů a sledujeme teplotu v těchto bodech.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="operace-s-vektory">
+<h2><span class="section-number">2.3. </span>Operace s vektory<a class="headerlink" href="#operace-s-vektory" title="Link to this heading">#</a></h2>
+<p><strong>Násobení vektoru s číslem</strong> je definováno jako součin daného čísla a jednotlivých komponent  vektoru, resp. jako vektor mířící <em>stejným směrem</em> jehož délka je odpovídajícím násobkem délky původního vektoru. (V případě záporného čísla násobíme absolutní hodnotou a otáčíme směr).</p>
+<ul class="simple">
+<li><p>Pro <span class="math notranslate nohighlight">\(\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}\)</span> platí <span class="math notranslate nohighlight">\(3\vec u = \begin{pmatrix} 9\cr 3\end{pmatrix}\)</span>.</p></li>
+<li><p>Grafické násobení: <img alt="Násobení vektoru číslem" src="../_images/vektory.svg" /></p></li>
+</ul>
+<p><strong>Sčítání vektorů</strong> je definováno po složkách pro uspořádané <span class="math notranslate nohighlight">\(n\)</span>-tice a jako celkové posunutí složené ze dvou dílčích posunutí pro orientované vektory. Variantou grafického sčítání vektorů je doplnění na rovnoběžník, viz obrázky.</p>
+<ol class="arabic simple">
+<li><p><strong>Algebraický součet.</strong> Pro <span class="math notranslate nohighlight">\(\vec u = \begin{pmatrix} 3\cr 1\end{pmatrix}\)</span> a <span class="math notranslate nohighlight">\(\vec v = \begin{pmatrix} 2\cr 5\end{pmatrix}\)</span> platí <span class="math notranslate nohighlight">\(\vec u +\vec v = \begin{pmatrix} 5\cr 6\end{pmatrix}\)</span>.</p></li>
+<li><p><strong>Grafický součet.</strong> Buď umístíme jeden vektor do koncového bodu druhého vektoru, nebo doplníme na rovnoběžník.</p></li>
+</ol>
+<p><img alt="Součet vektorů" src="../_images/soucet.svg" /></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../funkce/index.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Funkce</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../matice/index.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Matice</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace">2.1. Motivace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-vektoru">2.2. Příklady vektorů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operace-s-vektory">2.3. Operace s vektory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle Robert Mařík
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</p>
+<p><script src="https://utteranc.es/client.js"
+ repo="robert-marik/am" 
+ issue-term="pathname" 
+ label="comment" 
+ theme="github-light" 
+ crossorigin="anonymous" 
+  async> 
+ </script> 
+ </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

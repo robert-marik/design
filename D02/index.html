@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. Konstituční vztahy, difuzní rovnice &#8212; Aplikovaná matematika (design)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6f0469f0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics"]}, "tex": {"packages": {"[+]": ["physics"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'D02/index';</script>
+    <script src="../_static/custom.js?v=9eb870d4"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="13. Základní numerické metody" href="../E01/index.html" />
+    <link rel="prev" title="11. Parciální derivace ve fyzice" href="../D01/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Hledat v textu..."
+         aria-label="Hledat v textu..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aplikovaná matematika (design)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funkce</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funkce/index.html">1. Funkce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineární algebra</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektory/index.html">2. Vektory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matice/index.html">3. Matice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlastni_cisla/index.html">4. Vlastní směry a vlastní hodnoty matic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diferenciální a integrální počet</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivace/index.html">5. Derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parcialni_derivace/index.html">6. Parciální derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integral/index.html">7. Integrál</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerika/index.html">8. Numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Základy teorie elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statika/index.html">9. Základy teorie elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deformace/index.html">10. Teorie elasticity ve 3D</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Operátory matematické fyziky</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../D01/index.html">11. Parciální derivace ve fyzice</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Konstituční vztahy, difuzní rovnice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerická matematika</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../E01/index.html">13. Základní numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shrnutí</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../F01/index.html">14. Shrnutí</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Konstituční vztahy, difuzní rovnice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tok-tepla-difuzni-tok-transportni-deje">12.1. Tok tepla, difuzní tok, transportní děje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-toku">12.2. Divergence toku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-kontinuity">12.3. Rovnice kontinuity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difuzni-rovnice">12.4. Difuzní rovnice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-vedeni-tepla">12.5. Rovnice vedení tepla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorretuv-jev">12.6. Sorretův jev</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="konstitucni-vztahy-difuzni-rovnice">
+<h1><span class="section-number">12. </span>Konstituční vztahy, difuzní rovnice<a class="headerlink" href="#konstitucni-vztahy-difuzni-rovnice" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://user.mendelu.cz/marik/manim/Heat/">Vedení tepla v 1D</a></p>
+<p><a class="reference external" href="https://user.mendelu.cz/marik/manim/Divergence/">Transport ve 2D</a></p>
+<section id="tok-tepla-difuzni-tok-transportni-deje">
+<h2><span class="section-number">12.1. </span>Tok tepla, difuzní tok, transportní děje<a class="headerlink" href="#tok-tepla-difuzni-tok-transportni-deje" title="Link to this heading">#</a></h2>
+<p>Pochopení a modelování transportních dějů je důležité pro většinu
+technických oborů. Podstata těchto dějů je často odlišná, přesto mají
+navenek podobné chování a tím je umožněn jednotný přístup při
+matematickém modelování.</p>
+<p>Příklady veličin podléhajících transportním dějům</p>
+<ul class="simple">
+<li><p>povrchová voda</p></li>
+<li><p>podzemní voda</p></li>
+<li><p>teplo</p></li>
+<li><p>voda ve dřevě</p></li>
+</ul>
+<p>Obecná bilance veličiny, která má zdroje a spotřebiče a je přenášena tokem vypadá následovně.</p>
+<ul class="simple">
+<li><p>Existuje veličina, spojitě rozložená v prostoru, charakterizující stav systému. Tuto veličinu budeme nazývat
+<em>stavovou veličinou</em> a její hustotu označíme <span class="math notranslate nohighlight">\(u\)</span>.</p></li>
+<li><p>Stavová veličina se může v prostoru přemisťovat <em>tokem</em> <span class="math notranslate nohighlight">\(\vec
+  \jmath\)</span>.</p></li>
+<li><p>Stavová veličina může vznikat a zanikat.
+<em>Zdroje</em> i <em>spotřebiče</em> budeme
+uvažovat společně a jejich vydatnost rozlišíme
+znaménkem: spotřebiče budou zdroje se zápornou vydatností. Celkovou vydatnost zdrojů a spotřebičů v daném místě, tj.
+množství veličiny vygenerované na jednotku objemu (nebo plochy,
+nebo délky, podle počtu dimenzí v úloze) za jednotku času,
+označíme <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
+</ul>
+<p>Zákon zachování (se zohledněním toku a zdrojů) je vlastně celková
+bilance stavové veličiny. Přirozeným jazykem je možno tuto bilanci
+formulovat následovně.</p>
+<blockquote>
+<div><p>Přírůstek množství veličiny je součtem přírůstku ze zdrojů a přírůstku způsobeného tokem.</p>
+</div></blockquote>
+<p>Toto je jednoduchý, ale přitom neuvěřitelně silný nástroj, který
+umožní popsat řadu zcela odlišných dějů. Pro použití v matematickém
+modelu ale musíme jednotlivé pojmy kvantifikovat. Měřit rychlost, s
+jakou se mění množství veličiny v daném místě umíme pomocí derivace
+podle času. Měřit změny v toku přenášejícím sledovanou veličinu jsme
+se naučili jako jednu z aplikací parciálních derivací: jedná se o
+záporně vzatou derivaci podle prostorové proměnné vynásobenou
+fyzikální materiálovou konstantou. Ještě se musíme naučit měřit intenzitu toku a její změny ve dvou nebo třech dimenzích.</p>
+</section>
+<section id="divergence-toku">
+<h2><span class="section-number">12.2. </span>Divergence toku<a class="headerlink" href="#divergence-toku" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span>Definition </span> (Divergence)</p>
+<section class="definition-content" id="proof-content">
+<p><em>Divergence</em> vektorového pole <span class="math notranslate nohighlight">\(\vec F\)</span> v daném bodě je převis toku vektorového pole z tohoto místa nad tokem do tohoto místa. Tento tok se počítá přes hranici infinitezimálně malého referenčního tělesa a je vztažený na jednotku objemu. Divergenci vektorového pole <span class="math notranslate nohighlight">\(\vec F\)</span> označujeme <span class="math notranslate nohighlight">\(\nabla\cdot\vec F\)</span> nebo <span class="math notranslate nohighlight">\(\mathop{\mathrm{div}} \vec F\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span>Theorem </span> (Výpočet divergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Pro vektorovou funkci <div class="math notranslate nohighlight">
+\[\vec F=(P,Q,R)=P\vec i + Q\vec j + R\vec k,\]</div>
+ kde <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> a <span class="math notranslate nohighlight">\(R\)</span> jsou funkce tří proměnných <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(z\)</span> vypočteme divergenci vztahem 	  <div class="math notranslate nohighlight">
+\[\nabla\cdot\vec F=\mathop{\mathrm{div}}\vec F=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}.\]</div>
+
+Pro vektorovou funkci dvou proměnných vypočteme divergenci analogicky, pouze chybí třetí člen.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span>Remark </span> (Fyzikální interpretace divergence)</p>
+<section class="remark-content" id="proof-content">
+<p>Vektorové pole používáme k modelování toku veličin, které nás zajímají (teplo v materiálu, tekutina nebo chemická látka v materiálu, voda nebo plyn v půdě a podobně). Divergence vektorového pole udává tok z jednotkového objemu látky v daném místě. Udává, jestli se v daném místě a čase tok nabývá na intenzitě (kladná divergence) nebo ustává (záporná divergence). Tento efekt může být způsoben tím, že veličina přenášená tímto polem se v daném místě buď kumuluje, nebo ubývá a také tím, že daná veličina v bodě může vznikat nebo zanikat.</p>
+</section>
+</div><p><a class="reference external" href="https://user.mendelu.cz/marik/am/slovni_ulohy/#parci%C3%A1ln%C3%AD-derivace-vektorov%C3%A9ho-pole">2D svět versus 3D svět</a></p>
+</section>
+<section id="rovnice-kontinuity">
+<h2><span class="section-number">12.3. </span>Rovnice kontinuity<a class="headerlink" href="#rovnice-kontinuity" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Přírůstek stavové veličiny za jednotku času v jednotkovém objemu
+(nebo ploše, nebo délce, podle dimenzionality úlohy) je derivace
+hustoty <span class="math notranslate nohighlight">\(u\)</span> podle času.
+<div class="math notranslate nohighlight">
+\[\text{Přírůstek}=\frac{\partial u}{\partial t}\]</div>
+</p></li>
+<li><p>Přírůstek veličiny v jednotkovém objemu (nebo ploše, nebo délce) za
+jednotku času způsobený tokem <span class="math notranslate nohighlight">\(\vec \jmath\)</span> je záporně vzatá divergence
+vektorového pole <span class="math notranslate nohighlight">\(\vec \jmath\)</span>. Tento přírůstek je způsobený snížením
+toku, proto má předřazeno záporné znaménko.
+<div class="math notranslate nohighlight">
+\[    \text{
+     Přírůstek způsobený tokem
+}=-\nabla\cdot \vec \jmath\]</div>
+</p></li>
+</ul>
+<p>Matematickou formulací celkové bilance  je <strong>rovnice kontinuity</strong>.
+<div class="math notranslate nohighlight">
+\[
+      {\frac{\partial u}{\partial t}=\sigma -\nabla\cdot \vec \jmath}   \]</div>
+</p>
+<blockquote>
+<div><p>Poznámka (fyzikální interpretace členů rovnice kontinuity).</p>
+<ul class="simple">
+<li><p>Člen <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span> udává, jak rychle se roste hustota stavové veličiny <span class="math notranslate nohighlight">\(u\)</span> v daném místě a čase.</p></li>
+<li><p>Člen <span class="math notranslate nohighlight">\(\sigma\)</span> udává vydatnost zdrojů stavové veličiny, přičemž spotřebiče jsou uvažovány jako zdroje záporné vydatnosti. Tento člen tedy udává, kolik stavové veličiny v tomto místě vzniká v jednotkovém objemu za jednotku času.</p></li>
+<li><p>Člen <span class="math notranslate nohighlight">\(\nabla\cdot \vec j\)</span> udává v daném bodě změnu ve velikosti proudění přenášejícím stavovou veličinu. Přesněji, udává, o kolik více veličiny z daného místa vyteče ve srovnání s množstvím veličiny, které do tohoto místa vteče. Jinak řečeno, udává, o kolik zesílí v daném místě tok <span class="math notranslate nohighlight">\(\vec \jmath\)</span>. My potřebujeme mít zachyceno zeslabení (množství které chybí v toku se „použije“ na akumulaci veličiny v daném místě) a proto uvažujeme záporně vzatou divergenci, tj. <span class="math notranslate nohighlight">\(-\nabla\cdot \vec j\)</span>.</p></li>
+<li><p>Pokud zdroje stavové veličiny neexistují, jedná se o <em>bezzdrojovou rovnici</em> a klademe <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p></li>
+<li><p>Pokud studujeme systém v ustáleném stavu, kdy se stavová veličina nemění v čase, je člen <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span> na levé straně nulový. V tomto případě mluvíme o <em>stacionárním stavu</em> a <em>stacionární rovnici kontinuity</em>. Stacionární rovnice kontinuity typicky popisuje systémy, které byly dostatečně dlouhou dobu ve stabilních podmínkách a dosáhly rovnovážného stavu.</p></li>
+<li><p>Viděli jsme, že za určitých podmínek mohou některé členy v rovnici kontinuty chybět. Naopak člen <span class="math notranslate nohighlight">\(\nabla\cdot \vec j\)</span> charakterizující změny v toku je v rovnici kontinuity přítomen vždy. Bez něj by rovnice kontinuity ztratila smysl (resp. redukovala by se na triviální případ, kdy veličina v daném místě vzniká danou rychlostí a zůstává zde, tj. problém řešitelný čistě integrováním).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="difuzni-rovnice">
+<h2><span class="section-number">12.4. </span>Difuzní rovnice<a class="headerlink" href="#difuzni-rovnice" title="Link to this heading">#</a></h2>
+<p>Difuzní rovnice je rovnice kontiuity s dosazeným konstitučním vztahem
+pro tok.  Použijeme-li pro kvantifikaci souvislosti toku a gradientu
+lineární aproximaci, je možné psát
+<div class="math notranslate nohighlight">
+\[      \vec \jmath=-D\nabla u,\]</div>
+
+kde <span class="math notranslate nohighlight">\(D\)</span> konstanta
+úměrnosti. Pokud tok <span class="math notranslate nohighlight">\(\vec \jmath\)</span> a gradient <span class="math notranslate nohighlight">\(\nabla u\)</span> leží v jedné přímce,
+je <span class="math notranslate nohighlight">\(D\)</span> reálné číslo, jinak je <span class="math notranslate nohighlight">\(D\)</span> matice. Například při
+studiu pohybu vody ve dřevě se voda řídí nejen směrem maximálního
+poklesu vlhkosti, ale stáčí se současně do podélného směru, ve kterém dřevo
+vede vlhkost nejlépe. V takovém případě je <span class="math notranslate nohighlight">\(D\)</span> matice.
+Spojením rovnice kontinuity
+<div class="math notranslate nohighlight">
+\[
+      {\frac{\partial u}{\partial t}=\sigma -\nabla\cdot \vec \jmath}   \]</div>
+
+a vztahu  pro tok stavové veličiny dostáváme rovnici
+<div class="math notranslate nohighlight">
+\[
+      {\frac{\partial u}{\partial t}=\sigma - \nabla\cdot \bigl(-D\nabla u\bigr)}.\]</div>
+
+Tuto rovici je možno upravit na tvar
+<div class="math notranslate nohighlight">
+\[
+      {\frac{\partial u}{\partial t}=\sigma + \nabla\cdot \bigl(D\nabla u\bigr)},\]</div>
+
+který se nazývá <em>difuzní rovnice</em>.</p>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span>Remark </span> (Fyzikální interpretace rovnice difuzní rovnice)</p>
+<section class="remark-content" id="proof-content">
+<ul class="simple">
+<li><p>Člen <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span> udává, jak rychle se mění hustota stavové veličiny <span class="math notranslate nohighlight">\(u\)</span>. Je stejný jako v rovnici kontinuity.</p></li>
+<li><p>Člen <span class="math notranslate nohighlight">\(\sigma\)</span> udává vydatnost zdrojů stavové veličiny. Je stejný jako v rovnici kontinuity.</p></li>
+<li><p>Člen <span class="math notranslate nohighlight">\(\nabla u\)</span> udává nerovnoměrnost v prostorovém rozložení stavové veličiny. Pomocí difuzní matice <span class="math notranslate nohighlight">\(D\)</span> a konstitutivního zákona tuto nerovnoměrnost přepočítáme na tok, který se snaží uvažovanou nerovnoměrnost vyrovnat. Tento tok je reprezentován výrazem <span class="math notranslate nohighlight">\(-D\nabla u\)</span>.</p></li>
+<li><p>Záporně vzatá divergence toku udává, jak tok v daném místě ztrácí na intenzitě. Vzhledem k zápornému znaménku v konstitutivním zákoně má záporně vzatá divergence tvar <div class="math notranslate nohighlight">
+\[\nabla\cdot \bigl(D\nabla u\bigr).\]</div>
+ Představuje přírůstek hustoty stavové veličiny v daném místě za jednotku času, způsobený zeslábnutím toku.</p></li>
+<li><p>Rovnice jako celek vyjadřuje, že navýšení hustoty stavové veličiny (tj. množství stavové veličiny v jednotkovém objemu) je součtem navýšení díky zdrojům a navýšení díky zeslabení toku v daném místě.</p></li>
+</ul>
+</section>
+</div></section>
+<section id="rovnice-vedeni-tepla">
+<h2><span class="section-number">12.5. </span>Rovnice vedení tepla<a class="headerlink" href="#rovnice-vedeni-tepla" title="Link to this heading">#</a></h2>
+<p>Důležitým speciálním případem difuzní rovnice je rovnice vedení tepla.
+Stavovou veličinou, která se zachovává v úlohách s vedením tepla, je vnitřní energie ve
+formě tepla. Zpravidla nemá smysl uvažovat členy vyjadřující
+zdroje, tj. <span class="math notranslate nohighlight">\(\sigma =0\)</span>. Protože teplo neměříme přímo, je vhodnější
+model formulovat pro teplotu <span class="math notranslate nohighlight">\(T\)</span>. Jsou-li <span class="math notranslate nohighlight">\(\varrho\)</span> a <span class="math notranslate nohighlight">\(c\)</span> po řadě hustota a měrná tepelná kapacita materiálu, má člen vyjadřující změnu hustoty
+energie v daném místě tvar
+<span class="math notranslate nohighlight">\(\varrho c\frac{\partial T}{\partial t}.\)</span> Úměrnost mezi gradientem
+teploty a tokem tepla zprostředkovává
+<em>Fourierův zákon</em>. Difuzní rovnice má v tomto případě tvar
+<div class="math notranslate nohighlight">
+\[{\varrho c\frac{\partial T}{\partial t}=  \nabla\cdot\bigl(D\nabla T\bigr)}\]</div>
+</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span>Remark </span> (Fyzikální interpretace rovnice vedení tepla)</p>
+<section class="remark-content" id="proof-content">
+<ul class="simple">
+<li><p>Veličina <span class="math notranslate nohighlight">\(\frac{\partial T}{\partial t}\)</span> udává rychlost růstu teploty tělesa a koeficient <span class="math notranslate nohighlight">\(\rho c\)</span> tuto hodnotu přepočítává na údaj, jak rychle roste vnitřní energie tělesa (kinetická energie molekul.)</p></li>
+<li><p>Výraz <span class="math notranslate nohighlight">\(D\nabla T\)</span> udává (až na znaménko), jak se nerovnoměrnost v rozložení teploty vyrovnává tokem tepla. Přesněji, tok tepla je <span class="math notranslate nohighlight">\(-D\nabla T\)</span>.</p></li>
+<li><p>Člen <span class="math notranslate nohighlight">\(\nabla\cdot(D\nabla T)\)</span> udává, kolik tepla z celkového toku v daném místě zůstává a podílí se na zvýšení teploty. Vzhledem k absenci zdrojů je to také jediný mechanismus, jak v daném místě může vnitřní energie přibývat či ubývat.</p></li>
+<li><p>Rovnice jako celek vyjadřuje to, že pokud z daného místa více energie odtéká, než kolik do místa proudí, dojde v tomto místě k odpovídajícímu snížení teploty. V tomto bodě je totiž divegrence toku <span class="math notranslate nohighlight">\(\nabla\cdot (-D\nabla T)\)</span> kladná a výraz z rovnice <span class="math notranslate nohighlight">\(\nabla\cdot (D\nabla T)\)</span> je proto záporný.</p></li>
+</ul>
+</section>
+</div></section>
+<section id="sorretuv-jev">
+<h2><span class="section-number">12.6. </span>Sorretův jev<a class="headerlink" href="#sorretuv-jev" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../D01/index.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Parciální derivace ve fyzice</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../E01/index.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Základní numerické metody</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tok-tepla-difuzni-tok-transportni-deje">12.1. Tok tepla, difuzní tok, transportní děje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-toku">12.2. Divergence toku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-kontinuity">12.3. Rovnice kontinuity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difuzni-rovnice">12.4. Difuzní rovnice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-vedeni-tepla">12.5. Rovnice vedení tepla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorretuv-jev">12.6. Sorretův jev</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle Robert Mařík
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</p>
+<p><script src="https://utteranc.es/client.js"
+ repo="robert-marik/am" 
+ issue-term="pathname" 
+ label="comment" 
+ theme="github-light" 
+ crossorigin="anonymous" 
+  async> 
+ </script> 
+ </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

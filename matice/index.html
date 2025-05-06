@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Matice &#8212; Aplikovaná matematika (design)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6f0469f0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics"]}, "tex": {"packages": {"[+]": ["physics"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'matice/index';</script>
+    <script src="../_static/custom.js?v=9eb870d4"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="4. Vlastní směry a vlastní hodnoty matic" href="../vlastni_cisla/index.html" />
+    <link rel="prev" title="2. Vektory" href="../vektory/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Hledat v textu..."
+         aria-label="Hledat v textu..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aplikovaná matematika (design)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funkce</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funkce/index.html">1. Funkce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineární algebra</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektory/index.html">2. Vektory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Matice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlastni_cisla/index.html">4. Vlastní směry a vlastní hodnoty matic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diferenciální a integrální počet</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivace/index.html">5. Derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parcialni_derivace/index.html">6. Parciální derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integral/index.html">7. Integrál</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerika/index.html">8. Numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Základy teorie elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statika/index.html">9. Základy teorie elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deformace/index.html">10. Teorie elasticity ve 3D</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Operátory matematické fyziky</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../D01/index.html">11. Parciální derivace ve fyzice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../D02/index.html">12. Konstituční vztahy, difuzní rovnice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerická matematika</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../E01/index.html">13. Základní numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shrnutí</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../F01/index.html">14. Shrnutí</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace-matice-tuhosti-a-poddajnosti-zatizeni-nosniku">3.1. Motivace - matice tuhosti a poddajnosti, zatížení nosníku</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radkovy-a-sloupcovy-index">3.1.1. Řádkový a sloupcový index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorovy-a-maticovy-zapis">3.1.2. Vektorový a maticový zápis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soucin-matice-a-vektoru">3.2. Součin matice a vektoru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-vektoru">3.3. Zobrazení vektorů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstitucni-zakony">3.4. Konstituční zákony</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometricke-transformace-i">3.5. Geometrické transformace I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometricke-transformace-ii">3.6. Geometrické transformace II</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace">3.6.1. Motivace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogenni-souradnice">3.6.2. Homogenní souřadnice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posunuti-pomoci-maticoveho-soucinu">3.6.3. Posunutí pomocí maticového součinu.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspektiva-pomoci-maticoveho-soucinu">3.6.4. Perspektiva pomocí maticového součinu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maticovy-soucin-dvou-matic">3.7. Maticový součin dvou matic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markovovy-retezce">3.8. Markovovy řetězce</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="matice">
+<h1><span class="section-number">3. </span>Matice<a class="headerlink" href="#matice" title="Link to this heading">#</a></h1>
+<section id="motivace-matice-tuhosti-a-poddajnosti-zatizeni-nosniku">
+<h2><span class="section-number">3.1. </span>Motivace - matice tuhosti a poddajnosti, zatížení nosníku<a class="headerlink" href="#motivace-matice-tuhosti-a-poddajnosti-zatizeni-nosniku" title="Link to this heading">#</a></h2>
+<p>Na praktické ukázce deformace nosníku si ukážeme zavedení čtyřrozměrných vektorů, matice a součinu matice s vektorem.</p>
+<p>Sledujeme nosník ve vybraných čtyřech uzlových bodech. V těchto bodech je nosník
+zatížen silami <span class="math notranslate nohighlight">\(f_1\)</span>, …, <span class="math notranslate nohighlight">\(f_4\)</span> a vlivem těchto sil je deformován nosník o
+<span class="math notranslate nohighlight">\(u_1\)</span>, …, <span class="math notranslate nohighlight">\(u_4\)</span>. Síly působí svisle, výchylky bodů jsou ve svislém směru.</p>
+<p>Předpokládejme, že stejně jako na pružině je deformace úměrná síle. Předpokládejme, že deformace od různých sil se sčítají. Poté máme následující vztahy.</p>
+<div class="math notranslate nohighlight" id="equation-1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-1" title="Link to this equation">#</a></span>\[ 
+\begin{aligned}
+u_1 = k_{11}f_1 + k_{12} f_2 + k_{13}f_3 + k_{14}f_4\cr
+u_2 = k_{21}f_1 + k_{22} f_2 + k_{23}f_3 + k_{24}f_4\cr
+u_3 = k_{31}f_1 + k_{32} f_2 + k_{33}f_3 + k_{34}f_4\cr
+u_4 = k_{41}f_1 + k_{42} f_2 + k_{43}f_3 + k_{44}f_4\cr
+\end{aligned}
+\]</div>
+<p>Toto jsou celkem čtyři vztahy obsahující jako data čtyři veličiny. V reálu jsou sledovaných bodů tisíce místo čtyř a proto se jedná o nepraktický zápis pro práci (tisíce rovnic a tisíce neznámých).</p>
+<section id="radkovy-a-sloupcovy-index">
+<h3><span class="section-number">3.1.1. </span>Řádkový a sloupcový index<a class="headerlink" href="#radkovy-a-sloupcovy-index" title="Link to this heading">#</a></h3>
+<p>Soustavu <a class="reference internal" href="#equation-1">(3.1)</a> je možné zapsat kratším způsobem ve tvaru</p>
+<div class="math notranslate nohighlight">
+\[
+u_i= k_{i1}f_1 + k_{i2} f_2 + k_{i3}f_3 + k_{i4}f_4
+\]</div>
+<p>pro <span class="math notranslate nohighlight">\(i\in\{1,2,3,4\}\)</span> nebo dokonce</p>
+<div class="math notranslate nohighlight">
+\[
+u_i= \sum_{j=1}^4 k_{ij}f_j.
+\]</div>
+<p>Poslední výraz bývá obvyklejší zapsat pomocí Einsteinovy notace, kdy se vynechává znaménko pro sumu a přes opakovaný index se sčítá. Tedy soustava se zjednoduší na <div class="math notranslate nohighlight">
+\[u_i=k_{ij}f_j.\]</div>
+</p>
+<p>Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom o jiný zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.</p>
+</section>
+<section id="vektorovy-a-maticovy-zapis">
+<h3><span class="section-number">3.1.2. </span>Vektorový a maticový zápis<a class="headerlink" href="#vektorovy-a-maticovy-zapis" title="Link to this heading">#</a></h3>
+<p>Jinou variantou je použití sloupcových vektorů, kde soustavu <a class="reference internal" href="#equation-1">(3.1)</a> přepíšeme do tvaru</p>
+<div class="math notranslate nohighlight" id="equation-2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-2" title="Link to this equation">#</a></span>\[
+\begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4\end{pmatrix}=
+\begin{pmatrix}k_{11}\cr k_{21}\cr k_{31}\cr k_{41}\end{pmatrix} f_1 +
+\begin{pmatrix}k_{12}\cr k_{22}\cr k_{32}\cr k_{42}\end{pmatrix} f_2 +
+\begin{pmatrix}k_{13}\cr k_{23}\cr k_{33}\cr k_{43}\end{pmatrix} f_3 +
+\begin{pmatrix}k_{14}\cr k_{24}\cr k_{34}\cr k_{44}\end{pmatrix} f_4.
+\]</div>
+<p>Tento tvar představuje jedinou rovnici mezi čtyřrozměrnými vektory. Naznačená operace se provádí po složkách. Jedná se o operaci kombinující součin čísel s vektory a sčítání vektorů. Tato operace se nazývá <em>lineární kombinace vektorů</em>.</p>
+<p>Aby síly byly také ve formě vektoru, zapisujeme rovnici zpravidla ve tvaru</p>
+<div class="math notranslate nohighlight" id="equation-3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-3" title="Link to this equation">#</a></span>\[
+\begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4
+\end{pmatrix}=
+\begin{pmatrix}
+k_{11} &amp; k_{12} &amp; k_{13}&amp; k_{14} \cr
+k_{21} &amp; k_{22} &amp; k_{23}&amp; k_{24} \cr
+k_{31} &amp; k_{32} &amp; k_{33}&amp; k_{34} \cr
+k_{41} &amp; k_{42} &amp; k_{43}&amp; k_{44} \cr
+\end{pmatrix} 
+\begin{pmatrix}f_1\cr f_2\cr f_3\cr f_4
+\end{pmatrix},
+\]</div>
+<p>přičemž obdélníkové schema vyplněné hodnotami se nazývá matice. Tímto je zaveden nový objekt (<em>matice</em>) a nová operace (<em>součin matice a vektoru</em>).</p>
+<p>Po přeznačení</p>
+<div class="math notranslate nohighlight">
+\[
+U = \begin{pmatrix}u_1\cr u_2\cr u_3\cr u_4
+\end{pmatrix}, \quad K=
+\begin{pmatrix}
+k_{11} &amp; k_{12} &amp; k_{13}&amp; k_{14} \cr
+k_{21} &amp; k_{22} &amp; k_{23}&amp; k_{24} \cr
+k_{31} &amp; k_{32} &amp; k_{33}&amp; k_{34} \cr
+k_{41} &amp; k_{42} &amp; k_{43}&amp; k_{44} \cr
+\end{pmatrix} , \quad F = 
+\begin{pmatrix}f_1\cr f_2\cr f_3\cr f_4
+\end{pmatrix}
+\]</div>
+<p>dostáváme</p>
+<div class="math notranslate nohighlight">
+\[
+U = K F,
+\]</div>
+<p>kde <span class="math notranslate nohighlight">\(U\)</span> je vektor deformací, <span class="math notranslate nohighlight">\(F\)</span> je vektor působících sil a <span class="math notranslate nohighlight">\(K\)</span> je <em>matice poddajnosti</em>. Toto je již relativně jednoduchý vztah. Reprezentuje totiž jednu rovnici, která vyjadřuje, že jedna veličina je součinem dvou jiných veličin. V určitém smyslu je stejně jako u pružiny deformace úměrná působící síle, ovšem deformace a síla jsou vyjádřeny vektorem a konstanta úměrnosti maticí.</p>
+<p>Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vztahem <div class="math notranslate nohighlight">
+\[F=CU,\]</div>
+ kde <span class="math notranslate nohighlight">\(C\)</span> je <em>matice tuhosti</em>.</p>
+<p>Operace <a class="reference internal" href="#equation-3">(3.3)</a> mezi maticí a vektorem definovaná vztahem <a class="reference internal" href="#equation-2">(3.2)</a> se nazývá maticový součin. Později si ukážeme, jak tuto definici rozšířit na dvě matice.</p>
+</section>
+</section>
+<section id="soucin-matice-a-vektoru">
+<h2><span class="section-number">3.2. </span>Součin matice a vektoru<a class="headerlink" href="#soucin-matice-a-vektoru" title="Link to this heading">#</a></h2>
+<p>Součin matice a vektoru definujeme jako lineární kombinaci sloupců matice, při které jsou koeficienty komponenty vektoru.</p>
+<p>Pro trojrozměrný vektor <span class="math notranslate nohighlight">\(\vec v =\begin{pmatrix}v_1\cr v_2\cr v_3\end{pmatrix}\)</span> a čtvercovou matici</p>
+<div class="math notranslate nohighlight">
+\[A = 
+\begin{pmatrix}
+a_{11} &amp;a_{12}&amp; a_{13}\cr
+a_{21} &amp;a_{22}&amp; a_{23}\cr
+a_{31} &amp;a_{32}&amp; a_{33}
+\end{pmatrix}
+\]</div>
+<p>dostáváme</p>
+<div class="math notranslate nohighlight">
+\[  
+A\vec v = 
+\begin{pmatrix} a_{11} \cr a_{21} \cr a_{31}  \end{pmatrix} v_1 +
+\begin{pmatrix} a_{12} \cr a_{22} \cr a_{32}  \end{pmatrix} v_2 +
+\begin{pmatrix} a_{13} \cr a_{23} \cr a_{33}  \end{pmatrix} v_3.
+\]</div>
+<p>Pro obecnou definici je nejvýhodnější využití sumační notace nebo dokonce Einsteinovy notace, jak jsme ukázali v odstavci s motivací.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Součin matice a vektoru)</p>
+<section class="definition-content" id="proof-content">
+<p>Součinem matice <span class="math notranslate nohighlight">\(A=(a_{ij})\)</span> a vektoru <span class="math notranslate nohighlight">\(\vec v = (v_{i})\)</span> je vektor <span class="math notranslate nohighlight">\(\vec u = (u_i)\)</span>
+definovaný vztahem
+<div class="math notranslate nohighlight">
+\[u_i = \sum_j a_{ij} v_{j}.\]</div>
+</p>
+</section>
+</div></section>
+<section id="zobrazeni-vektoru">
+<h2><span class="section-number">3.3. </span>Zobrazení vektorů<a class="headerlink" href="#zobrazeni-vektoru" title="Link to this heading">#</a></h2>
+<p>V praxi používáme matice ve zobrazeních, kde je obrazem vektoru opět vektor. Maticové zobrazení má jistá specifika.</p>
+<ul class="simple">
+<li><p>Obrazem nulového vektoru je vždy nulový vektor.</p></li>
+<li><p>Obrazem násobku vektoru je násobek obrazu vektoru.</p></li>
+<li><p>Obrazy rovnoběžných vektorů jsou rovnoběžné.</p></li>
+<li><p>Obraz vektoru nemusí být rovnoběžný se vzorem.</p></li>
+</ul>
+<p>První tři vlastnosti platí i pro násobení vektoru skalárním číslem. V tomto případě však automaticky vychází vzor a obraz rovnoběžný. Díky použití matice namísto skalární hodnoty jsme schopni modelovat i situace, kdy vzor a obraz nemusí mít stejný směr.</p>
+</section>
+<section id="konstitucni-zakony">
+<h2><span class="section-number">3.4. </span>Konstituční zákony<a class="headerlink" href="#konstitucni-zakony" title="Link to this heading">#</a></h2>
+<p>Konstituční zákony jsou zákony, které udávají, jak materiál reaguje na vnější podnět.</p>
+<ul class="simple">
+<li><p>Při nerovnoměrném rozložení teploty v tělese se teplota vyrovnává vedením tepla. Intenzita děje souvisí se spádem teploty. (Fourierův zákon)</p></li>
+<li><p>Při nerovnoměrném vlhkosti nebo koncentrace nějaké látky v tělese se nerovnovážná situace vyrovnává difuzí. Difuzní tok souvisí se spádem koncentrace. (Fickův zákon)</p></li>
+</ul>
+<p>Ve dvourozměrných a trojrozměrných úlohách mají spád teploty či koncentrace a tok tepla či látky směr a velikost a jedná se tedy o vektory. Situace se liší podle toho, o jaký typ materiálu se jedná.</p>
+<ul class="simple">
+<li><p>V izotropních materiálech má podnět stejný směr jako odezva a souvislost mezi nimi může být zprostředkována násobením skalární hodnotou. Proto v těchto materiálech matice nepotřebujeme. Fourierův zákon a Fickův zákon pro izotropní materiály maticovou formulaci nevyžadují.</p></li>
+<li><p>V anizotropních materiálech je však situace jiná. Materiálové vlastnosti závisí na směru. Například v některém směru materiál vede teplo lépe, než ve směru jiném. Proto se tok tepla vždy stáčí do tohoto preferovaného směru a nemusí mít stejný směr jako spád teploty. Vztah mezi podnětem a odezvou je v tomto případě nutné vyjádřit pomocí maticového násobení. Proto Fourierův a Fickův zákon ve dřevě má v roli materiálové vlastnosti matici.</p></li>
+</ul>
+<p><strong>Příklad.</strong> Je-li spád teploty (například v Kelvinech na metr) dán vektorem <span class="math notranslate nohighlight">\(\vec u\)</span>, je tok tepla <span class="math notranslate nohighlight">\(\vec q\)</span> (například ve wattech na metr čtvereční) v hliníku dán vztahem
+<div class="math notranslate nohighlight">
+\[\vec q = 237 \mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u\]</div>
+
+a tok v (javorovém) dřevě vztahem
+<div class="math notranslate nohighlight">
+\[\vec q = \begin{pmatrix}0.3&amp;0&amp;0\cr0&amp;0.18&amp;0\cr 0&amp;0&amp;0.18\end{pmatrix}\mathrm{W}/(\mathrm{m}\mathrm{K}) \cdot\vec u. \]</div>
+
+(Viz <a class="reference external" href="https://cs.wikipedia.org/wiki/Hlin%C3%ADk">Hliník</a> a <a class="reference external" href="https://www.dashofer.cz/download/pdf/drv/2_5_1_tepelne_vlastnosti_dreva.pdf">Tepelné vlastnosti dřeva</a>.) Podíl velikosti toku tepla a spádu teploty je u hliníku konstantní a nezávislý na směru, ale u dřeva tomu tak není. Stejný spád teploty vyvolá jiný tok v podélném a jiný v příčném směru.
+<a href="../notebooks/konstitucni_zakony.html">Ilustrační zápisník</a> ukazuje výpočet toku tepla v uvedených případech. Vektor definující pokles teploty je stále stejně dlouhý a jednotlivé scénáře se liší směrem. U hliníku je tok vždy stejně velký a vždy míří stejným směrem, jako je pokles teploty. U dřeva tomu tak není. Poznamenejme, že uvedený výpočet pro javor platí pouze, pokud jsou osy orientovány tak, že jsou v anatomických směrech dřeva. V obecném případě nebude mít matice nulové prvky, ale bude mít všech devět komponent nenulových, což jakoukoliv činí obtížnější, protože zpravidla se jedná o jeden článek v řetězci výpočtů a jakékoliv komplikace se dalšími kroky často prohlubují.</p>
+</section>
+<section id="geometricke-transformace-i">
+<h2><span class="section-number">3.5. </span>Geometrické transformace I<a class="headerlink" href="#geometricke-transformace-i" title="Link to this heading">#</a></h2>
+<p>Body v prostotu můžeme ztotožnit s vektory a matice může poté popisovat zobrazení bodů v prostoru.</p>
+<ul class="simple">
+<li><p><a href="../notebooks/matice_geometricka_zobrazeni.html">Ilustrační zápisník</a></p></li>
+<li><p>Sloupce matice popisující zobrazení jsou obrazy jednotkových vektorů ve směru os.</p></li>
+<li><p>Jednotková matice (sestavená z jednotkových vektorů ve směru os, tj. s jedničkami v hlavní diagonále a nulami jinak) odpovídá identickému zobrazení, každý vektor se zobrazí sám na sebe.
+<div class="math notranslate nohighlight">
+\[
+I = \begin{pmatrix} 1&amp;0&amp;0\cr0&amp;1&amp;0\cr 0&amp;0&amp;1
+\end{pmatrix}
+\]</div>
+</p></li>
+<li><p>Matice rotace o úhel <span class="math notranslate nohighlight">\(\theta\)</span> proti směru hodinových ručiček má tvar
+<div class="math notranslate nohighlight">
+\[   \begin{pmatrix}   \cos\theta&amp;-\sin\theta\cr   \sin\theta&amp;\cos\theta   \end{pmatrix}. \]</div>
+</p></li>
+<li><p>Součet a rozdíl matic je definován po složkách. Součin matic je definován jako složené zobrazení (viz též níže).</p></li>
+</ul>
+</section>
+<section id="geometricke-transformace-ii">
+<h2><span class="section-number">3.6. </span>Geometrické transformace II<a class="headerlink" href="#geometricke-transformace-ii" title="Link to this heading">#</a></h2>
+<section id="motivace">
+<h3><span class="section-number">3.6.1. </span>Motivace<a class="headerlink" href="#motivace" title="Link to this heading">#</a></h3>
+<p>Násobení matice s nulovým vektorem je nulový vektor. Proto se zobrazením
+<div class="math notranslate nohighlight">
+\[X\to AX\]</div>
+
+počátek zobrazí vždy na počátek. Proto není možné pomocí maticového násobení realizovat například posunutí. Podobně je možné ukázat, že maticové násobení zachovává rovnoběžnost a proto není možné pomocí maticového násobení realizovat perspektivu. Například není možné pomocí maticového násobení modelovat zobrazení kamerou a není možné vyhodnocovat data z fotografií. Pro odstranění těchto nevýhod je možné použít rozšíření souřadnic, homogenní souřadnice.</p>
+</section>
+<section id="homogenni-souradnice">
+<h3><span class="section-number">3.6.2. </span>Homogenní souřadnice<a class="headerlink" href="#homogenni-souradnice" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Homogenní souřadnice vzniknou doplněním jedničky jako další souřadnice. Pracuje se s nimi
+jako s vektory v dimenzi o jedničku větším. Například bod <span class="math notranslate nohighlight">\([1,2]\)</span> má
+v homogenních souřadnicích tvar <span class="math notranslate nohighlight">\((1,2,1)\)</span></p></li>
+<li><p>Před převodem z homogenních souřadnic do kartézských je nutné
+zajistit na poslední pozici jedničku a poté převést na bod v
+kartézských souřadnicích. Například <span class="math notranslate nohighlight">\((6,90,3)\)</span> jsou homogenní
+souřadnice bodu <span class="math notranslate nohighlight">\([2,30]\)</span>.</p></li>
+</ul>
+</section>
+<section id="posunuti-pomoci-maticoveho-soucinu">
+<h3><span class="section-number">3.6.3. </span>Posunutí pomocí maticového součinu.<a class="headerlink" href="#posunuti-pomoci-maticoveho-soucinu" title="Link to this heading">#</a></h3>
+<p>V homogenních souřadnicích neplatí podmínka, že nula se zobrazuje na
+nulu. Je možné takto realizovat například posunutí. Matice posunutí v rovině, která počátek posune do bodu <span class="math notranslate nohighlight">\((a_1,a_2)\)</span>,
+je
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}1&amp;0&amp;a_1\cr 0&amp;1&amp;a_2\cr 0&amp;0&amp;1\end{pmatrix}.\]</div>
+
+Vskutku, přímým výpočtem v homogenních souřadnicích dostáváme následující.
+<div class="math notranslate nohighlight">
+\[ \begin{pmatrix}1&amp;0&amp;a_1\cr 0&amp;1&amp;a_2\cr 0&amp;0&amp;1\end{pmatrix} \begin{pmatrix}u_1\cr u_2\cr 1\end{pmatrix} = u_1\begin{pmatrix}1\cr 0\cr 0\end{pmatrix}+ u_2\begin{pmatrix}0\cr 1\cr 0\end{pmatrix}+ 1\begin{pmatrix}a_1\cr a_2\cr 1\end{pmatrix} = \begin{pmatrix}u_1+a_1\cr u_2+a_2\cr 1\end{pmatrix}\]</div>
+</p>
+</section>
+<section id="perspektiva-pomoci-maticoveho-soucinu">
+<h3><span class="section-number">3.6.4. </span>Perspektiva pomocí maticového součinu<a class="headerlink" href="#perspektiva-pomoci-maticoveho-soucinu" title="Link to this heading">#</a></h3>
+<p>V homogenních souřadnicích neplatí podmínka, že se rovnoběžky
+zobrazují na rovnoběžky. Tím je možné maticový součin použít pro
+obrázky s perspektivou. Viz <a class="reference external" href="https://en.wikipedia.org/wiki/Camera_matrix">Camera matrix</a>.</p>
+</section>
+</section>
+<section id="maticovy-soucin-dvou-matic">
+<h2><span class="section-number">3.7. </span>Maticový součin dvou matic<a class="headerlink" href="#maticovy-soucin-dvou-matic" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Maticový součin dvou matic je definován pomocí násobení matice a vektoru.
+Součin <span class="math notranslate nohighlight">\(C=AB\)</span> je matice, která má ve sloupcích obrazy sloupců matice <span class="math notranslate nohighlight">\(B\)</span> při
+zobrazení popsaném maticí <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>Součin <span class="math notranslate nohighlight">\(C=AB\)</span> je možno chápat jako složené zobrazení, kdy nejprve použijme zobrazení <span class="math notranslate nohighlight">\(B\)</span> a potom zobrazení <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>Maticový součin obecně není komutativní. Obecně neplatí <span class="math notranslate nohighlight">\(AB=BA.\)</span></p></li>
+<li><p>Maticový součin je asociativní. Platí <span class="math notranslate nohighlight">\(A(BC)=(AB)C\)</span>.</p></li>
+<li><p>Neutrálním prvkem je jednotková matice <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+</ul>
+</section>
+<section id="markovovy-retezce">
+<h2><span class="section-number">3.8. </span>Markovovy řetězce<a class="headerlink" href="#markovovy-retezce" title="Link to this heading">#</a></h2>
+<p>Matice je možné použít k modelování vývoje systémů. Z pravděpodobností
+s jakou se systém nachází v jednotlivých stavech sestavíme vektor a
+matici použijeme k modelování toho, jak systém přechází z jednoho
+stavu do druhého.</p>
+<p><a href="../notebooks/matice_markov_chain.html">Ilustrativní zápisník</a>, sukcese lesa.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../vektory/index.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Vektory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../vlastni_cisla/index.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Vlastní směry a vlastní hodnoty matic</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace-matice-tuhosti-a-poddajnosti-zatizeni-nosniku">3.1. Motivace - matice tuhosti a poddajnosti, zatížení nosníku</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radkovy-a-sloupcovy-index">3.1.1. Řádkový a sloupcový index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorovy-a-maticovy-zapis">3.1.2. Vektorový a maticový zápis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soucin-matice-a-vektoru">3.2. Součin matice a vektoru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-vektoru">3.3. Zobrazení vektorů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstitucni-zakony">3.4. Konstituční zákony</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometricke-transformace-i">3.5. Geometrické transformace I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometricke-transformace-ii">3.6. Geometrické transformace II</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivace">3.6.1. Motivace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogenni-souradnice">3.6.2. Homogenní souřadnice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posunuti-pomoci-maticoveho-soucinu">3.6.3. Posunutí pomocí maticového součinu.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspektiva-pomoci-maticoveho-soucinu">3.6.4. Perspektiva pomocí maticového součinu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maticovy-soucin-dvou-matic">3.7. Maticový součin dvou matic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markovovy-retezce">3.8. Markovovy řetězce</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle Robert Mařík
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</p>
+<p><script src="https://utteranc.es/client.js"
+ repo="robert-marik/am" 
+ issue-term="pathname" 
+ label="comment" 
+ theme="github-light" 
+ crossorigin="anonymous" 
+  async> 
+ </script> 
+ </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
