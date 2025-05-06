@@ -2,9 +2,44 @@
 
 ## První a druhá impulsová věta.
 
-* Časová změna celkové hybnosti (derivace celkové hybnosti podle času) je rovna součtu vnějších sil.
-* Časová změna celkového momentu hybnosti je rovna celkovému momentu všech vnějších sil.
-* Rovnováha na páce, výpočet reakcí při působení bodových sil na přímém nosníku. Pro těleso, které je v rovnováze, je součet sil a součet momentů sil nulový.
+### Popis posuvného a rotačního pohybu tělesa
+
+Fyzikální parametry pro popis posuvného pohybu tělesa:
+  * hmotnost tělesa $m$
+  * rychlost tělesa $\vec v$
+  * hybnost tělesa $\vec p = m \vec v$
+
+Fyzikální parametry pro popis rotačního pohybu tělesa:
+  * moment setrvačnosti tělesa $J$
+  * úhlová rychlost tělesa $\vec \omega$
+  * moment hybnosti tělesa $\vec L = J \vec \omega$
+
+### Impulsové věty
+
+```{prf:theorem} První impulsová věta
+:nonumber:
+
+Časová změna celkové hybnosti tělesa (soustavy) je rovna součtu vnějších sil působících na těleso (soustavu).
+
+$$ \frac{d\vec p}{dt} = \sum \vec F $$
+```
+
+```{prf:theorem} Druhá impulsová věta
+:nonumber:
+
+Časová změna celkového momentu hybnosti tělesa (soustavy) je rovna celkovému momentu vnějších sil působících na těleso.
+
+$$ \frac{d\vec L}{dt} = \sum \vec M $$
+```
+
+### Podmínky rovnováhy
+
+```{prf:theorem} Podmínka statické rovnováhy
+:nonumber:
+
+$$\sum \vec F = \sum \vec M = 0$$
+```
+
 
 ## Teorie elasticity
 
@@ -13,4 +48,8 @@
   * [obecná deformace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
   * <a href="../notebooks/matice_symetrizace.html">symetrizace</a>
 
+## Numerické simulace
 
+![](nosnik_3bodovy.png)
+![](nosnik_ctvrtina.png)
+![](beam_smyk.png)  

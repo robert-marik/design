@@ -99,7 +99,7 @@ Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vz
 
 Operace {eq}`3` mezi maticí a vektorem definovaná vztahem {eq}`2` se nazývá maticový součin. Později si ukážeme, jak tuto definici rozšířit na dvě matice.
 
-## Definice maticového součinu
+## Součin matice a vektoru
 
 Součin matice a vektoru definujeme jako lineární kombinaci sloupců matice, při které jsou koeficienty komponenty vektoru. 
 

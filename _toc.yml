@@ -22,6 +22,7 @@ parts:
     - file: parcialni_derivace/index.md
     - file: aplikace_parcialnich_derivaci/index.md
     - file: integral/index.md
+    - file: numerika/index.md
   - caption: Základy teorie elasticity
     numbered: true
     chapters:
