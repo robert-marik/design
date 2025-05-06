@@ -18,6 +18,26 @@ $$
 
 Tenzor napětí je bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
 
+### Praktická ukázka tenzoru napětí v tříbodovém ohybu
+
+#### Tříbodový ohyb, tah v podélném směru
+
+![](../statika/nosnik_3bodovy.png)
+
+Tah na spodní straně, tlak na horní straně a před podpěrami. Zeleně neutrální oblast, kde je napětí nulové.
+
+#### Tříbodový ohyb, tah v podélném směru pro čtvrtinu nosníku
+
+![](../statika/nosnik_ctvrtina.png)
+
+Numerická simulace pro část nosníku šetří strojový čas a nároky na paměť. V tomto případě je možné použít symetrii a počítat pouze čtvrtinu nosníku.
+
+#### Tříbodový ohyb, smykové napětí
+
+![](../statika/beam_smyk.png)
+
+Smykové napětí v levé a pravé polovině nosníku se liší znaménkem, je antisymetrické. 
+
 ## Linearizace vektoru posunutí, tenzor deformace
 
 * linearizace, [nelineární transfromace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
@@ -28,7 +48,11 @@ $$
 \varepsilon = (\varepsilon_{ij}) = \left(\frac 12\left(\frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)\right)
 $$
 
-* Komponenty $\varepsilon_{ii}$ jsou normálové deformace, $\varepsilon_{ij}$ pro $i\neq j$ jsou smykové deformace.
+* Komponenty $\varepsilon_{ii}$ jsou normálové deformace, $\varepsilon_{ij}$ pro
+  $i\neq j$ jsou smykové deformace.
+* Normálová deformace udává, o kolik procent se materiál v daném směru prodlouží
+  (kladná hodnota) nebo zkrátí (záporná hodnota). Smyková deformace udává, jak
+  se změní pravé úhly (v obloukové míře). 
 
 ## Hookův zákon pro izotropní, anizotropní a ortotropní materiál
 
@@ -127,7 +151,7 @@ $$\left(
 \right)
 $$
 
-Modře vyznačené bloky dávají do relaci smykové namáhání a normálové napětí. Červené vyznačené prvky dávají do relace smykové napětí v jedné rovině se smykovou deformací v jiné rovině. 
+Modře vyznačené prvky dávají do relace smykové namáhání a normálové napětí. Červené vyznačené prvky dávají do relace smykové napětí v jedné rovině se smykovou deformací v jiné rovině. 
 
 ### Ortotropní materiály
 
@@ -244,7 +268,8 @@ $$\left(
 \right)
 $$
 
-Tyto materiály popisujeme pomocí sedmi nezávislých materiálových konstant.
+Tyto materiály popisujeme pomocí pěti nezávislých materiálových konstant. Šestá konstanta je dána vztahem
+$$S_{66} = 2(S_{11}-S_{22}).$$
 
 ### Izotropní materiály
 
