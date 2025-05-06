@@ -65,7 +65,7 @@ $$\varepsilon = \left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 \quad 
@@ -76,7 +76,7 @@ $$\varepsilon = \left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -90,7 +90,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -111,7 +111,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -125,7 +125,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -146,7 +146,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -166,7 +166,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -187,7 +187,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -202,7 +202,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -223,7 +223,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -242,7 +242,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -263,7 +263,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -287,7 +287,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -308,7 +308,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
@@ -322,7 +322,7 @@ $$\left(
     \varepsilon_z \\
     \varepsilon_{yz} \\
     \varepsilon_{xz} \\
-    \varepsilon_{xz}
+    \varepsilon_{xy}
      \end{matrix} 
 \right)
 =
@@ -343,7 +343,7 @@ $$\left(
     \sigma_z \\
     \sigma_{yz} \\
     \sigma_{xz} \\
-    \sigma_{xz} 
+    \sigma_{xy} 
      \end{matrix}
 \right)
 $$
