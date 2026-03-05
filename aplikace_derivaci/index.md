@@ -26,6 +26,48 @@ Derivace je definována pomocí limitního přechodu, což může být v praxi o
 * Centrální diference $f'(x)\approx \frac{f(x+h)-f(x-h)}{2h}$
 * Zpětná poměrná diference $f'(x)\approx \frac{f(x)-f(x-h)}{h}$
 
+## Převod rovnice ochlazování na tvar s konečnými diferencemi
+
+Rovnici ochlazování můžeme přepsat do tvaru s konečnými diferencemi, což nám umožní tuto rovnici numericky řešit.
+
+$$\frac{T(t+h)-T(t)}{h} = -k(T(t)-T_\infty)$$
+
+$$T(t+h) = T(t) - kh(T(t)-T_\infty)$$
+
+Pseudokód pro numerické řešení rovnice ochlazování:
+
+```
+T = T0
+for t in range(0, max_time, h):
+    T = T - k * h * (T - T_inf)
+```
+
+Python kód pro numerické řešení rovnice ochlazování:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+# Parametry
+T0 = 100  # Počáteční teplota kávy
+T_inf = 20  # Teplota okolí
+k = 0.1  # Koeficient ochlazování
+h = 0.1  # Krok časového intervalu
+max_time = 60  # Maximální čas pro simulaci
+# Inicializace
+times = np.arange(0, max_time, h)
+T = np.zeros_like(times)
+T[0] = T0
+# Numerické řešení
+for i in range(1, len(times)):
+    T[i] = T[i-1] - k * h * (T[i-1] - T_inf)
+# Graf
+plt.plot(times, T)
+plt.xlabel('Čas (min)')
+plt.ylabel('Teplota kávy (°C)')
+plt.title('Ochladzování kávy podle Newtonova zákona')
+plt.grid()
+plt.show()
+``` 
 
 ## Lineární aproximace funkce jedné proměnné
 
