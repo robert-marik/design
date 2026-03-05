@@ -155,7 +155,7 @@ je hodně pod nosnou kapacitou prostředí.
 
 //name: 011 Derivace v aplikacích III
 ::011 Derivace v aplikacích III::[markdown]
-Veličina $T$ udává teplotu vody v závislosti na čase. Derivace je $$\frac\{\mathrm dT\}\{\mathrm dt\}\=20^\circ/\mathrm\{min\}$$
+Veličina $T$ udává teplotu vody v závislosti na čase. Derivace je $$\\frac\{\\mathrm dT\}\{\\mathrm dt\}\=20^\\circ/\\mathrm\{min\}$$
 Co je možné z této informace vyčíst? Pokud je více možností, vyberte tu, která nese nejpodrobnější informace.
 {
 ~Teplota vody je větší než 20 stupňů Celsia a roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.
@@ -172,3 +172,13 @@ Zejména je dobré si uvědomit následující.\n
 3. V derivaci je informace o změnách funkčních hodnot, o hodnotách samotných derivace informaci nenese.\n
 4. Rychlostí dvacet stupňů Celsia za minutu se může ohřívat studená i horká voda.\n
 5. Dokonce se touto rychlostí může ohřívat i voda těsně před varem, protože se jedná o rychlost okamžitou a celý proces nemusí trvat celou minutu. }
+
+//name: 012 Derivace v aplikacích IV
+::012 Derivace v aplikacích IV::[markdown]
+Veličina $x$ je funkce času a udává průměr stromu jako funkci času. V jakých jednotkách může být vyjádřena derivace $$\\frac\{\\mathrm dx\}\{\\mathrm dt\}?$$
+{
+=V milimetrech za rok. (Například přírůstek za jeden rok.)
+~V letech na milimetr. (Například počet let nutných pro milimetrový přírůstek.)
+~V milimetrech. (Například celkový přírůstek.)
+~V letech. (Například stáří stromu.)
+####V milimetrech za rok. Jednotka derivace průměru podle času je podílem jednotky průměru (například milimetr) a jednotky času (například rok). Tedy milimetr lomeno rok, což vhodněji vyjadřujeme obratem milimetr za rok. (Podobně jako rychlost pohybu auta udáváme v kilometrech za hodinu.)"}
