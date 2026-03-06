@@ -19,7 +19,7 @@ u_4 = k_{41}f_1 + k_{42} f_2 + k_{43}f_3 + k_{44}f_4\cr
 \end{aligned}
 $$ (1)
 
-Toto jsou celkem čtyři vztahy obsahující jako data čtyři veličiny. V reálu jsou sledovaných bodů tisíce místo čtyř a proto se jedná o nepraktický zápis pro práci (tisíce rovnic a tisíce neznámých).
+Toto jsou celkem čtyři vztahy obsahující jako data čtyři veličiny. V reálu jsou sledovaných bodů tisíce místo čtyř a proto se jedná o nepraktický zápis pro práci (tisíce rovnic a tisíce neznámých). Ukážeme si několik možností, jak takové obrovské soustavy zapisovat, aby bylo možné je zpracovávat.
 
 ### Řádkový a sloupcový index
 
@@ -38,7 +38,7 @@ $$
 
 Poslední výraz bývá obvyklejší zapsat pomocí Einsteinovy notace, kdy se vynechává znaménko pro sumu a přes opakovaný index se sčítá. Tedy soustava se zjednoduší na $$u_i=k_{ij}f_j.$$
 
-Tento zápis je již krátký i pro tisíce rovnic, ale jedná se vlastně jenom o jiný zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.
+Tento zápis je již krátký i pro tisíce rovnic. Formálně se na první pohled jedná o jednu rovnici, ale ve skutečnosti to je jenom o jiný (stručnější) zápis obrovské soustavy rovnic. V následujících odstavcích si ukážeme jiný přístup.
 
 ### Vektorový a maticový zápis
 
@@ -99,7 +99,7 @@ Podobně je možné postupovat i naopak a vyjádřit síly pomocí deformací vz
 
 Operace {eq}`3` mezi maticí a vektorem definovaná vztahem {eq}`2` se nazývá maticový součin. Později si ukážeme, jak tuto definici rozšířit na dvě matice.
 
-## Součin matice a vektoru
+## Definice maticového součinu
 
 Součin matice a vektoru definujeme jako lineární kombinaci sloupců matice, při které jsou koeficienty komponenty vektoru. 
 
@@ -216,7 +216,7 @@ obrázky s perspektivou. Viz [Camera matrix](https://en.wikipedia.org/wiki/Camer
 * Maticový součin dvou matic je definován pomocí násobení matice a vektoru.
   Součin $C=AB$ je matice, která má ve sloupcích obrazy sloupců matice $B$ při
   zobrazení popsaném maticí $A$. 
-* Součin $C=AB$ je možno chápat jako složené zobrazení, kdy nejprve použijme zobrazení $B$ a potom zobrazení $A$.
+* Součin $C=AB$ je možno chápat jako složené zobrazení, kdy nejprve použijme zobrazení $B$ a potom zobrazení $A$. Ve složkách $$c_{ij}=\sum_{k}a_{ik}b_{kj}.$$
 * Maticový součin obecně není komutativní. Obecně neplatí $AB=BA.$ 
 * Maticový součin je asociativní. Platí $A(BC)=(AB)C$.
 * Neutrálním prvkem je jednotková matice $I$.
