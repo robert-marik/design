@@ -25,8 +25,8 @@ sphinx-build -Ea ../ $directory -b html
 # sed -i 's/<body /<body class="cviceni" /' $directory/cviceni/cviceni*.html
 
 # sed -i 's/Corollary/Důsledek/' $directory/*/index.html
-# sed -i 's/Theorem/Věta/' $directory/*/index.html
-# sed -i 's/Remark/Poznámka/' $directory/*/index.html
+sed -i 's/Theorem/Věta/' $directory/*/index.html
+sed -i 's/Remark/Poznámka/' $directory/*/index.html
 # sed -i 's/Definition/Definice/' $directory/*/index.html
 # sed -i 's/Example/Příklad/' $directory/*/index.html
 # sed -i 's/Podle Robert/Autor Robert/' $directory/*/*.html
@@ -43,9 +43,9 @@ sphinx-build -Ea ../ $directory -b html
 # #sed -i 's/<p>https:\/\/youtu.be\/\(.*\)<\/p>/<div class="Ycontainer"> <iframe class="responsive-iframe" src="https:\/\/www.youtube.com\/embed\/\1"><\/iframe> <\/div>/' $directory/*/*.html
 # sed -i 's/<p>https:\/\/youtu.be\/\(.*\)<\/p>/<p><a href="https:\/\/youtu.be\/\1">Video<\/a><\/p>/' $directory/*/*.html
 
-# sed -i 's/<p>manimp:\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/user.mendelu.cz\/marik\/manim\/\1" target=_blank><img src="https:\/\/user.mendelu.cz\/marik\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\2 <a href="\/marik\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
+sed -i 's/<p>manimp:\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/um.mendelu.cz\/manim\/\1" target=_blank><img src="https:\/\/um.mendelu.cz\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\2 <a href="\/marik\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
 
-# sed -i 's/<p>manim:\(.*\)|\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/user.mendelu.cz\/marik\/manim\/\1" target=_blank><img src="https:\/\/user.mendelu.cz\/marik\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\3 <a href="https:\/\/user.mendelu.cz\/marik\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a> <a href="https:\\\\youtu.be\/\2" class=but-video target=_blank>Spustit video<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
+sed -i 's/<p>manim:\(.*\)|\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/um.mendelu.cz\/manim\/\1" target=_blank><img src="https:\/\/um.mendelu.cz\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\3 <a href="https:\/\/um.mendelu.cz\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a> <a href="https:\\\\youtu.be\/\2" class=but-video target=_blank>Spustit video<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
 
 # #sed -i 's/<p><img alt="\(.*\)" src="\(.*\)" \/><\/p>/<p><img src="\2" \/><figcaption>\1<\/figcaption><\/p>/' $directory/*/index.html
 
