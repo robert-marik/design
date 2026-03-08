@@ -9,3 +9,6 @@ sphinx-design
 ghp-import
 sphinx-comments
 sphinx-proof
+numpy 
+matplotlib
+scipy
