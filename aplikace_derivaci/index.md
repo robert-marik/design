@@ -55,11 +55,21 @@ Diferenciální rovnice jsou matematické vztahy, které popisují, jak rychlost
 
 ## Aproximace derivací
 
+<div class="obtekat">
+
+```{figure} https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/diference.png
+
+Aproximace derivace pomocí diferencí.
+```
+
+</div>
+
+
+
 Derivace je definována pomocí limitního přechodu
-
 $$\frac{\mathrm df}{\mathrm dx} = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h},$$
-
-což může být v praxi obtížné použít. Proto se často používají různé aproximace
+což může je v praxi obtížně použitelné při numerických výpočtech. 
+Proto se často používají různé aproximace
 derivací, které umožňují odhadnout hodnotu derivace na základě hodnot funkce v
 několika bodech.
 
@@ -69,11 +79,13 @@ několika bodech.
 
 ## Převod rovnice ochlazování na tvar s konečnými diferencemi
 
-Rovnici ochlazování můžeme přepsat do tvaru s konečnými diferencemi, což nám umožní tuto rovnici numericky řešit.
+Rovnici ochlazování můžeme přepsat do tvaru s konečnými diferencemi, 
+což nám umožní tuto rovnici numericky řešit.
 
 $$\frac{T(t+h)-T(t)}{h} = -k(T(t)-T_\infty)$$
 
 $$T(t+h) = T(t) - kh(T(t)-T_\infty)$$
+
 
 Pseudokód pro numerické řešení rovnice ochlazování:
 
@@ -83,32 +95,11 @@ for t in range(0, max_time, h):
     T = T - k * h * (T - T_inf)
 ```
 
-Python kód pro numerické řešení rovnice ochlazování:
+<a href="../notebooks/ochlazovani.html">Python kód</a> pro numerické řešení rovnice ochlazování.
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-# Parametry
-T0 = 100  # Počáteční teplota kávy
-T_inf = 20  # Teplota okolí
-k = 0.1  # Koeficient ochlazování
-h = 0.1  # Krok časového intervalu
-max_time = 60  # Maximální čas pro simulaci
-# Inicializace
-times = np.arange(0, max_time, h)
-T = np.zeros_like(times)
-T[0] = T0
-# Numerické řešení
-for i in range(1, len(times)):
-    T[i] = T[i-1] - k * h * (T[i-1] - T_inf)
-# Graf
-plt.plot(times, T)
-plt.xlabel('Čas (min)')
-plt.ylabel('Teplota kávy (°C)')
-plt.title('Ochladzování kávy podle Newtonova zákona')
-plt.grid()
-plt.show()
-``` 
+Tento postup je však pouze ilustrační, v praxi se používají sofistikovanější metody pro 
+řešení diferenciálních rovnic, které jsou stabilnější a přesnější než uvedená jednoduchá Eulerova metoda.
+
 
 ## Lineární aproximace funkce jedné proměnné
 
@@ -160,17 +151,21 @@ $$f(x+h)\approx f(x)+f'(x)h,$$
 což získáme dosazením $x+h$ za $x$ a $x$ za $x_0$.
 ```
 
-```{prf:remark} Význam vzorce pro lineární aproximaci
-:nonumber:
+```{margin} Lineární aproximace
+
+manim:Linearni_aproximace|aOvVJzeWy3o|Lineární aproximace může pomoci zjednodušit komplikované funkční vztahy v případě, kdy vstupní data nejsou příliš variabilní.
+
+```
+
+**Význam vzorce pro lineární aproximaci**
 
 * Vzorec umožňuje složitý funkční předpis předpisem jednodušším (lineární funkce jsou jedny z nejtrivilálnějších). 
 * K použití vzorce stačí znát jeden bod grafu a funkční hodnotu a hodnotu derivace v tomto bodě.
 * Aproximace je pouze lokální, použitelná pouze v určitém okolí uvažovaného bodu. Jak velké toto okolí může být a jaké chyby se dopouštíme při lineární aproximaci je různé pro různé funkce. Obecně platí, že čím blíže jsme k bodu $x_0$, tím je tato aproximace přesnější.
-```
 
-manim:Linearni_aproximace|aOvVJzeWy3o|Lineární aproximace může pomoci zjednodušit komplikované funkční vztahy v případě, kdy vstupní data nejsou příliš variabilní.
 
-**Příklady lineární aproximace** 
+```{admonition} Příklady lineární aproximace
+:nonumber:
 V okolí bodu $x=0$ platí následující lineární aproximace
 
 1. $\sqrt{1+x}\approx 1+\frac{1}{2}x$
@@ -179,12 +174,13 @@ V okolí bodu $x=0$ platí následující lineární aproximace
 4. $\cos x\approx 1$
 5. $\begin{pmatrix} \cos(x) & -\sin(x)\\ \sin(x) & \cos(x)\end{pmatrix}\approx \begin{pmatrix} 1 & -x\\ x & 1\end{pmatrix}$
 
+```
 
 ## Jednorozměrné konstituční zákony
 
 Konstituční zákony jsou matematické vztahy, které popisují chování materiálů a systémů v závislosti na vnějších faktorech, jako jsou teplota, tlak, objem, atd. Tyto zákony jsou klíčové pro pochopení a předpověď chování materiálů a systémů v různých podmínkách.
 
-```{prf:remark} Příklady konstitučních zákonů:
+```{admonition} Příklady konstitučních zákonů:
 :nonumber:
 
 1. **Hookův zákon**: Popisuje vztah mezi silou $F$ působící na pružinu a její deformací $x$. Matematicky je vyjádřen jako $$F = kx,$$ kde $k$ je tuhost pružiny.
