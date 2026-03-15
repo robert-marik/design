@@ -72,7 +72,11 @@ Pro vektorovou funkci dvou proměnných vypočteme divergenci analogicky, pouze 
 
 ## Rovnice kontinuity
 
-![](https://raw.githubusercontent.com/robert-marik/am-images/refs/heads/main/rovnice_kontinuity.png)
+
+```{figure} https://raw.githubusercontent.com/robert-marik/am-images/refs/heads/main/rovnice_kontinuity.png
+
+Rovnice kontinuity popisuje, jak se mění stavová veličina v čase v závislosti na zdrojích a toku. Vyjadřuje zákon zachování se započtením zdrojů a spotřebičů a se započtením toku, který přenáší stavovou veličinu z jednoho místa na druhé.
+```
 
 * Přírůstek stavové veličiny za jednotku času v jednotkovém objemu
   (nebo ploše, nebo délce, podle dimenzionality úlohy) je derivace
