@@ -20,7 +20,12 @@
 
 ## Rovnice ochlazování
 
-Uvažujme kávu o teplotě $T$ v prostředí o teplotě $T_0$. 
+Uvažujme dvě tělesa o různé teplotě, která jsou v kontaktu, tak, že teplo může
+přecházet z jednoho tělesa na druhé. Pro jednoduchost uvažujme kávu o teplotě
+$T$ v prostředí o teplotě $T_0$. Káva se ochlazuje, ale teplota místnosti se
+tímto nemění a je konstantní. Dynamiku ochlazování kávy popisuje následující
+zákon.
+
 
 ```{prf:remark} Newtonův zákon ochlazování
 :nonumber:
@@ -30,7 +35,7 @@ Rychlost s jakou se mění teplota tělesa v kontaktu s okolím je přímo úmě
 <div class='obtekat'>
 
 ```{figure} https://raw.githubusercontent.com/robert-marik/desing-images/f96df3eaad2e59973523d9204c0f18f76adc2f0c/coffee.png
-Newtonův zákon ochlazování popisuje, jak se teplota kávy mění v závislosti na rozdílu mezi teplotou kávy a teplotou okolí.
+Newtonův zákon ochlazování popisuje, jak se teplota kávy mění v závislosti na rozdílu mezi teplotou kávy a teplotou okolí. Zákon platí pochopitelně obecně pro libovolná dvě tělesa různé teploty, která jsou v tepelném kontaktu.
 ```
 </div>
 
@@ -49,7 +54,12 @@ $k$) a rozdíl teploty kávy a teploty okolí ($T-T_\infty$).
 
 ## Diferenciální rovnice
 
-Diferenciální rovnice jsou matematické vztahy, které popisují, jak rychlost změny nějaké veličiny souvisí s její aktuální hodnotou. Jsou klíčové pro modelování a analýzu dynamických systémů v různých oblastech, jako jsou fyzika, biologie, ekonomie, inženýrství a další. Hrají roli i ve statice, například při popisu deformace nosníků.
+Diferenciální rovnice jsou matematické vztahy, které popisují, jak rychlost
+změny nějaké veličiny souvisí s její aktuální hodnotou. Jsou klíčové pro
+modelování a analýzu dynamických systémů v různých oblastech, jako jsou fyzika,
+biologie, ekonomie, inženýrství a další. Hrají roli i ve statice, například při
+popisu deformace nosníků. Už na příkladu ochlazování kávy vidíme, že
+diferenciální rovnice jsou přirozeným jazykem při kvantifikaci přírodních dějů.
 
 ## Aproximace derivací
 
@@ -85,7 +95,7 @@ $$\frac{T(t+h)-T(t)}{h} = -k(T(t)-T_\infty)$$
 $$T(t+h) = T(t) - kh(T(t)-T_\infty)$$
 
 
-Pseudokód pro numerické řešení rovnice ochlazování:
+Pseudokód pro numerické řešení rovnice ochlazování je následující.
 
 ```
 T = T0
@@ -93,23 +103,36 @@ for t in range(0, max_time, h):
     T = T - k * h * (T - T_inf)
 ```
 
-<a href="../notebooks/ochlazovani.html">Python kód</a> pro numerické řešení rovnice ochlazování.
+<a href="../notebooks/ochlazovani.html">Python kód</a> pro numerické řešení
+rovnice ochlazování.
 
-Tento postup je však pouze ilustrační, v praxi se používají sofistikovanější metody pro 
-řešení diferenciálních rovnic, které jsou stabilnější a přesnější než uvedená jednoduchá Eulerova metoda.
+Tento postup je však pouze ilustrační, v praxi se používají sofistikovanější
+metody pro řešení diferenciálních rovnic, které jsou stabilnější a přesnější
+než uvedená jednoduchá Eulerova metoda.
 
 
 ## Lineární aproximace funkce jedné proměnné
 
 
-V následujících pasážích se budeme věnovat lineární aproximaci funkce. To je nahrazení funkce s jakkoli složitým funkčním předpisem funkcí s tím nejjednodušším možným předpisem: lineární funkcí. Tím se pochopitelně dopouštíme jisté nepřesnosti a je to něco za něco: k popisu úlohy máme poté k dispozici jednodušší funkce, ale výpočty jsou zatíženy chybou. Někdy tato chyba může být tak velká, že je idea lineární aproximace naprosto nepoužitelná. Ale jindy se jedná o nástroj, který prakticky neřešitelnou úlohu převede na úlohu snadno zvládnutelnou. Linearizace nelineárních úloh je jedním ze základních inženýrských postupů. V mnoha případech dává samotná dobré výsledky a řeší zadaný problém, v jiných případech slouží jako odrazový můstek ke zvládnutí nelineárního problému.
+V následujících pasážích se budeme věnovat lineární aproximaci funkce. To je
+nahrazení funkce s jakkoli složitým funkčním předpisem funkcí s tím
+nejjednodušším možným předpisem: lineární funkcí. Tím se pochopitelně
+dopouštíme jisté nepřesnosti a je to něco za něco: k popisu úlohy máme poté k
+dispozici jednodušší funkce, ale výpočty jsou zatíženy chybou. Někdy tato chyba
+může být tak velká, že je idea lineární aproximace naprosto nepoužitelná. Ale
+jindy se jedná o nástroj, který prakticky neřešitelnou úlohu převede na úlohu
+snadno zvládnutelnou. Linearizace nelineárních úloh je jedním ze základních
+inženýrských postupů. V mnoha případech dává samotná dobré výsledky a řeší
+zadaný problém, v jiných případech slouží jako odrazový můstek ke zvládnutí
+nelineárního problému.
 
 ### Lineární aproximace v 1D
 
 <div class='obtekat'>
 
 ```{figure} https://robert-marik.github.io/matematika/_images/linapprox.svg
-Lineární aproximace funkce. Při dostatečném zvětšení se graf funkce zdá být přibližně lineární.
+Lineární aproximace funkce. Při dostatečném zvětšení se graf funkce zdá být
+přibližně lineární. 
 ```
 
 </div>

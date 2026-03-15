@@ -1,4 +1,4 @@
-# Konstituční vztahy, difuzní rovnice
+# Rovnice kontinuity, difuzní rovnice
 
 [Vedení tepla v 1D](https://user.mendelu.cz/marik/manim/Heat/)
 
@@ -71,6 +71,8 @@ Pro vektorovou funkci dvou proměnných vypočteme divergenci analogicky, pouze 
 [2D svět versus 3D svět](https://user.mendelu.cz/marik/am/slovni_ulohy/#parci%C3%A1ln%C3%AD-derivace-vektorov%C3%A9ho-pole)
 
 ## Rovnice kontinuity
+
+![](https://raw.githubusercontent.com/robert-marik/am-images/refs/heads/main/rovnice_kontinuity.png)
 
 * Přírůstek stavové veličiny za jednotku času v jednotkovém objemu
   (nebo ploše, nebo délce, podle dimenzionality úlohy) je derivace
