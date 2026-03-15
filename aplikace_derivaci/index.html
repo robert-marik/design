@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. Aplikace derivací &#8212; Aplikovaná matematika (design)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9e5d32fb" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics"]}, "tex": {"packages": {"[+]": ["physics"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'aplikace_derivaci/index';</script>
+    <script src="../_static/custom.js?v=9eb870d4"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="7. Parciální derivace" href="../parcialni_derivace/index.html" />
+    <link rel="prev" title="5. Derivace" href="../derivace/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Hledat v textu..."
+         aria-label="Hledat v textu..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aplikovaná matematika (design)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funkce</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funkce/index.html">1. Funkce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineární algebra</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektory/index.html">2. Vektory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matice/index.html">3. Matice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlastni_cisla/index.html">4. Vlastní směry a vlastní hodnoty matic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diferenciální a integrální počet</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivace/index.html">5. Derivace</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Aplikace derivací</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parcialni_derivace/index.html">7. Parciální derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../difuzni_rovnice/index.html">8. Rovnice kontinuity, difuzní rovnice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integral/index.html">9. Integrál</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Základy teorie elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statika/index.html">10. Základy teorie elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deformace/index.html">11. Teorie elasticity ve 3D</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerická matematika</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../numerika/index.html">12. Numerické metody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E01/index.html">13. Základní numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shrnutí</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../F01/index.html">14. Shrnutí</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Aplikace derivací</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-ochlazovani">6.1. Rovnice ochlazování</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencialni-rovnice">6.2. Diferenciální rovnice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximace-derivaci">6.3. Aproximace derivací</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevod-rovnice-ochlazovani-na-tvar-s-konecnymi-diferencemi">6.4. Převod rovnice ochlazování na tvar s konečnými diferencemi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearni-aproximace-funkce-jedne-promenne">6.5. Lineární aproximace funkce jedné proměnné</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearni-aproximace-v-1d">6.5.1. Lineární aproximace v 1D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednorozmerne-konstitucni-zakony">6.6. Jednorozměrné konstituční zákony</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="aplikace-derivaci">
+<h1><span class="section-number">6. </span>Aplikace derivací<a class="headerlink" href="#aplikace-derivaci" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Lineární aproximace funkce jedné proměnné - komplikované funkční předpisy
+nahradíme lineární funkcí, která je jednodušší a přitom nám umožní odhadnout
+hodnotu funkce v okolí zadaného bodu. Mnoho inženýrských úloh se velmi
+zjednoduší, pouze za malou cenu v podobě určité ztráty přesnosti.</p></li>
+<li><p>Jednorozměrné konstituční zákony - matematické vztahy, které popisují chování
+materiálů a systémů v závislosti na vnějších faktorech, jako jsou teplota,
+tlak, objem, atd. Tyto zákony jsou klíčové pro pochopení a předpověď chování
+materiálů a systémů v různých podmínkách. Příklady jsou Hookův zákon,
+Fourierův zákon, Darcyho zákon. Formálně mají jednotnou podobu a derivace nám
+umožní pochopit, proč tomu tak je.</p></li>
+<li><p>Modely založené na derivacích, diferenciální rovnice. Diferenciální rovnice
+jsou matematické vztahy, které popisují, jak rychlost změny nějaké veličiny
+souvisí s její aktuální hodnotou. Jsou klíčové pro modelování a analýzu
+dynamických systémů v různých oblastech, jako jsou fyzika, biologie, ekonomie,
+inženýrství a další. Hrají roli i ve statice, například při popisu deformace
+nosníků.</p></li>
+</ul>
+<section id="rovnice-ochlazovani">
+<h2><span class="section-number">6.1. </span>Rovnice ochlazování<a class="headerlink" href="#rovnice-ochlazovani" title="Link to this heading">#</a></h2>
+<p>Uvažujme dvě tělesa o různé teplotě, která jsou v kontaktu, tak, že teplo může
+přecházet z jednoho tělesa na druhé. Pro jednoduchost uvažujme kávu o teplotě
+<span class="math notranslate nohighlight">\(T\)</span> v prostředí o teplotě <span class="math notranslate nohighlight">\(T_0\)</span>. Káva se ochlazuje, ale teplota místnosti se
+tímto nemění a je konstantní. Dynamiku ochlazování kávy popisuje následující
+zákon.</p>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span>Poznámka </span> (Newtonův zákon ochlazování)</p>
+<section class="remark-content" id="proof-content">
+<p>Rychlost s jakou se mění teplota tělesa v kontaktu s okolím je přímo úměrná rozdílu teploty tělesa a teploty okolí.</p>
+</section>
+</div><div class='obtekat'>
+<figure class="align-default" id="id1">
+<img alt="https://raw.githubusercontent.com/robert-marik/desing-images/f96df3eaad2e59973523d9204c0f18f76adc2f0c/coffee.png" src="https://raw.githubusercontent.com/robert-marik/desing-images/f96df3eaad2e59973523d9204c0f18f76adc2f0c/coffee.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 6.1 </span><span class="caption-text">Newtonův zákon ochlazování popisuje, jak se teplota kávy mění v závislosti na rozdílu mezi teplotou kávy a teplotou okolí. Zákon platí pochopitelně obecně pro libovolná dvě tělesa různé teploty, která jsou v tepelném kontaktu.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Matematickým modelem tohoto zákona je počáteční úloha
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm dT}{\mathrm dt} =  -k(T-T_\infty),\quad T(0)=T_0.\]</div>
+</p>
+<p>Jedná se o přirozený překlad slovního popisu do matematického jazyka. Obsahuje
+rychlost zmeny teploty kávy (derivaci), přímou úměrnost (násobení konstantou
+<span class="math notranslate nohighlight">\(k\)</span>) a rozdíl teploty kávy a teploty okolí (<span class="math notranslate nohighlight">\(T-T_\infty\)</span>).</p>
+<ul class="simple">
+<li><p>Tato rovnice nám umožní pochopit, jak se teplota kávy mění v čase a jak rychle se ochlazuje.</p></li>
+<li><p>V rovnici je obsaženo, že dynamika ochlazování s časem klesá, protože jak se
+káva ochlazuje, rozdíl teplot mezi kávou a okolím se zmenšuje.</p></li>
+<li><p>Rovnice umožňuje modelovat různé scénáře a měnit vlastnosti hrnku i okolí a
+sledovat, jak se to projeví na celkovém průběhu děje.</p></li>
+</ul>
+</section>
+<section id="diferencialni-rovnice">
+<h2><span class="section-number">6.2. </span>Diferenciální rovnice<a class="headerlink" href="#diferencialni-rovnice" title="Link to this heading">#</a></h2>
+<p>Diferenciální rovnice jsou matematické vztahy, které popisují, jak rychlost
+změny nějaké veličiny souvisí s její aktuální hodnotou. Jsou klíčové pro
+modelování a analýzu dynamických systémů v různých oblastech, jako jsou fyzika,
+biologie, ekonomie, inženýrství a další. Hrají roli i ve statice, například při
+popisu deformace nosníků. Už na příkladu ochlazování kávy vidíme, že
+diferenciální rovnice jsou přirozeným jazykem při kvantifikaci přírodních dějů.</p>
+</section>
+<section id="aproximace-derivaci">
+<h2><span class="section-number">6.3. </span>Aproximace derivací<a class="headerlink" href="#aproximace-derivaci" title="Link to this heading">#</a></h2>
+<div class="obtekat">
+<figure class="align-default" id="id2">
+<img alt="https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/diference.png" src="https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/diference.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 6.2 </span><span class="caption-text">Aproximace derivace pomocí diferencí.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Derivace je definována pomocí limitního přechodu
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm df}{\mathrm dx} = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h},\]</div>
+
+což může je v praxi obtížně použitelné při numerických výpočtech.
+Proto se často používají různé aproximace
+derivací, které umožňují odhadnout hodnotu derivace na základě hodnot funkce v
+několika bodech.</p>
+<ul class="simple">
+<li><p>Dopředná poměrná diference <span class="math notranslate nohighlight">\(\frac{\mathrm df}{\mathrm dx}\approx \frac{f(x+h)-f(x)}{h}\)</span></p></li>
+<li><p>Centrální diference <span class="math notranslate nohighlight">\(\frac{\mathrm df}{\mathrm dx}\approx \frac{f(x+h)-f(x-h)}{2h}\)</span></p></li>
+<li><p>Zpětná poměrná diference <span class="math notranslate nohighlight">\(\frac{\mathrm df}{\mathrm dx}\approx \frac{f(x)-f(x-h)}{h}\)</span></p></li>
+</ul>
+</section>
+<section id="prevod-rovnice-ochlazovani-na-tvar-s-konecnymi-diferencemi">
+<h2><span class="section-number">6.4. </span>Převod rovnice ochlazování na tvar s konečnými diferencemi<a class="headerlink" href="#prevod-rovnice-ochlazovani-na-tvar-s-konecnymi-diferencemi" title="Link to this heading">#</a></h2>
+<p>Rovnici ochlazování můžeme přepsat do tvaru s konečnými diferencemi,
+což nám umožní tuto rovnici numericky řešit.</p>
+<div class="math notranslate nohighlight">
+\[\frac{T(t+h)-T(t)}{h} = -k(T(t)-T_\infty)\]</div>
+<div class="math notranslate nohighlight">
+\[T(t+h) = T(t) - kh(T(t)-T_\infty)\]</div>
+<p>Pseudokód pro numerické řešení rovnice ochlazování je následující.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">T0</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_time</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">T</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="n">T_inf</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a href="../notebooks/ochlazovani.html">Python kód</a> pro numerické řešení
+rovnice ochlazování.</p>
+<p>Tento postup je však pouze ilustrační, v praxi se používají sofistikovanější
+metody pro řešení diferenciálních rovnic, které jsou stabilnější a přesnější
+než uvedená jednoduchá Eulerova metoda.</p>
+</section>
+<section id="linearni-aproximace-funkce-jedne-promenne">
+<h2><span class="section-number">6.5. </span>Lineární aproximace funkce jedné proměnné<a class="headerlink" href="#linearni-aproximace-funkce-jedne-promenne" title="Link to this heading">#</a></h2>
+<p>V následujících pasážích se budeme věnovat lineární aproximaci funkce. To je
+nahrazení funkce s jakkoli složitým funkčním předpisem funkcí s tím
+nejjednodušším možným předpisem: lineární funkcí. Tím se pochopitelně
+dopouštíme jisté nepřesnosti a je to něco za něco: k popisu úlohy máme poté k
+dispozici jednodušší funkce, ale výpočty jsou zatíženy chybou. Někdy tato chyba
+může být tak velká, že je idea lineární aproximace naprosto nepoužitelná. Ale
+jindy se jedná o nástroj, který prakticky neřešitelnou úlohu převede na úlohu
+snadno zvládnutelnou. Linearizace nelineárních úloh je jedním ze základních
+inženýrských postupů. V mnoha případech dává samotná dobré výsledky a řeší
+zadaný problém, v jiných případech slouží jako odrazový můstek ke zvládnutí
+nelineárního problému.</p>
+<section id="linearni-aproximace-v-1d">
+<h3><span class="section-number">6.5.1. </span>Lineární aproximace v 1D<a class="headerlink" href="#linearni-aproximace-v-1d" title="Link to this heading">#</a></h3>
+<div class='obtekat'>
+<figure class="align-default" id="id3">
+<img alt="https://robert-marik.github.io/matematika/_images/linapprox.svg" src="https://robert-marik.github.io/matematika/_images/linapprox.svg" />
+<figcaption>
+<p><span class="caption-number">Obr. 6.3 </span><span class="caption-text">Lineární aproximace funkce. Při dostatečném zvětšení se graf funkce zdá být
+přibližně lineární.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Pokud se funkce mění, můžeme odhad změny z předchozího odstavce přičíst k
+funkční hodnotě a tím máme odhad funkční hodnoty po změně. Toto je
+principem lineární aproximace, neuvěřitelně jednoduché a přitom velice
+mocné techniky používané inženýry k tomu, aby se popis problémů a
+řešení úloh vůbec daly efektivně zvládnout.</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span>Věta </span> (Lineární aproximace)</p>
+<section class="theorem-content" id="proof-content">
+<p>Buď <span class="math notranslate nohighlight">\(f:\mathbb R\to\mathbb R\)</span> funkce, která má derivaci. V okolí bodu <span class="math notranslate nohighlight">\(x_0\)</span> platí přibližný vzorec <div class="math notranslate nohighlight">
+\[f(x)\approx f(x_0)+ f'(x_0)(x-x_0)\]</div>
+ neboli
+<div class="math notranslate nohighlight">
+\[f(x)\approx f(x_0)+ \frac{\mathrm df(x_0)}{\mathrm dx}(x-x_0).\]</div>
+</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span>Poznámka </span> (Slovní interpretace vzorce pro lineární aproximaci)</p>
+<section class="remark-content" id="proof-content">
+<p>Výše uvedený vzorec není těžké rozšifrovat.</p>
+<ul class="simple">
+<li><p>Veličina <span class="math notranslate nohighlight">\(f(x)\)</span> je funkční hodnota v bodě <span class="math notranslate nohighlight">\(x\)</span>, tu chceme odhadnout.</p></li>
+<li><p>Veličina <span class="math notranslate nohighlight">\(f(x_0)\)</span> je známá funkční hodnota v bodě <span class="math notranslate nohighlight">\(x_0\)</span>, to je
+ýchozí bod pro odhad.</p></li>
+<li><p>Veličina <span class="math notranslate nohighlight">\(f'(x_0)\)</span> je odhad změny veličiny <span class="math notranslate nohighlight">\(f\)</span> způsobený jednotkovou změnou vstupních dat (zvýšení hodnoty <span class="math notranslate nohighlight">\(x_0\)</span> o jednotku). Tento faktor ještě v dalším kroku musíme přizpůsobit tomu, že změna vstupních dat není jednotková, což uděláme s využitím přímé úměrnosti.</p></li>
+<li><p>Veličina <span class="math notranslate nohighlight">\(f'(x_0)(x-x_0)\)</span> je odhad změny veličiny <span class="math notranslate nohighlight">\(f\)</span> vyvolané
+změnou veličiny <span class="math notranslate nohighlight">\(x\)</span> z <span class="math notranslate nohighlight">\(x_0\)</span> o <span class="math notranslate nohighlight">\(\Delta x=x-x_0\)</span> tak, jak jsme jej
+používali v minulé přednášce.</p></li>
+</ul>
+</section>
+</div><div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span>Poznámka </span> (Alternativní vzorec pro lineární aproximaci)</p>
+<section class="remark-content" id="proof-content">
+<p>Vzorec pro lineární aproximaci se často píše v ekvivalentním tvaru
+<div class="math notranslate nohighlight">
+\[f(x+h)\approx f(x)+f'(x)h,\]</div>
+
+což získáme dosazením <span class="math notranslate nohighlight">\(x+h\)</span> za <span class="math notranslate nohighlight">\(x\)</span> a <span class="math notranslate nohighlight">\(x\)</span> za <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+</section>
+</div><aside class="margin sidebar">
+<p class="sidebar-title">Lineární aproximace</p>
+<div class="obtekat"><figure><a href="https://um.mendelu.cz/manim/Linearni_aproximace" target=_blank><img src="https://um.mendelu.cz/manim/thumbs/Linearni_aproximace.jpg"></a><figcaption>Lineární aproximace může pomoci zjednodušit komplikované funkční vztahy v případě, kdy vstupní data nejsou příliš variabilní. <a href="https://um.mendelu.cz/manim/Linearni_aproximace" class=but-prez target=_blank>Otevřít prezentaci</a> <a href="https:\\youtu.be/aOvVJzeWy3o" class=but-video target=_blank>Spustit video</a></figcaption></figure></div>
+</aside>
+<p><strong>Význam vzorce pro lineární aproximaci</strong></p>
+<ul class="simple">
+<li><p>Vzorec umožňuje složitý funkční předpis předpisem jednodušším (lineární funkce jsou jedny z nejtrivilálnějších).</p></li>
+<li><p>K použití vzorce stačí znát jeden bod grafu a funkční hodnotu a hodnotu derivace v tomto bodě.</p></li>
+<li><p>Aproximace je pouze lokální, použitelná pouze v určitém okolí uvažovaného bodu. Jak velké toto okolí může být a jaké chyby se dopouštíme při lineární aproximaci je různé pro různé funkce. Obecně platí, že čím blíže jsme k bodu <span class="math notranslate nohighlight">\(x_0\)</span>, tím je tato aproximace přesnější.</p></li>
+</ul>
+<div class="admonition-priklady-linearni-aproximace admonition">
+<p class="admonition-title">Příklady lineární aproximace</p>
+<p>V okolí bodu <span class="math notranslate nohighlight">\(x=0\)</span> platí následující lineární aproximace</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\sqrt{1+x}\approx 1+\frac{1}{2}x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{\sqrt{1-x}}\approx 1+\frac{1}{2}x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin x\approx x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\cos x\approx 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{pmatrix} \cos(x) &amp; -\sin(x)\\ \sin(x) &amp; \cos(x)\end{pmatrix}\approx \begin{pmatrix} 1 &amp; -x\\ x &amp; 1\end{pmatrix}\)</span></p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="jednorozmerne-konstitucni-zakony">
+<h2><span class="section-number">6.6. </span>Jednorozměrné konstituční zákony<a class="headerlink" href="#jednorozmerne-konstitucni-zakony" title="Link to this heading">#</a></h2>
+<p>Konstituční zákony jsou matematické vztahy, které popisují chování materiálů a systémů v závislosti na vnějších faktorech, jako jsou teplota, tlak, objem, atd. Tyto zákony jsou klíčové pro pochopení a předpověď chování materiálů a systémů v různých podmínkách.</p>
+<div class="admonition-priklady-konstitucnich-zakonu admonition">
+<p class="admonition-title">Příklady konstitučních zákonů:</p>
+<ol class="arabic simple">
+<li><p><strong>Hookův zákon</strong>: Popisuje vztah mezi silou <span class="math notranslate nohighlight">\(F\)</span> působící na pružinu a její deformací <span class="math notranslate nohighlight">\(x\)</span>. Matematicky je vyjádřen jako <div class="math notranslate nohighlight">
+\[F = kx,\]</div>
+ kde <span class="math notranslate nohighlight">\(k\)</span> je tuhost pružiny.</p></li>
+<li><p><strong>Fourierův zákon</strong>: Popisuje vztah mezi rychlostí poklesu teploty a tepelným tokem v materiálu. Matematicky je vyjádřen vztahem <div class="math notranslate nohighlight">
+\[q = -k \frac{dT}{dx},\]</div>
+ kde <span class="math notranslate nohighlight">\(q\)</span> je tepelný tok, <span class="math notranslate nohighlight">\(k\)</span> je tepelná vodivost a <span class="math notranslate nohighlight">\(T\)</span> je teplota.</p></li>
+<li><p><strong>Fickův zákon</strong>: Popisuje vztah mezi difuzním tokem a gradientem koncentrace v porézním médiu. Matematicky je vyjádřen vztahem <div class="math notranslate nohighlight">
+\[j = -D \frac{dc}{dx},\]</div>
+ kde <span class="math notranslate nohighlight">\(j\)</span> je difuzní tok, <span class="math notranslate nohighlight">\(D\)</span> je difuzní koeficient a <span class="math notranslate nohighlight">\(c\)</span> je koncentrace.</p></li>
+</ol>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../derivace/index.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Derivace</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../parcialni_derivace/index.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Parciální derivace</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rovnice-ochlazovani">6.1. Rovnice ochlazování</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencialni-rovnice">6.2. Diferenciální rovnice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximace-derivaci">6.3. Aproximace derivací</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevod-rovnice-ochlazovani-na-tvar-s-konecnymi-diferencemi">6.4. Převod rovnice ochlazování na tvar s konečnými diferencemi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearni-aproximace-funkce-jedne-promenne">6.5. Lineární aproximace funkce jedné proměnné</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearni-aproximace-v-1d">6.5.1. Lineární aproximace v 1D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednorozmerne-konstitucni-zakony">6.6. Jednorozměrné konstituční zákony</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle Robert Mařík
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</p>
+<p><script src="https://utteranc.es/client.js"
+ repo="robert-marik/am" 
+ issue-term="pathname" 
+ label="comment" 
+ theme="github-light" 
+ crossorigin="anonymous" 
+  async> 
+ </script> 
+ </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
