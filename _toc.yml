@@ -21,21 +21,17 @@ parts:
     - file: aplikace_derivaci/index.md
     - file: parcialni_derivace/index.md
     - file: aplikace_parcialnich_derivaci/index.md
+    - file: difuzni_rovnice/index.md
     - file: integral/index.md
-    - file: numerika/index.md
   - caption: Základy teorie elasticity
     numbered: true
     chapters:
     - file: statika/index.md
     - file: deformace/index.md
-  - caption: Operátory matematické fyziky
-    numbered: true
-    chapters:
-    - file: D01/index.md
-    - file: D02/index.md
   - caption: Numerická matematika
     numbered: true
     chapters:
+    - file: numerika/index.md
     - file: E01/index.md
   - caption: Shrnutí
     numbered: true

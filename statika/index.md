@@ -40,7 +40,6 @@ $$ \frac{d\vec L}{dt} = \sum \vec M $$
 $$\sum \vec F = \sum \vec M = 0$$
 ```
 
-
 ## Teorie elasticity
 
 * Deformace, namáhání a Hookův zákon v 1D

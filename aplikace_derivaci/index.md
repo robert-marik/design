@@ -45,7 +45,9 @@ $k$) a rozdíl teploty kávy a teploty okolí ($T-T_\infty$).
 * V rovnici je obsaženo, že dynamika ochlazování s časem klesá, protože jak se
   káva ochlazuje, rozdíl teplot mezi kávou a okolím se zmenšuje.
 * Rovnice umožňuje modelovat různé scénáře a měnit vlastnosti hrnku i okolí a
-  sledovat, jak se to projeví na celkovém průběhu děje. 
+  sledovat, jak se to projeví na celkovém průběhu děje.
+  
+   
 
 ## Diferenciální rovnice
 

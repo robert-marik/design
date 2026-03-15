@@ -27,6 +27,13 @@ roli parametru a nijak se nemění.
 ```
 
 
+
+```{figure} https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/parcialni_versus_obycejna_derivace.png
+
+Parciální derivace umožňuje sledovat změnu funkce vzhledem k jednotlivým proměnným samostatně.
+```
+
+
 ```{prf:remark} jednotka parciální derivace
 :nonumber:
  Jednotka derivace $\frac{\partial f}{\partial x}$ je stejná, jako jednotka podílu $\frac {f}x$. Jednotka derivace $\frac{\partial f}{\partial y}$ je stejná, jako jednotka podílu $\frac {f}y$.
@@ -87,6 +94,11 @@ nebo (vyjádřeno pomocí skalárního součinu a gradientu)
 $$      f(x,y)\approx f(x_0, y_0)+ \nabla f(x_0,y_0)\cdot (x-x_0,y-y_0).$$
 
 ### Lineární aproximace vektorové funkce
+
+```{figure} https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/linearni_aproximace.png
+
+Všechny lineární aproximace mají jednotnou strukturu. Odhad změny veličiny se počítá jako součin velikosti změny na vstupu a intenzity reakce na změnu a ten se přičítá k výchozí hodnotě.
+```
 
 Lineární aproximací vektorové funkce je lineární aproximace jednotlivých komponent. To jsou skalární funkce a je na ně možné aplikovat postup z předchozího bodu. Tedy pro funkci $\vec F(x,y)=f_1(x,y)\vec \imath + f_2(x,y)\vec\jmath$ máme v bodě $(x_0, y_0)$ lineární aproximace
 $$      f_1(x,y)\approx f_1(x_0, y_0)+\frac{\partial f_1 (x_0,y_0)}{\partial x}(x-x_0)+\frac{\partial f_1 (x_0,y_0)}{\partial y}(y-y_0)$$
@@ -160,6 +172,7 @@ mechanický model si můžeme představit proudění tekutiny (pro
 jednoduchou představu) nebo proudění vlhkosti (pro odvození rovnice
 difuze namísto rovnice vedení tepla). Budeme uvažovat libovolné místo materiálu a budeme matematicky vyjadřovat děje, které přispívají ke změně teploty.
 
+
 * Rychlost růstu teploty (s časem) je $$\frac{\partial T}{\partial t}.$$ Měříme ji například ve stupních Celsia za minutu. Tato rychlost je úměrná rychlosti s jakou do daného místa dodáváme teplo. Proto v dalším budeme hledat rychlost dodávání tepla a daného místa. Poté se vrátíme do tohoto místa a dáme tuto rychlost do souvislosti s rychlostí růstu teploty.
 * Rychlost růstu teploty jako funkce polohy je $$\frac{\partial T}{\partial x}.$$ Měříme ji například ve stupních Celsia na centimetr. 
 * Pro přepočet nerovnoměrného rozložení teploty na tok tepla nás zajímá nikoliv jak teplota v prostoru roste, ale jak klesá. Proto musíme vzít derivaci podle prostorové proměnné záporně, abychom dostali pokles teploty. Tento pokles vynásobíme konstantou, která převede spád teploty na tok tepla. Tuto konstantu označíme $k$ (nazývá se součinitel tepelné vodivosti a dodá nám ji fyzika a v ní takzvaný Fourierův zákon). Tok tepla $q$ ve směru osy $x$ je tedy $$q=-k\frac{\partial T}{\partial x}.$$ To je veličina, která udává, kolik joulů tepla proteče průřezem za jednotku času. 
@@ -172,6 +185,12 @@ difuze namísto rovnice vedení tepla). Budeme uvažovat libovolné místo mater
 * Pokles toku vypočtený v předchozím bodě je úměrný rychlosti růstu teploty. Příslušné konstanty úměrnosti dodá fyzika. Platí $$\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)=\rho c\frac{\partial T}{\partial t},$$ kde $c$ je měrná tepelná kapacita a $\rho$ je hustota. (V tomto případě jsou hustota i měrná tepelná kapacita vztaženy ne k jednotce objemu, jak jsme zvyklí, ale k jednotce délky. Například $\rho$ je lineární hustota, tj. v gramech na centimetr). 
   * Například pokles $-\frac{\partial q}{\partial x}=2\,\mathrm{J}/(\mathrm{min}\,\mathrm{cm})$ toku $q=10\,\mathrm{J}/\mathrm{min}$ znamená, že o centimetr dál ve směru osy $x$ proteče průřezem směrem doprava už nikoliv deset, ale pouze osm joulů za minutu. Tedy každou minutu se v jednom centimetru délky od toku "odpojí" energie o velikosti dva jouly a ta se "uloží" do materiálu. Navenek se to projeví zvýšením teploty v daném místě. Přičemž hrají roli fyzikální vlastnosti materiálu, které udávají, jaká teplotní změna odpovídá dodanému teplu.
 * Rovnice odvozená v předchozím kroku se nazývá **rovnice vedení tepla** a dokáže modelovat například prostup tepla stěnou domu. Tato rovnice zachycuje matematicky to, jak funguje materiál z hlediska předávání tepla mezi místy o různé teplotě. 
+
+```{figure} https://raw.githubusercontent.com/robert-marik/desing-images/refs/heads/main/rovnice_vedeni_tepla.png
+
+Rovnice vedení tepla v jedné dimenzi. Dává do souvislosti rychlost růstu teploty v daném místě s rychlostí růstu teploty jako funkce polohy a s rychlostí poklesu toku tepla jako funkce polohy. Je matematickým modelem vedení tepla v jedné dimenzi. Odvození této rovnice je uvedeno v textu.
+```
+
 
 **Shrnutí.** V odvození vidíme, že rovnice vedení tepla je vlastně
 bilance toku tepla. Zeslabení toku 
