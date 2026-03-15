@@ -68,8 +68,8 @@ html_theme_options = {
 language = 'cs'
 html_title = 'Aplikovaná matematika (design)'
 
-jupyter_cache = ''
-jupyter_execute_notebooks = 'auto'
+nb_execution_cache_path = "_build/.jupyter_cache"
+nb_execution_mode = "auto"
 latex_engine = 'xelatex'
 myst_enable_extensions = ['amsmath', 'dollarmath']
 myst_url_schemes = ['mailto', 'http', 'https']
