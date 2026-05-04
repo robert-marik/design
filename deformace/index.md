@@ -52,7 +52,7 @@ $$
   $i\neq j$ jsou smykové deformace.
 * Normálová deformace udává, o kolik procent se materiál v daném směru prodlouží
   (kladná hodnota) nebo zkrátí (záporná hodnota). Smyková deformace udává, jak
-  se změní pravé úhly (v obloukové míře). 
+  se změní pravé úhly (polovina změny velikosti úhlu v obloukové míře). 
 
 ## Hookův zákon pro izotropní, anizotropní a ortotropní materiál
 
@@ -68,7 +68,7 @@ $$\varepsilon = \left(
     \varepsilon_{xy}
      \end{matrix} 
 \right)
-\quad 
+\quad \text{a} \quad
 \sigma = \left(
      \begin{matrix}
     \sigma_x \\
@@ -78,10 +78,13 @@ $$\varepsilon = \left(
     \sigma_{xz} \\
     \sigma_{xy} 
      \end{matrix}
-\right)
+\right).
 $$
+Toto označení se nazývá Voigtova notace.
 
-Matice poddajnosti je maticí, vyjadřující úměrnost mezi oběma tenzory.
+Matice poddajnosti je maticí, vyjadřující úměrnost mezi oběma tenzory. Slovně vyjádřeno, u každé komponenty deformace se sčítají příspěvky od všech komponent napětí, přičemž příspěvky od každého napětí jsou úměrné těmto napětím. To je přímá analogie jednorozměrného Hookova zákona $\varepsilon = \frac 1E \sigma$.
+
+Obecný vztah mezi tenzorem napětí a tenzorem deformace pro lineární materiál je tedy dán vztahem
 
 $$\left(
     \begin{matrix}
@@ -113,10 +116,13 @@ $$\left(
     \sigma_{xz} \\
     \sigma_{xy} 
      \end{matrix}
-\right)
+\right).
 $$
 
-Matice poddajnosti je symetrická
+Například $\varepsilon_x$ je dána vztahem
+$$\varepsilon_x = S_{11}\sigma_x + S_{12}\sigma_y + S_{13}\sigma_z + S_{14}\sigma_{yz} + S_{15}\sigma_{xz} + S_{16}\sigma_{xy}.$$
+
+Matice v této relaci se nazývá matice poddajnosti a je symetrická, tj. obsahuje pouze 21 nezávislých materiálových konstant.
 
 $$\left(
     \begin{matrix}
@@ -151,13 +157,20 @@ $$\left(
 \right)
 $$
 
-Modře vyznačené prvky dávají do relace smykové namáhání a normálové napětí. Červené vyznačené prvky dávají do relace smykové napětí v jedné rovině se smykovou deformací v jiné rovině. 
+Zpravidla se smykové namáhání projevuje jenom ve své vlastní rovině. Například smykové napětí $\sigma_{yz}$ vyvolává smykovou deformaci $\varepsilon_{yz}$, ale nevyvolává smykovou deformaci $\varepsilon_{xz}$ nebo $\varepsilon_{xy}$. Proto jsou červené vyznačené prvky dávající do relace smykové napětí v jedné rovině se smykovou deformací v jiné rovině nulové.
+
+
+$$S_{45}=S_{46}=S_{56}=0$$
+
+Tím je počet nezávislých materiálových konstant zredukován na 18.
 
 ### Ortotropní materiály
 
-Ortotropní materiály jsou materiály, jejichž struktura se nemění při rotaci o $180^\circ$ okolo libovolné ze tří navzájem kolmých os. Typickým představitelem je dřevo. 
+Ortotropní materiály jsou materiály, jejichž struktura se nemění při rotaci o $180^\circ$ okolo libovolné ze tří navzájem kolmých os. Typickým představitelem je dřevo. V tomto případě volíme často směry $x=L$, $y=R$, $z=T$. Platí $E_L>E_R>E_T$.
 
-Při vhodné volbě souřadnic nevyvolávají normálová napětí deformaci a smyková napětí vyvolávají jenom smykovou deformaci v rovině, ve které tato napětí působí. V pravém hodním bloku matice jsou nuly a pravý dolní roh je diagonální. 
+Modře vyznačené prvky v matici poddajnosti dávají do relace smykové namáhání a normálové napětí.
+Při vhodné volbě souřadnic nevyvolávají normálová napětí smykovou deformaci a smyková napětí nevyvolávají normálovou deformaci.
+ V pravém horním bloku matice jsou proto nuly. Matice poddajnosti se dále redukuje a počet materiálových konstant se snižuje na 9. 
 
 $$\left(
     \begin{matrix}
@@ -193,7 +206,17 @@ $$\left(
 $$
 
 Materiálové vlastnosti určujeme pomocí devíti na sobě nezávislých materiálových konstant.
-Pomocí Youngových modulů pro jednotlivé směry, pomocí Poissonova čísla a pomocí smykových modulů je možno formulovat vztah následovně.
+
+Konstanta úměrnosti mezi normálovým napětím $\sigma_i$ a normálovou deformací $\varepsilon_i$ se nazývá Youngův modul $E_i$. Platí $$
+\varepsilon_i = \frac 1{E_i} \sigma_i\quad \text{ pro $i\in\{x,y,z\}$}.$$
+
+Konstanta úměrnosti mezi smykovým napětím $\sigma_{ij}$ a smykovou deformací $\varepsilon_{ij}$ se nazývá smykový modul $G_{ij}$. Platí $$
+\varepsilon_{ij} = \frac 1{G_{ij}} \sigma_{ij} \quad \text{ pro $i,j\in\{x,y,z\}$, $i\neq j$}.$$
+
+Poměr mezi normálovou deformací v jednom směru a normálovou deformací v jiném směru se nazývá Poissonovo číslo $\nu_{ij}=-\frac{\varepsilon_j}{\varepsilon_i}$. Platí tedy $$\varepsilon_j = -\nu_{ij} \varepsilon_i
+= - \frac{\nu_{ij}}{E_i} \sigma_i \quad\text{ pro $i,j\in\{x,y,z\}$, $i\neq j$}.$$
+
+Pomocí Youngových modulů pro jednotlivé směry, pomocí Poissonova čísla a pomocí smykových modulů je možno formulovat Hookův zákon následovně.
 
 $$\left(
     \begin{matrix}
@@ -350,7 +373,11 @@ $$
 
 Izotropní materiály charakterizujeme pomocí tří materiálových konstant. Mezi těmito konstantami je vztah 
 $$G = \frac{E}{2(1+\nu)}.$$
-Hodnota $\nu$ pro inzotropní materiály je zpravidl blízká číslu $0.33$.
+Hodnota $\nu$ pro izotropní materiály je zpravidla blízká číslu $0.33$.
+
+Malá hodnota $\nu$ znamená, že materiál se při zatížení v jednom směru deformuje jenom málo v kolmých směrech. Taková vlastnost je vhodná například pro zátky lahví. Korek má velmi malou hodnotu $\nu$, jinak by bylo komplikované láhev otevřít nebo uzavřít. 
+
+Velká hodnota $\nu$ znamená, že materiál se při zatížení v jednom směru deformuje výrazně i v kolmých směrech. Takové materiály jsou špatně objemově stlačitelné. Příkladem je guma a další tlumící materiály.
 
 ## Přímé nosníky
 
