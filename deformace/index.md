@@ -1,62 +1,24 @@
-# Teorie elasticity ve 3D
-
-## Tenzor napětí
-
-* Napětí je podílem velikosti působící síly a velikosti plochy, na kterou tato síla působí. Pro sílu kolmou k ploše mluvíme o normálovém napětí, pro sílu ve směru plochy o smykovém napětí. 
-* Znaménková konvence - viz obrázek. Napětí v obrázku jsou kladná, opačná napětí jsou záporná. Kladné normálové napětí tedy značí tah, záporné tlak. 
-* V obrázku jsou napěí pouze na třech stěnách, na zbylých šesti jsou odpovídající napětí tak, aby element byl ve statické rovnováze, tj. aby výsledná síla a výsledný moment byly nulové.
-
-$$
-\sigma = \begin{pmatrix}
-\sigma_x & \sigma_{xy} & \sigma_{xz}\cr
-\sigma_{xy} & \sigma_y & \sigma_{yz}\cr
-\sigma_{xz} & \sigma_{xy} & \sigma_{z}
-\end{pmatrix}
-$$
-
-![](../images/stress.svg)
-
-Tenzor napětí je bilineární forma, umožňuje výpočet síly na libovolně orientované ploše
-
-### Praktická ukázka tenzoru napětí v tříbodovém ohybu
-
-#### Tříbodový ohyb, tah v podélném směru
-
-![](../statika/nosnik_3bodovy.png)
-
-Tah na spodní straně, tlak na horní straně a před podpěrami. Zeleně neutrální oblast, kde je napětí nulové.
-
-#### Tříbodový ohyb, tah v podélném směru pro čtvrtinu nosníku
-
-![](../statika/nosnik_ctvrtina.png)
-
-Numerická simulace pro část nosníku šetří strojový čas a nároky na paměť. V tomto případě je možné použít symetrii a počítat pouze čtvrtinu nosníku.
-
-#### Tříbodový ohyb, smykové napětí
-
-![](../statika/beam_smyk.png)
-
-Smykové napětí v levé a pravé polovině nosníku se liší znaménkem, je antisymetrické. 
-
-## Linearizace vektoru posunutí, tenzor deformace
-
-* linearizace, [nelineární transfromace a její linearizace](https://gist.github.com/robert-marik/dd01d023c30454183196d9c7b967aa00)
-* separace rotační, posuvné a deformační složky 
-* tenzor deformace $\varepsilon$
-
-$$
-\varepsilon = (\varepsilon_{ij}) = \left(\frac 12\left(\frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)\right)
-$$
-
-* Komponenty $\varepsilon_{ii}$ jsou normálové deformace, $\varepsilon_{ij}$ pro
-  $i\neq j$ jsou smykové deformace.
-* Normálová deformace udává, o kolik procent se materiál v daném směru prodlouží
-  (kladná hodnota) nebo zkrátí (záporná hodnota). Smyková deformace udává, jak
-  se změní pravé úhly (polovina změny velikosti úhlu v obloukové míře). 
+# Hookův zákon ve 3D
 
 ## Hookův zákon pro izotropní, anizotropní a ortotropní materiál
 
-Tenzory napětí a deformace upravíme na vektory. 
+Tenzory napětí a deformace 
+
+$$
+\varepsilon = \begin{pmatrix}
+    \varepsilon_x & \varepsilon_{xy} & \varepsilon_{xz} \\
+    \varepsilon_{xy} & \varepsilon_y & \varepsilon_{yz} \\
+    \varepsilon_{xz} & \varepsilon_{yz} & \varepsilon_z
+     \end{pmatrix}
+\quad \text{a} \quad
+\sigma = \begin{pmatrix}
+\sigma_x & \sigma_{xy} & \sigma_{xz}\cr
+\sigma_{xy} & \sigma_y & \sigma_{yz}\cr
+\sigma_{xz} & \sigma_{yz} & \sigma_{z}
+\end{pmatrix}
+$$
+
+upravíme na vektory. 
 
 $$\varepsilon = \left(
     \begin{matrix}
@@ -250,6 +212,15 @@ $$\left(
      \end{matrix}
 \right)
 $$
+
+Z podmínek symetrie plynou vztahy
+$$
+\frac{\nu_{ij}}{{E_i}}
+=
+\frac{\nu_{ji}}{E_j}.
+$$
+
+**Poznámka:** Někdy je přehozen význam indexů u Poissonova podílu. Proto je nutné se u každého použití vzorce v literatuře nebo softwaru seznámit s použitou notací.
 
 ### Materiály izotropní v jedné rovině
 
