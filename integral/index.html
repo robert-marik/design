@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Integrál &#8212; Aplikovaná matematika (design)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9e5d32fb" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=0f3dec7d"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics"]}, "tex": {"packages": {"[+]": ["physics"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'integral/index';</script>
+    <script src="../_static/custom.js?v=9eb870d4"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="11. Základy teorie elasticity" href="../statika/index.html" />
+    <link rel="prev" title="9. Rovnice kontinuity, difuzní rovnice" href="../difuzni_rovnice/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Hledat v textu..."
+         aria-label="Hledat v textu..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aplikovaná matematika (design)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funkce</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funkce/index.html">1. Funkce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineární algebra</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektory/index.html">2. Vektory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matice/index.html">3. Matice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlastni_cisla/index.html">4. Vlastní směry a vlastní hodnoty matic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Diferenciální a integrální počet</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivace/index.html">5. Derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aplikace_derivaci/index.html">6. Aplikace derivací</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parcialni_derivace/index.html">7. Parciální derivace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aplikace_parcialnich_derivaci/index.html">8. Aplikace parciálních derivací</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../difuzni_rovnice/index.html">9. Rovnice kontinuity, difuzní rovnice</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Integrál</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Základy teorie elasticity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statika/index.html">11. Základy teorie elasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deformace/index.html">12. Hookův zákon ve 3D</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerická matematika</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../numerika/index.html">13. Numerické metody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E01/index.html">14. Základní numerické metody</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shrnutí</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../F01/index.html">15. Shrnutí</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integrál</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurcity-integral">10.1. Neurčitý integrál</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcni-predpis-z-rychlosti-zmeny-a-vychoziho-stavu">10.1.1. Funkční předpis z rychlosti změny a výchozího stavu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#urcity-integral-newtonuv">10.2. Určitý integrál (Newtonův)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zmena-funkce-z-rychlosti-zmeny-casova-zmena-teploty">10.2.1. Změna funkce z rychlosti změny (časová změna teploty)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-motivace">10.2.2. Další motivace</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#urcity-integral-riemannuv">10.3. Určitý integrál (Riemannův)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integral">
+<h1><span class="section-number">10. </span>Integrál<a class="headerlink" href="#integral" title="Link to this heading">#</a></h1>
+<section id="neurcity-integral">
+<h2><span class="section-number">10.1. </span>Neurčitý integrál<a class="headerlink" href="#neurcity-integral" title="Link to this heading">#</a></h2>
+<p>Představíme nástroj, který nám umožní z rychlosti, s jakou se mění veličina <span class="math notranslate nohighlight">\(f\)</span>, určit rovnici
+udávající závislost veličiny <span class="math notranslate nohighlight">\(f\)</span> na čase.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span>Definition </span> (Neurčitý integrál)</p>
+<section class="definition-content" id="proof-content">
+<p>Řekneme, že funkce <span class="math notranslate nohighlight">\(F\)</span> je <em>primitivní funkcí</em> k funkci <span class="math notranslate nohighlight">\(f\)</span> na intervalu <span class="math notranslate nohighlight">\(I\)</span>, jestliže platí <div class="math notranslate nohighlight">
+\[F'(x)=f(x)\]</div>
+ na intervalu <span class="math notranslate nohighlight">\(I\)</span>. Množina všech primitivních funkcí k funkci <span class="math notranslate nohighlight">\(f\)</span> se nazývá <em>neurčitý integrál</em> funkce <span class="math notranslate nohighlight">\(f\)</span> a značí <div class="math notranslate nohighlight">
+\[\int f(x)\,\mathrm dx.\]</div>
+</p>
+</section>
+</div><p>Otázku (ne-)jednoznačnosti řeší následující věta.</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span>Věta </span> (Jednoznačnost primitivní funkce)</p>
+<section class="theorem-content" id="proof-content">
+<p>Primitivní funkce je dána jednoznačně, až na aditivní konstantu.</p>
+<ul class="simple">
+<li><p>Je-li <span class="math notranslate nohighlight">\(F\)</span> primitivní funkcí k funkci <span class="math notranslate nohighlight">\(f\)</span> na intervalu <span class="math notranslate nohighlight">\(I\)</span>,
+platí totéž i pro funkci <span class="math notranslate nohighlight">\(G(x)=F(x)+c\)</span>, kde <span class="math notranslate nohighlight">\(c\in\mathbb R\)</span>.</p></li>
+<li><p>Jsou-li <span class="math notranslate nohighlight">\(F\)</span> a <span class="math notranslate nohighlight">\(G\)</span> primitivní funkce k téže funkci <span class="math notranslate nohighlight">\(f\)</span> na
+intervalu <span class="math notranslate nohighlight">\(I\)</span>, existuje <span class="math notranslate nohighlight">\(c\in\mathbb R\)</span> takové, že
+<div class="math notranslate nohighlight">
+\[     F(x)=G(x)+c \]</div>
+ na <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+</ul>
+</section>
+</div><p><strong>Příklad.</strong> Funkce <span class="math notranslate nohighlight">\(x^2\)</span> má primitivní funkce například <span class="math notranslate nohighlight">\(\frac 13 x^3\)</span>, nebo <span class="math notranslate nohighlight">\(\frac 13 x^3+7\)</span>,  nebo <span class="math notranslate nohighlight">\(\frac 13 x^3+\pi\)</span>, protože derivace všech těchto tří funkcí je <span class="math notranslate nohighlight">\(x^2\)</span>. Platí <div class="math notranslate nohighlight">
+\[\int x^2 \,\mathrm dx=\frac 13 x^3+c,\qquad c\in\mathbb R.\]</div>
+</p>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Poznámka 10.1 </span> (Vzorce pro výpočet integrálu)</p>
+<section class="remark-content" id="proof-content">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int c\,\mathrm dx=cx+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int  x^n\,\mathrm dx= \frac{x^{n+1}}{n+1}+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\int e^{ax}\,\mathrm dx=\frac 1a e^{ax}+C\)</span></p></li>
+</ol>
+</section>
+</div><section id="funkcni-predpis-z-rychlosti-zmeny-a-vychoziho-stavu">
+<h3><span class="section-number">10.1.1. </span>Funkční předpis z rychlosti změny a výchozího stavu<a class="headerlink" href="#funkcni-predpis-z-rychlosti-zmeny-a-vychoziho-stavu" title="Link to this heading">#</a></h3>
+<p><em>Uvažujme těleso, jehož teplota klesá známou rychlostí. Derivace teploty podle času je <span class="math notranslate nohighlight">\(\frac{\mathrm dT}{\mathrm dt}=-0.1 e^{-0.01
+t} \,{}^\circ \mathrm C/\mathrm{min}.\)</span> Cílem je najít teplotu jako
+funkci času. Dodatečná informace je, že počáteční teplota je <span class="math notranslate nohighlight">\(28
+^\circ \mathrm{C}\)</span>.</em></p>
+<p>Použijeme skutečnost, že integrál konstantního násobku je konstantní násobek integrálu a vzorec <div class="math notranslate nohighlight">
+\[\int e^{ax}\,\mathrm{d}x=\frac 1a e^{ax}+c.\]</div>
+
+Teplota jako
+funkce času je dána integrálem
+\dm <div class="math notranslate nohighlight">
+\[T=\int - 0.1 e^{-0.01t} \,\mathrm dt=\frac{-0.1}{-0.01} e^{-0.01t}+C = 10 e^{-0.01t}+C.\]</div>
+
+Hodnota <span class="math notranslate nohighlight">\(C\)</span> souvisí s počáteční teplotou. Protože počáteční teplota je <span class="math notranslate nohighlight">\(28 ^\circ \mathrm{C}\)</span>, dosadíme do vztahu
+pro <span class="math notranslate nohighlight">\(T\)</span> hodnoty <span class="math notranslate nohighlight">\(T=28 ^\circ \mathrm{C}\)</span> a <span class="math notranslate nohighlight">\(t=0\)</span> a ze vzniklé rovnice
+určíme <span class="math notranslate nohighlight">\(C\)</span>. Dostáváme takto podmínku <div class="math notranslate nohighlight">
+\[28=10 e^0 +C,\]</div>
+ která implikuje
+<span class="math notranslate nohighlight">\(C=18 ^\circ \mathrm C\)</span>. Funkce udávající závislost
+teploty místnosti na čase je <div class="math notranslate nohighlight">
+\[T=\left(18+10 e^{-0.01
+t}\right)\,{}^\circ \mathrm C.\]</div>
+</p>
+<p><strong>Poznámka (vlhkost dřeva elektrickou metodou).</strong> Podobný výpočet se využívá u měření elektrického odporu dřeva pro stanovení vlhkosti. Protože elektrický odpor dřeva je velký, není vhodné pro určení elektrického odporu použít Ohmův zákon a změřený proud a napětí. Jedna z možností je měření času nutného k nabití nebo vybití kondenzátoru přes odpor. V případě nabíjení proud exponenciálně klesá (zdůvodníme později v přednášce věnované diferenciálním rovnicím) a proto (díky elektrickým vlastnostem kondenzátoru) exponenciálně klesá i rychlost, s jakou roste napětí na kondenzátoru. Toto napětí je nutné pro výpočet odporu. Pokud známe rychlost, s jakou se napětí mění, určíme napětí integrováním a znalostí napětí na začátku nabíjení.</p>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span>Poznámka </span> (Veličina vypočtená z rychlosti své změny)</p>
+<section class="remark-content" id="proof-content">
+<p>Pokud se veličina <span class="math notranslate nohighlight">\(f(t)\)</span> mění v čase rychlostí <span class="math notranslate nohighlight">\(r(t)\)</span>, platí <div class="math notranslate nohighlight">
+\[f(t)=\int r(t)\,\mathrm dt,\]</div>
+ přičemž pravá strana je dána jednoznačně až na aditivní konstantu. To koresponduje s pozorováním, že rychlost změn k jednoznačné identifikaci časového průběhu měnící se veličiny nestačí. Je potřeba mít zadán ještě výchozí stav.</p>
+</section>
+</div></section>
+</section>
+<section id="urcity-integral-newtonuv">
+<h2><span class="section-number">10.2. </span>Určitý integrál (Newtonův)<a class="headerlink" href="#urcity-integral-newtonuv" title="Link to this heading">#</a></h2>
+<p>Představíme si mírnou modifikaci neurčitého integrálu. Rychlost změny
+nebudeme používat k hledání předpisu funkce, ale budeme hledat změnu
+funkce na zadaném intervalu.</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span>Definition </span> (Newtonův určitý integrál)</p>
+<section class="definition-content" id="proof-content">
+<p>Buď <span class="math notranslate nohighlight">\(f\)</span> funkce a <span class="math notranslate nohighlight">\(F\)</span> její
+primitivní funkce na intervalu <span class="math notranslate nohighlight">\(I\)</span>. Buď <span class="math notranslate nohighlight">\([a,b]\subset I\)</span> podinterval v
+<span class="math notranslate nohighlight">\(I\)</span>. <em>Určitým integrálem funkce <span class="math notranslate nohighlight">\(f\)</span> na intervalu <span class="math notranslate nohighlight">\([a,b]\)</span></em> rozumíme
+veličinu označenou a definovanou vztahem <div class="math notranslate nohighlight">
+\[\int_a^b f(x)\mathrm
+dx:=F(b)-F(a).\]</div>
+</p>
+</section>
+</div><div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span>Poznámka </span> (Změna veličiny vypočtená pomocí rychlosti)</p>
+<section class="remark-content" id="proof-content">
+<p>Pokud se veličina <span class="math notranslate nohighlight">\(f(t)\)</span> mění v časovém intervalu od <span class="math notranslate nohighlight">\(t=a\)</span> do <span class="math notranslate nohighlight">\(t=b\)</span> rychlostí <span class="math notranslate nohighlight">\(r(t)\)</span>, je změna veličiny <span class="math notranslate nohighlight">\(f\)</span> za tento časový okamžik rovna <div class="math notranslate nohighlight">
+\[\Delta f=f(b)-f(a)=\int_a^b r(t)\,\mathrm dt.\]</div>
+</p>
+</section>
+</div><p><strong>Označení.</strong> Výraz <span class="math notranslate nohighlight">\(F(b)-F(a)\)</span>, tj. změnu funkce <span class="math notranslate nohighlight">\(F(x)\)</span> na intervalu
+<span class="math notranslate nohighlight">\([a,b]\)</span>, označujeme také <span class="math notranslate nohighlight">\([F(x)]_a^b\)</span>. Tento zápis se často používá
+jako mezivýpočet při výpočtu určitého integrálu.
+<div class="math notranslate nohighlight">
+\[\int_0^1 x^2 \,\mathrm dx=\left[\frac 13 x^3\right]_0^1=\frac 13 (1)^3 -\frac 13 (0)^3=\frac 13\]</div>
+</p>
+<section id="zmena-funkce-z-rychlosti-zmeny-casova-zmena-teploty">
+<h3><span class="section-number">10.2.1. </span>Změna funkce z rychlosti změny (časová změna teploty)<a class="headerlink" href="#zmena-funkce-z-rychlosti-zmeny-casova-zmena-teploty" title="Link to this heading">#</a></h3>
+<p><em>Uvažujme těleso, jehož teplota klesá známou rychlostí. Derivace teploty podle času je
+<span class="math notranslate nohighlight">\(\frac{\mathrm dT}{\mathrm dt}=-0.1 e^{-0.01 t} \,{}^\circ \mathrm
+C/\mathrm{min}.\)</span> Chceme určit pokles teploty za první hodinu a pokles teploty za druhou hodinu.</em></p>
+<p>Neurčitý integrál
+<div class="math notranslate nohighlight">
+\[\int - 0.1 e^{-0.01t} \,\mathrm dt=10 e^{-0.01t}+C\]</div>
+
+jsme vypočítali v podkapitole s neurčitým integrálem. Potřebovali jsme
+ještě znát počáteční hodnotu teploty a našli jsme teplotu jako funkci
+času.</p>
+<p>Nyní zapojíme určitý integrál. Nepotřebujeme informaci o počáteční
+teplotě, ale zato jsme schopni určit jenom změnu teploty za daný
+časový interval. Za první hodinu bude změna teploty
+\dm<div class="math notranslate nohighlight">
+\[\int_0^{60} - 0.1 e^{-0.01t} \,\mathrm dt=\left[10 e^{-0.01t}\right]_0^{60}= 10 e^{-0.01\cdot 60} - 10 e^{-0.01\cdot 0}\approx  -4.5 ^\circ \mathrm C.\]</div>
+
+Za druhou hodinu bude změna teploty
+\dm<div class="math notranslate nohighlight">
+\[\int_{60}^{120} - 0.1 e^{-0.01t} \,\mathrm dt=\left[10 e^{-0.01t}\right]_{60}^{120}= 10 e^{-0.01\cdot 120} - 10 e^{-0.01\cdot 60}\approx  -2.5 ^\circ \mathrm C. \]</div>
+</p>
+</section>
+<section id="dalsi-motivace">
+<h3><span class="section-number">10.2.2. </span>Další motivace<a class="headerlink" href="#dalsi-motivace" title="Link to this heading">#</a></h3>
+<p>Ze středoškolské fyziky dobře známe vzorce pro dráhu, práci a tlakovou
+sílu. Ovšem jenom v extrémně pěkných případech, kdy se tyto veličiny určují součinem.</p>
+<ul>
+<li><p>Dráha rovnoměrného pohybu je určena vzorcem</p>
+<div class="math notranslate nohighlight" id="equation-1">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-1" title="Link to this equation">#</a></span>\[s=vt.\]</div>
+<p>Tento
+vzorec není použitelný pro pohyb proměnnou rychlostí. Z kapitoly o
+neurčitém integrálu víme, že obecný vzorec je</p>
+<div class="math notranslate nohighlight" id="equation-2">
+<span class="eqno">(10.2)<a class="headerlink" href="#equation-2" title="Link to this equation">#</a></span>\[s=\int v\,\mathrm dt.\]</div>
+<p>Pokud je <span class="math notranslate nohighlight">\(v\)</span> konstantní, vzorec <a class="reference internal" href="../matice/index.html#equation-1">(3.1)</a> je důsledkem vzorce
+<a class="reference internal" href="../matice/index.html#equation-2">(3.2)</a>.</p>
+</li>
+<li><p>Hydrostatická tlaková síla <span class="math notranslate nohighlight">\(F\)</span> působící ve vodě v hloubce <span class="math notranslate nohighlight">\(h\)</span> na
+plochu o velikosti <span class="math notranslate nohighlight">\(S\)</span> se určí podle vztahu <div class="math notranslate nohighlight">
+\[F=Sh\rho g,\]</div>
+ kde
+<span class="math notranslate nohighlight">\(\rho\)</span> je hustota vody a <span class="math notranslate nohighlight">\(g\)</span> tíhové zrychlení. Tento vzorec však
+není možné použít, pokud různé části plochy jsou v různých
+hloubkách. Například není možné pomocí tohoto vzorce určit celkovou
+sílu na svislou stěnu reprezentující hráz přehrady, protože různé části stěny jsou v různých hloubkách.</p></li>
+<li><p>Práce vykonaná konstantní silou <span class="math notranslate nohighlight">\(F\)</span> po dráze <span class="math notranslate nohighlight">\(s\)</span> je</p>
+<div class="math notranslate nohighlight" id="equation-3">
+<span class="eqno">(10.3)<a class="headerlink" href="#equation-3" title="Link to this equation">#</a></span>\[W=Fs.\]</div>
+<p>Co když se ale síla nebo dráha mění? Pokud nás zajímá práce nutná k
+navinutí visícího řetězu na rumpál, síla se během namotávání plynule
+zmenšuje, protože visící kus řetězu se při namotávání
+zkracuje. Pokud nás zajímá práce nutná k vyčerpání vodní nádrže,
+musíme každý litr vody, který je na dně, „tahat“ po delší dráze než
+každý litr vody, který je na hladině a proto se mění dráha. Vzorec <a class="reference internal" href="../matice/index.html#equation-3">(3.3)</a> selhává v obou případech. Jednou kvůli nekonstantní síle,
+podruhé kvůli dráze.</p>
+</li>
+</ul>
+<p>\iffalse</p>
+<div class='obtekat'>
+<figure class="align-default" id="id1">
+<img alt="../_images/1.png" src="../_images/1.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.1 </span><span class="caption-text">Obsah pod konstantní funkcí.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>\fi</p>
+<ul class="simple">
+<li><p>Obsah obrazce mezi konstantní funkcí <span class="math notranslate nohighlight">\(f\)</span> a osou <span class="math notranslate nohighlight">\(x\)</span> nad intervalem
+<span class="math notranslate nohighlight">\([a,b]\)</span> se vypočte snadno, protože se jedná o obdélník se stranami
+<span class="math notranslate nohighlight">\(f\)</span> a <span class="math notranslate nohighlight">\(\Delta x=b-a\)</span>. Proto <div class="math notranslate nohighlight">
+\[S=f\cdot \Delta x.\]</div>
+ Tento přístup
+však není možné použít, pokud se funkce <span class="math notranslate nohighlight">\(f\)</span> na intervalu <span class="math notranslate nohighlight">\([a,b]\)</span>
+mění. Formálně je tato úloha stejná jako ostatní úlohy výše, má však
+snadnou geometrickou interpretaci. Právě tuto interpretaci využijeme
+v následujícím k definici druhého typu určitého integrálu
+(Riemannova).</p></li>
+</ul>
+</section>
+</section>
+<section id="urcity-integral-riemannuv">
+<h2><span class="section-number">10.3. </span>Určitý integrál (Riemannův)<a class="headerlink" href="#urcity-integral-riemannuv" title="Link to this heading">#</a></h2>
+<div class="obtekat"><figure><a href="https://um.mendelu.cz/manim/UrcityIntegral" target=_blank><img src="https://um.mendelu.cz/manim/thumbs/UrcityIntegral.jpg"></a><figcaption>Určitý integrál dokáže nahradit součin v případě, že koeficeint násobící měnící se veličinu není konstantní. <a href="http://um.mendelu.cz/manim/UrcityIntegral" class=but-prez target=_blank>Otevřít prezentaci</a></figcaption></figure></div>
+<div class='obtekat'>
+<figure class="align-default" id="id2">
+<img alt="../_images/1.png" src="../_images/1.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.2 </span><span class="caption-text">Obsah pod konstantní funkcí.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="../_images/2.png" src="../_images/2.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.3 </span><span class="caption-text">Obsah pod funkcí po částech konstantní.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="../_images/3.png" src="../_images/3.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.4 </span><span class="caption-text">Obsah pod obecnou funkcí je <span class="math notranslate nohighlight">\(\int_a^b f(x)\,\mathrm dx\)</span>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p><strong>Úloha 1.</strong> Snadným důsledkem vzorce pro obsah obdélníka je obsah
+obrazce mezi grafem konstantní funkce a osou <span class="math notranslate nohighlight">\(x\)</span>. <div class="math notranslate nohighlight">
+\[S=f\Delta x\]</div>
+</p>
+<p><strong>Úloha 2.</strong> Obsah pod funkcí složené ze dvou konstantních funkcí
+napojených na sebe se vypočte jako součet obsahů dvou
+obdélníků. <div class="math notranslate nohighlight">
+\[S=f_1\Delta x_1+f_2\Delta x_2\]</div>
+ Toto se dá snadno
+zobecnit na libovolný počet intervalů a pro libovolnou po částech
+konstantní funkci.</p>
+<p>Prostředky matematické analýzy je možné „zjemňovat dělení do
+nekonečna“, přesněji, můžeme použít limitní přechod podobný limitnímu
+přechodu, který v definici derivace převedl podíl (průměrnou
+rychlost) na derivaci (okamžitou rychlost). Díky tomu není nutné se
+omezovat na po částech konstantní funkce, ale postup bude fungovat i
+pro velmi obecné funkce. Výsledným produktem je Riemannův
+integrál.</p>
+<p>Riemannův integrál je velmi názorný, ale poměrně obtížně se
+počítá, pokud postupujeme přímo podle definice. Pokud však je funkce v
+určitém smyslu pěkná (má primitivní funkci na intervalu, který uvnitř
+obsahuje interval <span class="math notranslate nohighlight">\([a,b]\)</span>) jsou Riemannův a Newtonův integrál
+stejné. Proto mezi nimi nerozlišujeme, používáme jeden pojem <strong>určitý
+integrál</strong> a počítáme jej pomocí definice Newtonova integrálu. Obsah
+obrazce pod křivkou <span class="math notranslate nohighlight">\(f(x)\)</span> je roven <div class="math notranslate nohighlight">
+\[S=\int_a^b f(x)\,\mathrm dx.\]</div>
+</p>
+<p>V teorii Riemannova integrálu má vzorec
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x)\mathrm dx=\left[F(x)\right]_a^b=F(b)-F(a)\]</div>
+
+postavení věty nazývané <strong>Newtonova–Leibnizova věta</strong> a je to věta
+udávající, jak vypočteme určitý integrál pomocí neurčitého. Zajímavé
+je, že v některých případech je vhodné postupovat naopak a určit
+neurčitý integrál pomocí integrálu určitého, což si ukážeme v
+následující přednášce.</p>
+<div class="proof algorithm dropdown admonition" id="algorithm-6">
+<p class="admonition-title"><span class="caption-number">Algorithm 10.1 </span> (Nasčítání příspěvků k celkové dráze)</p>
+<section class="algorithm-content" id="proof-content">
+<p>\iffalse</p>
+<div class='obtekat'>
+<figure class="align-default" id="id5">
+<img alt="../_images/parasutista.jpg" src="../_images/parasutista.jpg" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.5 </span><span class="caption-text">Při pohybu proměnnou rychlostí je dráha integrálem rychlosti. Zdroj: pixabay.com</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>\fi</p>
+<ol class="arabic simple">
+<li><p>Těleso pohybující se po dobu <span class="math notranslate nohighlight">\(\Delta t\)</span> konstantní rychlostí <span class="math notranslate nohighlight">\(v\)</span> po
+přímce urazí dráhu <div class="math notranslate nohighlight">
+\[s=v\Delta t.\]</div>
+</p></li>
+<li><p>Těleso pohybující se po dobu <span class="math notranslate nohighlight">\(\Delta t_1\)</span> konstantní rychlostí
+<span class="math notranslate nohighlight">\(v_1\)</span> po přímce a poté po dobu <span class="math notranslate nohighlight">\(\Delta t_2\)</span> rychlostí <span class="math notranslate nohighlight">\(v_2\)</span> urazí
+celkovou dráhu <div class="math notranslate nohighlight">
+\[s=v_1\Delta t_1+v_2\Delta t_2.\]</div>
+ Toto je možné
+zobecnit na libovolný pohyb skládající se z konečného počtu úseků,
+kdy se těleso pohybuje konstantní rychlostí.  <div class="math notranslate nohighlight">
+\[s=v_1\Delta
+t_1+v_2\Delta t_2+\cdots +v_k \Delta t_k=\sum_{i=1}^k v_i\Delta t_i\]</div>
+
+Příspěvek za každou část pohybu, kdy je rychlost konstantní, je
+<div class="math notranslate nohighlight">
+\[\Delta s=v\Delta t, \]</div>
+ kde <span class="math notranslate nohighlight">\(v\)</span> a <span class="math notranslate nohighlight">\(\Delta t\)</span> jsou příslušná
+rychlost a doba pohybu, po kterou je rychlost konstantní.</p></li>
+<li><p>Pokud se rychlost mění spojitě a <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(b\)</span> jsou počáteční a koncový
+okamžik pohybu, platí <div class="math notranslate nohighlight">
+\[s=\int_a^b v(t)\,\mathrm dt.\]</div>
+</p></li>
+</ol>
+</section>
+</div><p>\iffalse</p>
+<div class='obtekat'>
+<figure class="align-default" id="id6">
+<img alt="../_images/bohdanka.jpg" src="../_images/bohdanka.jpg" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.6 </span><span class="caption-text">Při posuzování stability rozhledny hraje moment setrvačnosti ústřední roli. Moment setrvačnosti rozhledny je možné získat součtem momentů setrvačnosti jednotlivých trámů. Rozhledna Bohdanka. Zdroj: http://tvstav.cz</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="../_images/4.png" src="../_images/4.png" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.7 </span><span class="caption-text">Tyč rotující okolo kolmé osy.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<img alt="../_images/wallenda.jpg" src="../_images/wallenda.jpg" />
+<figcaption>
+<p><span class="caption-number">Obr. 10.8 </span><span class="caption-text">Provazochodec při přechodu přes Grand Canyon. Zdroj:  cbsnews.com</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>\fi</p>
+<ul class="simple">
+<li><p>Kinetická energie tělesa o hmotnosti <span class="math notranslate nohighlight">\(m\)</span> pohybujícího se posuvným
+pohybem rychlostí <span class="math notranslate nohighlight">\(v\)</span> je dána vztahem <span class="math notranslate nohighlight">\(E=\frac 12 mv^2\)</span>. Kinetická energie
+tělesa o momentu setrvačnosti <span class="math notranslate nohighlight">\(J\)</span> pohybujícího se otáčivým pohybem
+úhlovou rychlostí <span class="math notranslate nohighlight">\(\omega\)</span> je dána vztahem <span class="math notranslate nohighlight">\(E=\frac 12 J\omega
+^2\)</span>. Odsud vidíme, že energie potřebná k vyvolání rotačního pohybu
+je úměrná momentu setrvačnosti. Moment setrvačnosti je tedy jakousi
+mírou odolnosti tělesa vůči silám, které se jej snaží uvést do
+rotačního pohybu. Zjednodušeně, větší moment setrvačnosti znamená,
+že těleso je stabilnější.</p></li>
+<li><p>Moment setrvačnosti hmotného bodu o hmotnosti <span class="math notranslate nohighlight">\(m\)</span> vzhledem k ose
+otáčení vzdálené <span class="math notranslate nohighlight">\(r\)</span> od tohoto bodu je <span class="math notranslate nohighlight">\(J=mr^2\)</span>. Pro soustavu
+hmotných bodů stačí příspěvky sečíst. Pro případ tělesa se spojitě
+rozloženou hmotností bychom museli „sečíst nekonečně mnoho nekonečně
+malých příspěvků“ a proto sčítáme integrálem.</p></li>
+</ul>
+<p>Budeme studovat rotaci tyče o hmotnosti <span class="math notranslate nohighlight">\(m\)</span> a délce <span class="math notranslate nohighlight">\(L\)</span> okolo osy
+kolmé k tyči. Nechť je tyč položena podél osy <span class="math notranslate nohighlight">\(x\)</span> a rotuje okolo osy
+<span class="math notranslate nohighlight">\(y\)</span>. Kousek tyče o délce <span class="math notranslate nohighlight">\(\Delta x\)</span> má hmotnost <span class="math notranslate nohighlight">\(\frac{\Delta x}{L}m\)</span>
+a pokud je jeho vzdálenost od osy <span class="math notranslate nohighlight">\(y\)</span> rovna <span class="math notranslate nohighlight">\(x\)</span>, příspěvek k celkovému
+momentu setrvačnosti je <div class="math notranslate nohighlight">
+\[\Delta J= \frac{\Delta x}{L}m x^2 =\frac{m}{L} x^2\Delta x.\]</div>
+ Celkový moment setrvačnosti je dán
+integrálem, ale závisí na poloze tyče vzhledem k ose otáčení.</p>
+<ol class="arabic simple">
+<li><p>Pro tyč umístěnou levým koncem v počátku dostáváme moment vzhledem
+k ose procházející koncem tyče ve tvaru <div class="math notranslate nohighlight">
+\[J=\int_0^L \frac{m}{L}
+x^2\,\mathrm dx=\frac mL \left[\frac 13 x^3\right]_0^L= \frac mL
+\frac 13 L^3=\frac 13 mL^2.  \]</div>
+</p></li>
+<li><p>Pro tyč umístěnou středem v počátku dostáváme moment vzhledem k ose
+procházející středem ve tvaru
+\dm<div class="math notranslate nohighlight">
+\[J=\int_{-\frac L2}^{\frac L2} \frac{m}{L} x^2\,\mathrm dx=\frac mL \left[\frac 13 x^3\right]_{-\frac L2} ^{\frac L2} = \frac mL \left[\frac 13 \frac {L^3}8 - \frac 13 (-1)^3 \frac {L^3}8\right] = \frac 1{12} mL^2. \]</div>
+</p></li>
+</ol>
+<p><strong>Závěr.</strong></p>
+<ul class="simple">
+<li><p>Na roztočení tyče okolo konce je potřeba více energie, než na
+roztočení okolo středu. Čtyřikrát více. (Z praxe víme, že s dlouhým
+žebřem se manipuluje nejlépe, pokud jej držíme uprostřed.)</p></li>
+<li><p>Tyč o konstantní délkové hustotě <span class="math notranslate nohighlight">\(\tau\)</span> (dané použitým průřezem a
+materiálem) má hmotnost <span class="math notranslate nohighlight">\(m=\tau L\)</span> a moment setrvačnosti vzhledem ke
+středu <div class="math notranslate nohighlight">
+\[J=\frac1{12}\tau L^3.\]</div>
+ Vidíme, že moment setrvačnosti
+roste dramaticky při zvětšování délky, s třetí mocninou. Proto
+provazochodci nosí na laně dlouhou tyč a proto při extrémních
+výkonech, jako je přechod Grand Canyon, bývá použita extrémně dlouhá
+tyč (pro Grand Canyon 9.1 metrů a 20 kilogramů, viz <a class="reference external" href="https://en.wikipedia.org/wiki/Nik_Wallenda#Canyon_walk">Nik
+Wallenda</a>).</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../difuzni_rovnice/index.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Rovnice kontinuity, difuzní rovnice</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../statika/index.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Základy teorie elasticity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurcity-integral">10.1. Neurčitý integrál</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcni-predpis-z-rychlosti-zmeny-a-vychoziho-stavu">10.1.1. Funkční předpis z rychlosti změny a výchozího stavu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#urcity-integral-newtonuv">10.2. Určitý integrál (Newtonův)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zmena-funkce-z-rychlosti-zmeny-casova-zmena-teploty">10.2.1. Změna funkce z rychlosti změny (časová změna teploty)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-motivace">10.2.2. Další motivace</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#urcity-integral-riemannuv">10.3. Určitý integrál (Riemannův)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle Robert Mařík
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</p>
+<p><script src="https://utteranc.es/client.js"
+ repo="robert-marik/am" 
+ issue-term="pathname" 
+ label="comment" 
+ theme="github-light" 
+ crossorigin="anonymous" 
+  async> 
+ </script> 
+ </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
