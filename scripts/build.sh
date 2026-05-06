@@ -43,7 +43,7 @@ sed -i 's/Remark/Poznámka/' $directory/*/index.html
 # #sed -i 's/<p>https:\/\/youtu.be\/\(.*\)<\/p>/<div class="Ycontainer"> <iframe class="responsive-iframe" src="https:\/\/www.youtube.com\/embed\/\1"><\/iframe> <\/div>/' $directory/*/*.html
 # sed -i 's/<p>https:\/\/youtu.be\/\(.*\)<\/p>/<p><a href="https:\/\/youtu.be\/\1">Video<\/a><\/p>/' $directory/*/*.html
 
-sed -i 's/<p>manimp:\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/um.mendelu.cz\/manim\/\1" target=_blank><img src="https:\/\/um.mendelu.cz\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\2 <a href="\/marik\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
+sed -i 's/<p>manimp:\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/um.mendelu.cz\/manim\/\1" target=_blank><img src="https:\/\/um.mendelu.cz\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\2 <a href="http:\/\/um.mendelu.cz\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
 
 sed -i 's/<p>manim:\(.*\)|\(.*\)|\(.*\)<\/p>/<div class="obtekat"><figure><a href="https:\/\/um.mendelu.cz\/manim\/\1" target=_blank><img src="https:\/\/um.mendelu.cz\/manim\/thumbs\/\1.jpg"><\/a><figcaption>\3 <a href="https:\/\/um.mendelu.cz\/manim\/\1" class=but-prez target=_blank>Otevřít prezentaci<\/a> <a href="https:\\\\youtu.be\/\2" class=but-video target=_blank>Spustit video<\/a><\/figcaption><\/figure><\/div>/' $directory/*/index.html
 
