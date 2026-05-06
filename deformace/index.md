@@ -44,9 +44,16 @@ $$\varepsilon = \left(
 $$
 Toto označení se nazývá Voigtova notace.
 
-Matice poddajnosti je maticí, vyjadřující úměrnost mezi oběma tenzory. Slovně vyjádřeno, u každé komponenty deformace se sčítají příspěvky od všech komponent napětí, přičemž příspěvky od každého napětí jsou úměrné těmto napětím. To je přímá analogie jednorozměrného Hookova zákona $\varepsilon = \frac 1E \sigma$.
+Hookův zákon má tvar 
+$$\varepsilon = S \sigma,$$
+kde $S$ je matice poddajnosti, resp. 
+$$\sigma = C \varepsilon,$$
+kde $C$ je matice tuhosti. Matice tuhosti a matice poddajnosti jsou navzájem inverzní, tj. $C = S^{-1}$ a $S = C^{-1}$.
 
-Obecný vztah mezi tenzorem napětí a tenzorem deformace pro lineární materiál je tedy dán vztahem
+Matice poddajnosti je maticí, vyjadřující úměrnost mezi oběma tenzory. Slovně vyjádřeno, u každé komponenty deformace se sčítají příspěvky od všech komponent napětí, přičemž příspěvky od každého napětí jsou úměrné těmto napětím. To je přímá analogie jednorozměrného Hookova zákona $$\varepsilon = \frac 1E \sigma.$$
+
+Hookův zákon pro obecný anizotropní materiál rozepsaný po složkách pro tenzory
+ve Voigtově notaci vypadá následovně.
 
 $$\left(
     \begin{matrix}
@@ -81,10 +88,10 @@ $$\left(
 \right).
 $$
 
-Například $\varepsilon_x$ je dána vztahem
+Například komponenta $\varepsilon_x$ strain tenzoru je dána vztahem
 $$\varepsilon_x = S_{11}\sigma_x + S_{12}\sigma_y + S_{13}\sigma_z + S_{14}\sigma_{yz} + S_{15}\sigma_{xz} + S_{16}\sigma_{xy}.$$
 
-Matice v této relaci se nazývá matice poddajnosti a je symetrická, tj. obsahuje pouze 21 nezávislých materiálových konstant.
+Matice poddajnosti $S$ je symetrická, tj. obsahuje ne 36, ale pouze 21 nezávislých materiálových konstant.
 
 $$\left(
     \begin{matrix}
@@ -118,6 +125,8 @@ $$\left(
      \end{matrix}
 \right)
 $$
+
+Pro naprostou většinu materiálů se počet konstant dále redukuje.
 
 Zpravidla se smykové namáhání projevuje jenom ve své vlastní rovině. Například smykové napětí $\sigma_{yz}$ vyvolává smykovou deformaci $\varepsilon_{yz}$, ale nevyvolává smykovou deformaci $\varepsilon_{xz}$ nebo $\varepsilon_{xy}$. Proto jsou červené vyznačené prvky dávající do relace smykové napětí v jedné rovině se smykovou deformací v jiné rovině nulové.
 
@@ -215,9 +224,7 @@ $$
 
 Z podmínek symetrie plynou vztahy
 $$
-\frac{\nu_{ij}}{{E_i}}
-=
-\frac{\nu_{ji}}{E_j}.
+\frac{\nu_{ij}}{{E_i}} = \frac{\nu_{ji}}{E_j}.
 $$
 
 **Poznámka:** Někdy je přehozen význam indexů u Poissonova podílu. Proto je nutné se u každého použití vzorce v literatuře nebo softwaru seznámit s použitou notací.
